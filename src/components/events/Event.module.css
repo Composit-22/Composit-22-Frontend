@@ -1,0 +1,4 @@
+.card {
+    background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
+    height: 20rem;
+}

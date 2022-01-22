@@ -1,0 +1,66 @@
+.welcome {
+    background-image: url("welcome-bkg.jpg");
+    background-size: cover;
+    width: 95vw;
+    height: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+.welcome-btn__group {
+    display: flex;
+    gap: 10rem;
+}
+
+.welcome-btn__left {
+    color: white;
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-primary-light);
+    border-radius: .5rem;
+}
+
+.welcome-btn__left:hover {
+    color: var(--color-primary-light);
+    background-color: white;
+}
+
+.welcome-btn__right {
+    color: black;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: .5rem;
+}
+
+.welcome-btn__right:hover {
+    color: var(--color-primary);
+    background-color: white;
+    border: 1px solid var(--color-primary);
+    border-radius: .5rem;
+}
+
+.heading-medium {
+    font-size: min(5.9rem, max(5.9vw, 3rem));
+    color: rgb(75, 75, 75);
+    text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+    margin-top: 5rem;
+}
+
+.heading-small {
+    font-size: min(3rem, max(3vw, 2rem));
+    color: rgb(75, 75, 75);
+    text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+    
+}
+
+.heading-large {
+    font-size: min(14.4rem, max(14.4vw, 7.4rem));
+    color: darkred;
+    text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
