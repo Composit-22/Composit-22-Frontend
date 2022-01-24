@@ -26,7 +26,8 @@
     border-radius: .5rem;
 }
 
-.welcome-btn__left:hover {
+.welcome-btn__left:hover,
+.welcome-btn__left:active {
     color: var(--color-primary-light);
     background-color: white;
 }
@@ -38,11 +39,10 @@
     border-radius: .5rem;
 }
 
-.welcome-btn__right:hover {
+.welcome-btn__right:hover,
+.welcome-btn__right:active {
     color: var(--color-primary);
     background-color: white;
-    border: 1px solid var(--color-primary);
-    border-radius: .5rem;
 }
 
 .heading-medium {

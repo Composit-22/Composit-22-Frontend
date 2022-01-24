@@ -1,4 +1,76 @@
 .card {
-    background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary-dark));
+    background-image: linear-gradient(to bottom right, rgba(65, 237, 95, .8), rgba(51, 209, 201, .8)), url("event-bkg.jpg");
+    background-size: cover;
+    background-position: top;
+    height: 42rem;
+    border-radius: .5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+
+.card1 {
+    background-image: linear-gradient(to bottom right, rgba(245, 145, 145, .8), rgba(232, 188, 132, .8)), url("event-bkg.jpg");
+    background-size: cover;
+    background-position: top;
+    height: 42rem;
+    border-radius: .5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+
+.card-quote {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 0 auto;
+}
+
+.card-title {
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.card-desc {
+    display: flex;
+    gap: 2rem;
+}
+
+.card-desc__frag {
+    align-self: flex-end;
+}
+
+.card-btn__group {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 2rem;
+}
+
+.card-btn {
+    font-size: 1.2rem;
+    padding: .8rem 1rem;
+    border-radius: .8rem;
+    color: white;
+    border: 1px solid black;
+    background-color: black;
+    transition: all .3s;
+}
+
+.card-btn:hover,
+.card-btn:active {
+    color: black;
+    background-color: white;
+}
+
+.card-img {
+    clip-path: url(#deermask);
+    object-fit: cover;
+    width: 20rem;
     height: 20rem;
 }

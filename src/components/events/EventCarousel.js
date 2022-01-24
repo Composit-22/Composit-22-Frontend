@@ -49,7 +49,7 @@ const EventCarousel = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 2,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
@@ -60,28 +60,28 @@ const EventCarousel = () => {
             <h1 className={classes["carousel-heading"]}>Events</h1>
             <Slider className={classes["carousel"]} {...settings}>
                 <div className={classes["carousel-item"]}>
-                    <Event text="1" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="1"/>
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="2" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="2" />
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="3" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="3" />
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="4" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="4"/>
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="5" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="5" />
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="6" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="6"/>
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="7" />
+                    <Event quote="Get ready for a wonderful treasurehunt" isRed="6"/>
                 </div>
                 <div className={classes["carousel-item"]}>
-                    <Event text="8" />
+                    <Event quote="Get ready for a wonderful treasurehunt"isRed="6" />
                 </div>
             </Slider>
             <div className={classes["dummy"]}></div>

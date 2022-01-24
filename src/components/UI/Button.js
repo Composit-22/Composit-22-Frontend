@@ -5,7 +5,7 @@ const Button = (props) => {
     const styles = classes['btn'] + ' ' + props.className;
 
     return (
-        <button className={styles} wobble={props.wobble} onClick={props.onClick} onAnimationEnd={props.onAnimationEnd}>
+        <button className={styles} onClick={props.onClick}>
             {props.children}
         </button>
     );

@@ -32,4 +32,6 @@
 
 html {
     font-size: 62.5%; /* .1rem = 1px */
+    font-family: "Monserrat";
+    font-weight: 700;
 }

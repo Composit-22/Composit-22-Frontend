@@ -1,0 +1,59 @@
+.footer {
+    background-color: rgba(50, 50, 50, .1);
+}
+
+.footer > a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer > a:hover,
+.footer > a:focus {
+    color: purple;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    gap: 15rem;
+    padding: 6rem;
+}
+
+.footer-top__heading {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.footer-page-links {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.footer-page-link {
+    font-family: "Montserrat";
+    text-decoration: none;
+    color: grey;
+    font-size: 1.6rem;
+}
+
+.footer-page-link:link,
+.footer-page-link:hover,
+.footer-page-link:active {
+    color: purple;
+}
+
+.indicator {
+    font-size: 1.4rem;
+}
+
+
+ul.footer-page-links > a {
+    font-family: "Montserrat";
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+
+
