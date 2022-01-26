@@ -16,9 +16,23 @@ const Navbar = () => {
             height="40"
             className={classes["hamburger"]}
         >
-            <rect width="100" height="10" className={classes["hamburger__bar"]} />
-            <rect y="25" width="100" height="10" className={classes["hamburger__bar"]} />
-            <rect y="50" width="100" height="10" className={classes["hamburger__bar"]} />
+            <rect
+                width="100"
+                height="10"
+                className={classes["hamburger__bar"]}
+            />
+            <rect
+                y="25"
+                width="100"
+                height="10"
+                className={classes["hamburger__bar"]}
+            />
+            <rect
+                y="50"
+                width="100"
+                height="10"
+                className={classes["hamburger__bar"]}
+            />
         </svg>
     ) : (
         <svg
@@ -27,12 +41,26 @@ const Navbar = () => {
             height="40"
             className={classes["close"]}
         >
-            <line x1="0" y1="0" x2="100" y2="80" className={classes["close__fragment"]} />
-            <line x1="0" y1="80" x2="100" y2="0" className={classes["close__fragment"]} />
+            <line
+                x1="0"
+                y1="0"
+                x2="100"
+                y2="80"
+                className={classes["close__fragment"]}
+            />
+            <line
+                x1="0"
+                y1="80"
+                x2="100"
+                y2="0"
+                className={classes["close__fragment"]}
+            />
         </svg>
     );
 
-    const secondaryHeaderClasses = classes["secondary-header"] + (isVisible ? ` ${classes["active"]}` : "");
+    const secondaryHeaderClasses =
+        classes["secondary-header"] +
+        (isVisible ? ` ${classes["active"]}` : "");
 
     return (
         <header className={classes["navbar"]}>
@@ -49,6 +77,14 @@ const Navbar = () => {
                 </button>
                 <nav className={classes["primary-navigation"]}>
                     <ul className={classes["primary-navigation__list"]}>
+                        <li>
+                            <a
+                                href="#"
+                                className={classes["primary-navigation__link"]}
+                            >
+                                Home
+                            </a>
+                        </li>
                         <li>
                             <a
                                 href="#"
@@ -92,8 +128,16 @@ const Navbar = () => {
                     </ul>
                 </nav>
                 <div className={classes["nav-btn__group"]}>
-                    <Button className={`${classes["nav-btn"]} ${classes["nav-btn__login"]}`}>Login</Button>
-                    <Button className={`${classes["nav-btn"]} ${classes["nav-btn__register"]}`}>Register</Button>
+                    <Button
+                        className={`${classes["nav-btn"]} ${classes["nav-btn__login"]}`}
+                    >
+                        Login
+                    </Button>
+                    <Button
+                        className={`${classes["nav-btn"]} ${classes["nav-btn__register"]}`}
+                    >
+                        Register
+                    </Button>
                 </div>
             </header>
             <header className={secondaryHeaderClasses}>

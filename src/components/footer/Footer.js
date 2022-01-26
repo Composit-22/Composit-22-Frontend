@@ -1,4 +1,14 @@
 import classes from "./Footer.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faFacebook,
+    faLinkedin,
+    faYoutube,
+    faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 const Footer = () => {
     return (
@@ -52,11 +62,18 @@ const Footer = () => {
                     </h1>
                     <ul className={classes["footer-links"]}>
                         <li className={classes["footer-contact"]}>
+                        <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faMapMarkerAlt} /></span>
                             Department of Metallurgical and Materials
                             Engineering, IIT Kharagpur, West Bengal 721302
                         </li>
-                        <li className={classes["footer-contact"]}>096104 08669</li>
-                        <li className={classes["footer-contact"]}>composit2k22@gmail.com</li>
+                        <li className={classes["footer-contact"]}>
+                            <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faPhoneAlt} /></span>
+                            096104 08669
+                        </li>
+                        <li className={classes["footer-contact"]}>
+                            <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faEnvelope} /></span>
+                            composit2k22@gmail.com
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -70,6 +87,7 @@ const Footer = () => {
                                 target="_blank"
                                 className={classes["footer-link"]}
                             >
+                                <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faFacebook} /></span>
                                 Facebook
                             </a>
                         </li>
@@ -79,6 +97,7 @@ const Footer = () => {
                                 target="_blank"
                                 className={classes["footer-link"]}
                             >
+                                <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faLinkedin} /></span>
                                 LinkedIn
                             </a>
                         </li>
@@ -88,6 +107,7 @@ const Footer = () => {
                                 target="_blank"
                                 className={classes["footer-link"]}
                             >
+                                <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faYoutube} /></span>
                                 YouTube
                             </a>
                         </li>
@@ -97,6 +117,7 @@ const Footer = () => {
                                 target="_blank"
                                 className={classes["footer-link"]}
                             >
+                                <span className={classes["footer-icon"]}><FontAwesomeIcon icon={faGoogle} /></span>
                                 Google
                             </a>
                         </li>
@@ -105,7 +126,10 @@ const Footer = () => {
             </div>
             <div className={classes["footer-rule"]}></div>
             <div className={classes["footer-bottom"]}>
-                <p>2022 Composit IIT Kharagpur 27th Edition. All Rights Reserved.</p>
+                <p>
+                    2022 Composit IIT Kharagpur 27th Edition. All Rights
+                    Reserved.
+                </p>
                 <p>Developed and maintained by composit</p>
             </div>
         </footer>
