@@ -1,25 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
-    /* --color-primary: #eb2f64;
-     */
-     --color-primary: rgb(231, 154, 26);
-    --color-primary-light: #ff3366;
-    --color-primary-dark: #ba265d;
+    
+    /* COLORS */
+    --color-primary: #e89a1a;
+    --color-primary-light: #ffb900;
+    --color-primary-dark: #ff7730;
 
-    --color-grey-light-1: #faf9f9;
-    --color-grey-light-2: #f4f2f2;
-    --color-grey-light-3: #f0eeee;
-    --color-grey-light-4: #ccc;
+    --color-secondary: #eb2f64;
+    --color-secondary-light: #ff3366;
+    --color-secondary-dark: #ba265d;
 
-    --color-grey-dark-1: #333;
-    --color-grey-dark-2: #777;
+    --color-tertiary: #55c57a;
+    --color-tertiary-light: #7ed56f;
+    --color-tertiary-dark: #28b485;
 
+    --color-quaternary-light: #2998ff;
+    --color-quaternary-dark: #5643fa;
+
+    /* SHADOWS */
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 
+    /* DIMENSIONS */
     --mob-max-width: 650px;
 }
 

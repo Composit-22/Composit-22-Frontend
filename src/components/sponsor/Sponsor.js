@@ -10,10 +10,10 @@ const Sponsor = () => {
         <div className={classes["sponsor"]}>
             <h1 className={classes["sponsor-heading"]}>Our Sponsors</h1>
             <div className={classes["sponsor-group"]}>
-                <img src={apple} className={classes["sponsor-logo"]} />
-                <img src={facebook} className={classes["sponsor-logo"]} />
-                <img src={nokia} className={classes["sponsor-logo"]} />
-                <img src={oracle} className={classes["sponsor-logo"]} />
+                <img src={apple} alt="Apple" className={classes["sponsor-logo"]} />
+                <img src={facebook} alt="Facebook" className={classes["sponsor-logo"]} />
+                <img src={nokia} alt="Nokia" className={classes["sponsor-logo"]} />
+                <img src={oracle} alt="Oracle" className={classes["sponsor-logo"]} />
             </div>
             <Button className={classes["btn-sponsor"]}>Become a Sponsor</Button>
         </div>
