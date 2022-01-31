@@ -1,0 +1,21 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1500;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: scaleX(0.9);
+}
+
+.close__fragment {
+    stroke: white;
+    stroke-width: 0.5rem;
+}
