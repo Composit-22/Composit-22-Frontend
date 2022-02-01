@@ -11,12 +11,12 @@
     background-position: center;
     background-size: cover;
     margin-left: -1.5rem;
-    margin-right: -3.4rem;
+    margin-right: 0rem;
 }
 
 .left_img{
-    height: 40vh;
-    width: 20vw;
+    height: 55vh;
+    width: 30vw;
     opacity: 0.7;
     display: flex;
     align-self: flex-end;
@@ -29,7 +29,7 @@
 }
 
 .bkg .content{
-    width: 85%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -42,11 +42,11 @@
 .content > h2{
     display: flex;
     justify-content: center;
-    margin-top: 12rem;
+    margin-top: 2rem;
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 5.5rem;
+    font-size: 5rem;
     line-height: 130%;
     padding: 0 1rem;
     
@@ -59,7 +59,7 @@
     font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 4.9rem;
     color: black;
     text-align: center;
@@ -68,15 +68,14 @@
 
 .right_img{
     margin-top: 8rem;
-    height: 80vh;
-    width: 32vw;
+    height: 105vh;
+    width: 44vw;
     display: flex;
-    align-self: center;
+    align-self: flex-end;
     background: url("./images/right-img.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 @media (max-width: 1000px) {
@@ -95,5 +94,10 @@
     .bkg .content{
         padding: 2rem;
         margin: 2rem;
+        width: 100%;
+    }
+
+    .bkg .content > h2{
+        margin-top: 10rem;
     }
 }
