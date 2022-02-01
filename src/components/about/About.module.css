@@ -1,0 +1,103 @@
+.container{
+    overflow-x: hidden;
+}
+
+.bkg{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: url("./images/bkgrnd.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: -1.5rem;
+    margin-right: 0rem;
+}
+
+.left_img{
+    height: 55vh;
+    width: 30vw;
+    opacity: 0.7;
+    display: flex;
+    align-self: flex-end;
+    background: url("./images/left-img.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+    padding-left: 0px;
+}
+
+.bkg .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+    margin-right: -12rem;
+    margin-top: 3rem;
+}
+
+.content > h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 130%;
+    padding: 0 1rem;
+    
+    text-align: center;
+    color: #222222;
+}
+
+.content > p{
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 4.9rem;
+    color: black;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.right_img{
+    margin-top: 8rem;
+    height: 105vh;
+    width: 44vw;
+    display: flex;
+    align-self: flex-end;
+    background: url("./images/right-img.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1000px) {
+    .bkg{
+        margin: 0%;
+        width: 100%;
+    }
+    .bkg .left_img{
+        display: none;
+    }
+
+    .bkg .right_img{
+        display: none;
+    }
+
+    .bkg .content{
+        padding: 2rem;
+        margin: 2rem;
+        width: 100%;
+    }
+
+    .bkg .content > h2{
+        margin-top: 10rem;
+    }
+}
