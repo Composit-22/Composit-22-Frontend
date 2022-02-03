@@ -3,13 +3,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 5rem;
+  width: 100%;
+
+  overflow: hidden;
 }
 
-.container h2 {
+.container>h2 {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 5.4rem;
+  font-size: 4.5rem;
   line-height: 130%;
 
   display: flex;
@@ -17,29 +21,27 @@
 }
 
 .tab_container {
-  display: flex;
+  display: block;
   flex-direction: column;
-  width: 90rem;
+  width: 70%;
   background: white;
   margin-top: 6rem;
-  overflow-x: auto;
-  overflow-y: auto;
 }
 
-.bloc-tabs {
+.tab-block {
   display: flex;
 }
 
 .tabs {
   padding-bottom: 1.2rem;
-  margin: 1rem;
   text-align: center;
+
   width: 100%;
   background: white;
   box-sizing: content-box;
   border-width: 0 0 0.25rem 0;
   border-color: #edede4;
-  margin-bottom: 8rem;
+  margin: 0 1rem 8rem 0;
 }
 
 .tabs>h3 {
@@ -86,12 +88,11 @@
 }
 
 .active-content {
-  display: flex;
+  display: block;
 }
 
 .table-container {
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
 }
 
@@ -99,7 +100,7 @@
   display: flex;
   flex-flow: row wrap;
   border: solid 1px #d9d9d9;
-  background-color: #f3f4f1;
+  background-color: #f4f2f1;
   border-radius: 1rem 1rem 0 0;
 }
 
@@ -114,7 +115,7 @@
   width: 25%;
   text-align: center;
   padding: 0.5em 0.5em;
-  border-bottom: solid 1px #d9d9d9;
+  border-bottom: solid 0.1rem #d9d9d9;
   font-family: Raleway, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -136,149 +137,23 @@
 }
 
 @media (max-width: 900px) {
-  .content{
-    overflow-x: auto;
-    flex-wrap: wrap;
+  .container>h2 {
+    font-size: 4rem;
+  }
+
+  .tab-block {
+    flex-direction: column;
+  }
+
+  .tabs {
+    margin-bottom: 3rem;
+  }
+
+  .row>div {
+    width: 100%
+  }
+
+  .row>div:last-child {
+    border-bottom: solid 0.5rem #d9d9d9;
   }
 }
-
-
-/* $table-header: #1976D2;
-$table-header-border: #1565C0;
-$table-border: 
-$row-bg: #f4f2f1;
-
-div {
-  box-sizing: border-box;
-} */
-
-/* .table-container {
-  display: block;
-  margin: 2em auto;
-  width: 90%;
-  max-width: 600px;
-}
-
-.flag-icon {
-  margin-right: 0.1em;
-}
-
-.flex-table {
-  display: flex;
-  flex-flow: row wrap;
-  border-left: solid 1px $table-border;
-  transition: 0.5s;
-  &:first-of-type {
-    border-top: solid 1px $table-header-border;
-    border-left: solid 1px $table-header-border;
-  }
-  &:first-of-type .flex-row {
-    background: $table-header;
-    color: white;
-    border-color: $table-header-border;
-  }
-  &.row:nth-child(odd) .flex-row {
-    background: $row-bg;
-  }
-  &:hover {
-    background: #F5F5F5;
-    transition: 500ms;
-  }
-}
-
-.flex-row {
-  width: calc(100% / 4);
-  text-align: center;
-  padding: 0.5em 0.5em;
-  border-right: solid 1px $table-border;
-  border-bottom: solid 1px $table-border;
-}
-
-.rowspan {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.column {
-  display: flex;
-  flex-flow: column wrap;
-  width: 75%;
-  padding: 0;
-  .flex-row {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    border-bottom: solid 1px $table-border;
-    &:hover {
-      background: #F5F5F5;
-      transition: 500ms;
-    }
-  }
-}
-
-.flex-cell {
-  width: calc(100% / 3); //1px = border right
-  text-align: center;
-  padding: 0.5em 0.5em;
-  border-right: solid 1px $table-border;
-  //flex: 1 1 33.3%;
-  &:last-child {
-    // border-right: 0;
-  }
-}
-
-@media all and (max-width: 767px) {
-  .flex-row {
-    width: calc(100% / 3); //1px = border right
-    
-   &.first {
-     width: 100%;
-   }
-  }
-
-  .column {
-    width: 100%;
-  }
-}
-
-@media all and (max-width: 430px) {
-  
-  .flex-table {
-    .flex-row {
-      border-bottom: 0;
-    }
-    .flex-row:last-of-type {
-      border-bottom: solid 1px $table-border;
-    }
-  }
-  
-  .header {
-    .flex-row {
-      border-bottom: solid 1px;
-    }
-  }
-  
-  .flex-row {
-    width: 100%; //1px = border right
-    
-   &.first {
-     width: 100%;
-     border-bottom: solid 1px $table-border;
-   }
-  }
-
-  .column {
-    width: 100%;
-    .flex-row {
-      border-bottom: solid 1px $table-border;
-    }
-  }
-
-  .flex-cell {
-    width: 100%; //1px = border right
-  }
-} */
