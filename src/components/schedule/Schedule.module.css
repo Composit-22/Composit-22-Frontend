@@ -1,0 +1,148 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h2{
+    left: 42.5%;
+    right: 41.35%;
+    top: 0%;
+    bottom: 94.55%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 5.4rem;
+    line-height: 130%;
+
+    display: flex;
+    align-items: center;
+}
+
+.tab_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80rem;
+    background: white;
+    margin-top: 8rem;
+}
+
+.bloc-tabs {
+    display: flex;
+}
+
+.tabs {
+    padding-bottom: 1.2rem;
+    margin: 1rem;
+    text-align: center;
+    width: 90%;
+    background: white;
+    box-sizing: content-box;
+    position: relative;
+}
+
+.tabs > h3{
+    color: #222222;
+    font-family: Montserrat;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 800;
+    text-align: left;
+}
+
+.tabs > h6{
+    color: #222222;
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-align: left;
+}
+
+.active-tabs > h3{
+    color: #986F04;
+}
+
+.active-tabs > h6{
+    color: #986F04;
+}
+
+.active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.3rem;
+    width: 100%;
+    height: 0.3rem;
+    background: #986F04;
+}
+
+button {
+    border: none;
+}
+
+.content-tabs {
+    flex-grow : 1;
+}
+
+.content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.content h2 {
+    padding: 0px 0 5px 0px;
+}
+
+.content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+}
+
+.content p {
+    width: 100%;
+    height: 100%;
+}
+
+.active-content {
+    display: block;
+}
+
+/* .table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-row{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+} */
+
+.flex-table {
+    display: flex;
+    flex-flow: row wrap;
+    border-left: solid 1px  #d9d9d9;
+    transition: 0.5s;
+    /* &:first-of-type {
+      border-top: solid 1px #1565C0;
+      border-left: solid 1px #1565C0;
+    } */
+}
+
+.flex-row {
+    background: #1976D2;
+    color: white;
+    border-color: #1565C0;
+}
