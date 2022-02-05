@@ -13,6 +13,7 @@
 
 .primary-header {
     display: flex;
+    /* background-color: rgb(240, 240, 240); */
     background-color: transparent;
     backdrop-filter: blur(.2rem);
     justify-content: space-around;
@@ -77,19 +78,20 @@
 .primary-navigation__link {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: .6rem;
     transition: all 0.2s;
-    border-radius: 1rem;
+    border-bottom: .6rem solid transparent;
     text-decoration: none;
     color: black;
+    transition: all .4s;
 }
 
 .primary-navigation__link:last-child {
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .primary-navigation__link:hover {
-    background-color: var(--color-primary);
+    border-bottom: .6rem solid var(--color-primary);
 }
 
 .nav-toggle {

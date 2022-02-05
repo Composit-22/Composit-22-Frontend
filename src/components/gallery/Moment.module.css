@@ -1,7 +1,7 @@
 .moment {
     height: 30rem;
     background-image: linear-gradient(to right, rgb(243, 145, 92), rgb(200, 200, 100));
-    border: 2px solid goldenrod;
+    border: 5px solid goldenrod;
     object-fit: cover;
 }
 
@@ -27,5 +27,5 @@
     transform: translate(-50%, -50%);
     z-index: 2000;
     max-width: 90vw;
-    max-height: 90%;
+    max-height: 80%;
 }

@@ -4,13 +4,18 @@ import ReactDOM from "react-dom";
 import Backdrop from "../UI/Backdrop";
 
 import classes from "./Moment.module.css";
-import saturn from "./img/saturn.jpg";
 
-const OverlayContent = () => {
-    return <img src={saturn} alt="saturn-enlarged" className={classes["moment-enlarged"]}/>;
+const OverlayContent = (props) => {
+    return (
+        <img
+            src={props.image}
+            alt="saturn-enlarged"
+            className={classes["moment-enlarged"]}
+        />
+    );
 };
 
-const Moment = () => {
+const Moment = (props) => {
     const [isEnlarged, setIsEnlarged] = useState(false);
 
     const closeOverlayHandler = () => {
@@ -21,17 +26,23 @@ const Moment = () => {
         setIsEnlarged(true);
     };
 
-    return<>
-        <div className={classes["moment"]} onClick={openOverlayHandler}>
-            <img
-                src={saturn}
-                alt="saturn"
-                className={classes["moment-normal"]}
-            />
-        </div>
-        {isEnlarged && <Backdrop onClose={closeOverlayHandler} />}
-        {isEnlarged && ReactDOM.createPortal(<OverlayContent />, document.getElementById("overlay-root"))}
-    </>
+    return (
+        <>
+            <div className={classes["moment"]} onClick={openOverlayHandler}>
+                <img
+                    src={props.image}
+                    alt="saturn"
+                    className={classes["moment-normal"]}
+                />
+            </div>
+            {isEnlarged && <Backdrop onClose={closeOverlayHandler} />}
+            {isEnlarged &&
+                ReactDOM.createPortal(
+                    <OverlayContent image={props.image}/>,
+                    document.getElementById("overlay-root")
+                )}
+        </>
+    );
 };
 
 export default Moment;

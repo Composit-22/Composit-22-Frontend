@@ -1,5 +1,5 @@
 .card {
-    background-image: linear-gradient(to bottom right, rgba(65, 237, 95, .8), rgba(51, 209, 201, .8)), url("event-bkg.jpg");
+    background-image: url("event-bkg.jpg");
     background-size: cover;
     background-position: top;
     height: 42rem;
@@ -11,17 +11,24 @@
     overflow: hidden;
 }
 
-.card1 {
-    background-image: linear-gradient(to bottom right, rgba(245, 145, 145, .8), rgba(232, 188, 132, .8)), url("event-bkg.jpg");
-    background-size: cover;
-    background-position: top;
-    height: 42rem;
-    border-radius: .5rem;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    overflow: hidden;
+.bkg-0 {
+    background: linear-gradient(162.44deg, #D842F0 0%, #7A31D7 100%);
+}
+
+.bkg-1 {
+    background: linear-gradient(162.44deg, #F04242 0%, #D79531 100%);
+}
+
+.bkg-2 {
+    background: linear-gradient(162.44deg, #42F053 0%, #31CDD7 100%);
+}
+
+.bkg-3 {
+    background: linear-gradient(162.44deg, #4542F0 0%, #31D79B 100%);
+}
+
+.bkg-4 {
+    background: linear-gradient(162.44deg, #21FFD7 0%, #C728FF 100%);
 }
 
 .card-quote {
@@ -29,12 +36,15 @@
     font-weight: bold;
     font-size: 1.6rem;
     margin: 0 auto;
+    margin-left: -1rem;
 }
 
 .card-title {
     font-family: "Poppins";
     text-transform: uppercase;
     font-size: 3rem;
+    letter-spacing: 1px;
+    margin-left: -1rem;
 }
 
 .card-desc {
@@ -43,34 +53,59 @@
 }
 
 .card-desc__frag {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     align-self: flex-end;
 }
 
 .card-btn__group {
     display: flex;
-    gap: 5rem;
-    margin-bottom: 2rem;
+    gap: 4rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .card-btn {
+    display: inline-block;
+    font-family: "Poppins";
     font-size: 1.2rem;
-    padding: .8rem 1rem;
-    border-radius: .8rem;
-    color: white;
-    border: 1px solid black;
-    background-color: black;
+    text-transform: uppercase;
+    padding: .8rem .8rem;
+    border: none;
+    border-radius: 10rem;
+    color: black;
+    background-color: rgba(255, 255, 255, .5);
     transition: all .3s;
 }
 
-.card-btn:hover,
-.card-btn:active {
-    color: black;
-    background-color: white;
+.card-btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 650px) {
+    .card-btn {
+        font-size: 1rem;
+        padding: .4rem;
+    }
 }
 
 .card-img {
-    clip-path: url(#deermask);
-    object-fit: cover;
+    clip-path: circle(20% at 0% 0%);
+    position: relative;
     width: 20rem;
     height: 20rem;
+}
+
+.frag__title {
+    background-color: white;
+    padding: .3rem;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    border-left: 3px solid transparent 125%;
+}
+
+.frag__desc {
+    font-family: "Montserrat";
 }

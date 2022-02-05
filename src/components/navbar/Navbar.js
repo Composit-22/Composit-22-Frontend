@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Button from "../UI/Button";
 import classes from "./Navbar.module.css";
 
@@ -78,52 +79,52 @@ const Navbar = () => {
                 <nav className={classes["primary-navigation"]}>
                     <ul className={classes["primary-navigation__list"]}>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/home"
                                 className={classes["primary-navigation__link"]}
                             >
                                 Home
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/about"
                                 className={classes["primary-navigation__link"]}
                             >
                                 About
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/event"
                                 className={classes["primary-navigation__link"]}
                             >
                                 Event
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/schedule"
                                 className={classes["primary-navigation__link"]}
                             >
                                 Schedule
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/gallery"
                                 className={classes["primary-navigation__link"]}
                             >
                                 Gallery
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <NavLink
+                                to="/team"
                                 className={classes["primary-navigation__link"]}
                             >
                                 Our Team
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

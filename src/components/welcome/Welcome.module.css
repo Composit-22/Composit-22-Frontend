@@ -2,7 +2,7 @@
     background-image: url("welcome-bkg.jpg");
     background-size: cover;
     width: 100%;
-    height: 60rem;
+    height: 70rem;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
 }
 
 .heading-medium {
-    font-size: min(5.9rem, max(5.9vw, 3rem));
+    font-size: min(5.9rem, max(4.9vw, 3rem));
     color: rgb(75, 75, 75);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
     margin-top: 5rem;
@@ -64,7 +64,9 @@
 }
 
 .heading-large {
-    font-size: min(14.4rem, max(14.4vw, 7.4rem));
-    color: darkred;
+    font-size: min(13.4rem, max(13.4vw, 7.4rem));
+    font-weight: 600;
+    letter-spacing: .3rem;
+    color: rgb(138,96,49);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
 }
