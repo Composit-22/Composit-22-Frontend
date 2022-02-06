@@ -1,3 +1,5 @@
+import React from "react";
+
 import Carousel from "../UI/Carousel";
 import Moment from "./Moment";
 
@@ -12,36 +14,35 @@ import saturn from "./imgs/saturn.jpg";
 import uranus from "./imgs/uranus.jpg";
 import neptune from "./imgs/neptune.jpg";
 
-
-const Gallery = () => {
+const Gallery = React.forwardRef((props, ref) => {
     return (
-        <Carousel heading="Gallery">
+        <Carousel heading="Gallery" ref={ref}>
             <div className={classes["gallery__item"]}>
-                <Moment image={mercury}/>
+                <Moment image={mercury} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={venus}/>
+                <Moment image={venus} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={earth}/>
+                <Moment image={earth} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={mars}/>
+                <Moment image={mars} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={jupiter}/>
+                <Moment image={jupiter} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={saturn}/>
+                <Moment image={saturn} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={uranus}/>
+                <Moment image={uranus} />
             </div>
             <div className={classes["gallery__item"]}>
-                <Moment image={neptune}/>
+                <Moment image={neptune} />
             </div>
         </Carousel>
     );
-};
+});
 
 export default Gallery;

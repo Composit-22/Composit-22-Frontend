@@ -1,0 +1,10 @@
+.coming-soon {
+    margin: 20rem auto 20rem;
+    text-align: center;
+}
+
+.coming-soon__heading {
+    font-family: sans-serif;
+    color: grey;
+    font-size: 7rem;
+}

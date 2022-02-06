@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import classes from "./Carousel.module.css";
 
+import React from "react";
+
 const NextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
@@ -45,7 +47,7 @@ const PrevArrow = (props) => {
     );
 }
 
-const Carousel = (props) => {
+const Carousel = React.forwardRef((props, ref) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -85,13 +87,13 @@ const Carousel = (props) => {
     };
 
     return (
-        <div className={classes["carousel-container"]}>
+        <div className={classes["carousel-container"]} ref={ref}>
             <h1 className={classes["carousel-heading"]}>{props.heading}</h1>
             <Slider className={classes["carousel"]} {...settings}>
                 {props.children}
             </Slider>
         </div>
     );
-};
+});
 
 export default Carousel;

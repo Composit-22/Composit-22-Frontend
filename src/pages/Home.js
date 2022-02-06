@@ -1,16 +1,25 @@
+import { useCallback, useContext, useRef } from "react";
+
 import Welcome from "../components/welcome/Welcome";
 import EventCarousel from "../components/events/EventCarousel";
 import Gallery from "../components/gallery/Gallery";
 import Sponsor from "../components/sponsor/Sponsor";
 import Schedule from "../components/schedule/Schedule";
+import Landingabout from "../components/landingabout/Landingabout";
 
-const Home = () => {
+import ScrollContext from "../store/scroll-context";
+
+const Home = (props) => {
+    
+    const scrollCtx = useContext(ScrollContext);
+
     return (
         <>
             <Welcome />
-            <EventCarousel />
+            <EventCarousel ref={scrollCtx.eventCarouselRef}/>
             <Schedule />
-            <Gallery />
+            <Gallery ref={scrollCtx.galleryRef} />
+            <Landingabout />
             <Sponsor />
         </>
     );

@@ -1,3 +1,5 @@
+import React from "react";
+
 import Carousel from "../UI/Carousel";
 import Event from "./Event";
 
@@ -36,9 +38,9 @@ const EVENTS = [
     }
 ];
 
-const EventCarousel = () => {
+const EventCarousel = React.forwardRef((props, ref) => {
     return (
-        <Carousel heading="Events">
+        <Carousel heading="Events" ref={ref}>
             {EVENTS.map((event, index) => (
                 <div className={classes["event-carousel__item"]} key={index}>
                     <Event
@@ -50,6 +52,6 @@ const EventCarousel = () => {
             ))}
         </Carousel>
     );
-};
+});
 
 export default EventCarousel;

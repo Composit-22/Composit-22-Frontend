@@ -9,8 +9,15 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import ScrollContext from "../../store/scroll-context";
+
 
 const Footer = () => {
+
+    const scrollCtx = useContext(ScrollContext);
+
     return (
         <footer className={classes["footer"]}>
             <div className={classes["footer-top"]}>
@@ -30,29 +37,29 @@ const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <div className={classes["footer-link"]} onClick={scrollCtx.onScrollToEventCarousel}>
                                 <span>&gt;</span> Events
-                            </a>
+                            </div>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <div className={classes["footer-link"]} onClick={scrollCtx.onScrollToGallery}>
                                 <span>&gt;</span> Gallery
-                            </a>
+                            </div>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <div className={classes["footer-link"]} onClick={scrollCtx.onScrollToSchedule}>
                                 <span>&gt;</span> Schedule
-                            </a>
+                            </div>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <Link to="/about" className={classes["footer-link"]}>
                                 <span>&gt;</span> About
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <Link to="/team" href="#" className={classes["footer-link"]}>
                                 <span>&gt;</span> Our Team
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

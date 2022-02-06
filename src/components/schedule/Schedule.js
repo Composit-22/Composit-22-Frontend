@@ -1,17 +1,21 @@
 import Speaker from './Speaker';
 import classes from './Schedule.module.css';
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import ScrollContext from '../../store/scroll-context';
 
 const Schedule = () => {
 
     const [tab, changeTab] = useState(1);
+
+    const scrollCtx = useContext(ScrollContext);
 
     const switchTab = (newTab) => {
         changeTab(newTab);
     };
 
     return (
-        <div className={classes["container"]}>
+        <div className={classes["container"]} ref={scrollCtx.scheduleRef}>
             <h2>SCHEDULE</h2>
             <div className={classes["tab_container"]}>
                 <div className={classes["tab-block"]}>

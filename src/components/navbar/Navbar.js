@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import ScrollContext from "../../store/scroll-context";
 import Button from "../UI/Button";
 import classes from "./Navbar.module.css";
 
+import logo from "./react.png";
+
 const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false);
+
+    const scrollCtx = useContext(ScrollContext);
 
     const handleClick = () => {
         setIsVisible((prev) => !prev);
@@ -68,9 +73,9 @@ const Navbar = () => {
             <header className={classes["primary-header"]}>
                 <div className={classes["logo-container"]}>
                     <img
-                        src="logo192.png"
-                        alt="NASA"
-                        className={classes["logo"]}
+                        src={logo}
+                        alt="Composit"
+                        className={classes["logo-img"]}
                     />
                 </div>
                 <button className={classes["nav-toggle"]} onClick={handleClick}>
@@ -95,28 +100,28 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/event"
+                            <div
                                 className={classes["primary-navigation__link"]}
+                                onClick={scrollCtx.onScrollToEventCarousel}
                             >
                                 Event
-                            </NavLink>
+                            </div>
                         </li>
                         <li>
-                            <NavLink
-                                to="/schedule"
+                            <div
                                 className={classes["primary-navigation__link"]}
+                                onClick={scrollCtx.onScrollToSchedule}
                             >
                                 Schedule
-                            </NavLink>
+                            </div>
                         </li>
                         <li>
-                            <NavLink
-                                to="/gallery"
+                            <div
                                 className={classes["primary-navigation__link"]}
+                                onClick={scrollCtx.onScrollToGallery}
                             >
                                 Gallery
-                            </NavLink>
+                            </div>
                         </li>
                         <li>
                             <NavLink
@@ -129,43 +134,69 @@ const Navbar = () => {
                     </ul>
                 </nav>
                 <div className={classes["nav-btn__group"]}>
-                    <Button
+                    <NavLink
+                        to="/login"
                         className={`${classes["nav-btn"]} ${classes["nav-btn__login"]}`}
                     >
                         Login
-                    </Button>
-                    <Button
+                    </NavLink>
+                    <NavLink
+                        to="/register"
                         className={`${classes["nav-btn"]} ${classes["nav-btn__register"]}`}
                     >
                         Register
-                    </Button>
+                    </NavLink>
                 </div>
             </header>
             <header className={secondaryHeaderClasses}>
                 <ul className={classes["secondary-navigation__list"]}>
                     <li>
-                        <a
-                            href="#"
+                        <NavLink
+                            to="/home"
                             className={classes["secondary-navigation__link"]}
                         >
                             Home
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <NavLink
+                            to="/about"
                             className={classes["secondary-navigation__link"]}
                         >
                             About
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <div
+                            className={classes["secondary-navigation__link"]}
+                            onClick={scrollCtx.onScrollToEventCarousel}
+                        >
+                            Event
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            className={classes["secondary-navigation__link"]}
+                            onClick={scrollCtx.onScrollToSchedule}
+                        >
+                            Schedule
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            className={classes["secondary-navigation__link"]}
+                            onClick={scrollCtx.onScrollToGallery}
+                        >
+                            Gallery
+                        </div>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/team"
                             className={classes["secondary-navigation__link"]}
                         >
-                            Contact
-                        </a>
+                            Our Team
+                        </NavLink>
                     </li>
                 </ul>
             </header>

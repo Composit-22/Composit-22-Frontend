@@ -9,6 +9,12 @@
     flex-direction: column;
     gap: 1.2rem;
     overflow: hidden;
+    transform: scale(.95);
+    transition: all .3s;
+}
+
+.card:hover {
+    transform: scale(.99);
 }
 
 .bkg-0 {

@@ -3,6 +3,11 @@
     background-image: linear-gradient(to right, rgb(243, 145, 92), rgb(200, 200, 100));
     border: 5px solid goldenrod;
     object-fit: cover;
+    transition: all .3s;
+}
+
+.moment:hover {
+    transform: scale(1.05);
 }
 
 .moment-modal {
