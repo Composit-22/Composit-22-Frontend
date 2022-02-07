@@ -1,7 +1,6 @@
-import classes from "./Event.module.css";
+import classes from "./EventCard.module.css";
 import cardImg from "./event-bkg.jpg";
 import Button from "../UI/Button";
-import bkg from "./path.svg"
 
 const Event = (props) => {
     const styles = classes["bkg-" + (props.colorId % 5)] + ' ' + classes['card'];

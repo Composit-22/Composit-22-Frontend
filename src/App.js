@@ -1,11 +1,12 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import ScrollToTop from "./components/scrolltotop/ScrollToTop";
-import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import About from "./components/about/About";
-import ComingSoon from "./components/comingsoon/ComingSoon";
+import ScrollToTop from "./components/scrolltotop/ScrollToTop";
+
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import ComingSoon from "./pages/comingsoon/ComingSoon";
 
 const App = () => {
 
