@@ -1,0 +1,122 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 15rem 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(240,240,240,0.7);
+    padding: 3rem 0;
+}
+
+.heading{
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 3.1rem;
+    text-align: center;
+    margin: 0 0 6rem 0;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card{
+    width: 20%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 2rem;
+    
+    margin-right: 5rem;
+    padding-bottom: 3rem;
+}
+
+.details{
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5%;
+    padding: 2rem 1rem 3rem;
+    margin-left: 5rem;
+}
+
+.card>img{
+    width: 60%;
+    border: 1rem solid aqua;
+    border-radius: 100%;
+    margin: 3.5rem 0 0;
+}
+
+.name{
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 5rem;
+    text-align: center;
+    margin:1rem;
+    color: #000000;
+}
+
+.place{
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 3.7rem;
+    text-align: center;
+    margin:1rem 0 2rem;
+    color: #000000;
+}
+
+.details > div{
+    display: flex;
+    width: 95%;
+    text-align: center;
+    border-bottom: 0.2rem solid #986F04;
+}
+
+.category{
+    align-self: flex-start;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 3.7rem;
+    margin: 2rem 0 0.2rem;
+}
+
+.value{
+    align-self: flex-end;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.1rem;
+    text-align: center; 
+    width: 100%;
+    color: #8C92A2;
+    margin: 2rem 0 0.2rem;
+}

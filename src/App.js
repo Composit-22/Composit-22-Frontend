@@ -8,12 +8,14 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import ComingSoon from "./pages/comingsoon/ComingSoon";
 
+import Profile from "./components/myprofile/Profile";
+
 const App = () => {
 
     return (
         <>
             <Navbar/>
-            <ScrollToTop />
+            {/* <ScrollToTop />
             <Switch>
                 <Route path="/" exact>
                     <Redirect to="/home" />
@@ -21,7 +23,8 @@ const App = () => {
                 <Route path="/home" component={Home} exact />
                 <Route path="/about" component={About} />
                 <Route path="*" component={ComingSoon} />
-            </Switch>
+            </Switch> */}
+            <Profile />
             <Footer />
         </>
     );
