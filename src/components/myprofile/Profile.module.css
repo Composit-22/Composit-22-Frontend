@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 15rem 0;
+    margin-top: 12rem;
 }
 
 .content {
@@ -36,7 +36,7 @@
 }
 
 .card{
-    width: 20%;
+    width: 23%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
 }
 
 .details{
-    width: 40%;
+    width: 46%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
     justify-content: center;
     background-color: white;
     border-radius: 5%;
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 2rem 3rem;
     margin-left: 5rem;
 }
 
@@ -94,7 +94,6 @@
 .details > div{
     display: flex;
     width: 95%;
-    text-align: center;
     border-bottom: 0.2rem solid #986F04;
 }
 
@@ -106,6 +105,7 @@
     font-size: 2rem;
     line-height: 3.7rem;
     margin: 2rem 0 0.2rem;
+    width: 30%;
 }
 
 .value{
@@ -116,7 +116,73 @@
     font-size: 2rem;
     line-height: 3.1rem;
     text-align: center; 
-    width: 100%;
+    width: 70%;
     color: #8C92A2;
     margin: 2rem 0 0.2rem;
+}
+
+.reg_events{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    background-color: rgba(240,240,240,0.7);
+    border-radius: 2rem;
+    margin: 5rem 0;
+    padding-bottom: 4rem;
+}
+
+.reg_events > h2{
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.1rem;
+    line-height: 3.5rem;
+    text-align: center;
+    margin: 3rem 3rem 10rem 3rem;
+    color: #000000;
+}
+
+.event_button{
+    display: flex;
+    align-self: center;
+    width: 85%;
+    background-color: white;
+    color: #000000;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 3.1rem;
+    margin: 1.5rem 0;
+    border-radius: 5rem;
+}
+
+.event_name{
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    color: #050505;
+    margin: 1.5rem 5rem 1.5rem 5rem;
+    width: 50%;
+}
+
+.track_event{
+    align-self: center;
+    width: 50%;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    text-align: center;
+    margin: 1.5rem 2rem;
+    color: #706A6A;
+    text-decoration: none;
+}
+
+.event_button:hover{
+    border: 0.2rem solid #986F04;
+    transition: 0.15s;
 }
