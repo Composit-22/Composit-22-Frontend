@@ -15,7 +15,7 @@ const App = () => {
     return (
         <>
             <Navbar/>
-            {/* <ScrollToTop />
+            <ScrollToTop />
             <Switch>
                 <Route path="/" exact>
                     <Redirect to="/home" />
@@ -23,8 +23,7 @@ const App = () => {
                 <Route path="/home" component={Home} exact />
                 <Route path="/about" component={About} />
                 <Route path="*" component={ComingSoon} />
-            </Switch> */}
-            <Profile />
+            </Switch>
             <Footer />
         </>
     );
