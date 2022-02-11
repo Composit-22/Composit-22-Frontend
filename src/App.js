@@ -8,6 +8,8 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import ComingSoon from "./pages/comingsoon/ComingSoon";
 
+import Profile from "./components/myprofile/Profile";
+
 const App = () => {
 
     return (
