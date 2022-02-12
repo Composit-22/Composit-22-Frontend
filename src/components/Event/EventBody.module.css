@@ -1,0 +1,59 @@
+.eventBody {
+  display: flex;
+  margin-top: 82px;
+  height: fit-content;
+  background: linear-gradient(113.37deg, #31cdd7 0.6%, #42f053 86.58%);
+}
+
+.eventsvg {
+  width: 40%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+.eventContent {
+  width: 60%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+.eventName {
+  font-family: "Raleway", sans-serif;
+  font-size: 52px;
+  /* line-height: 128px; */
+  color: rgb(30, 30, 28);
+  border: 8px solid;
+  margin-left: 30%;
+  width: fit-content;
+
+  border-image-source: linear-gradient(162.44deg, #39f3d2 0%, #59e328 100%);
+}
+.eventSubName {
+  margin-top: 15px;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+.eventDescription {
+  padding-left: 10px;
+  width: 85%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  line-height: 38px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.registerButton {
+  margin-left: 30%;
+  margin-top: 15px;
+  border-radius: 30px;
+  padding: 15px;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+.date {
+  margin-left: 25%;
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(51, 51, 51);
+  font-size: 22px;
+}
