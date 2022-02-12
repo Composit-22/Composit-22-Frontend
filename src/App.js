@@ -1,5 +1,5 @@
 import { Route, Switch, Redirect } from "react-router-dom";
-
+import TeamCard from "./components/AboutUs/TeamCard";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./components/scrolltotop/ScrollToTop";
@@ -14,17 +14,19 @@ import Profile from "./components/myprofile/Profile";
 const App = () => {
   return (
     <>
+      {/* <TeamCard></TeamCard> */}
       <Navbar />
+
       <ScrollToTop />
-            <Switch>
-                <Route path="/" exact>
-                    <Redirect to="/home" />
-                </Route>
-                <Route path="/home" component={Home} exact />
-                <Route path="/about" component={About} />
-                <Route path="/event/:eventId" component={Event} />
-                <Route path="*" component={ComingSoon} />
-            </Switch>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" component={Home} exact />
+        <Route path="/about" component={About} />
+        <Route path="/event/:eventId" component={Event} />
+        <Route path="*" component={ComingSoon} />
+      </Switch>
       <Footer />
     </>
   );
