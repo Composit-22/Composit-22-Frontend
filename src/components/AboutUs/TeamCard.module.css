@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+  width: 250px;
+  height: 250px;
+}
+.cardimage {
+  width: 100%;
+  height: 100%;
+}
+.mouseOn {
+  opacity: 0.5;
+}
+.mouseOff {
+  opacity: 1;
+}
+.offHoverCardText {
+  display: none;
+}
+.cardText {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}

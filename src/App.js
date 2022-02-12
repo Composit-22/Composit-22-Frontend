@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./components/scrolltotop/ScrollToTop";
-import EventBody from "./components/Event/EventBody";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Event from "./pages/event/Event";
