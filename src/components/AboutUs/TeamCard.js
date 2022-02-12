@@ -31,9 +31,9 @@ const TeamCard = function (props) {
           onState ? classes.cardText : ""
         }`}
       >
-        <div>Name: Priyanshu Gautam</div>
+        <div>Priyanshu Gautam</div>
         <br />
-        <div>Team: Frontend</div>
+        <div>Frontend</div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@100&display=swap");
+
 .container {
   overflow-x: hidden;
   display: flex;
@@ -90,11 +91,8 @@
   text-align: left;
   opacity: 0.7;
 }
-<<<<<<< HEAD
-.landing-about__btn {
-=======
+
 .landing-about_btn {
->>>>>>> 613531eb51b8446602ea46a0f9ed98c659bcd581
   font-family: "Montserrat";
   align-items: left;
   margin-top: 1.8rem;

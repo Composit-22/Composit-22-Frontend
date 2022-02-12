@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./landingabout.css";
 
-import { NavLink } from "react-router-dom";
-
 const Landingabout = () => {
   return (
     <div className="container">

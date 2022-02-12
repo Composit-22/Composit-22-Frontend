@@ -10,6 +10,7 @@ import ComingSoon from "./pages/comingsoon/ComingSoon";
 import Login from "./pages/login/Login";
 import Profile from "./components/myprofile/Profile";
 import Register from "./pages/register/Register";
+import OurTeam from "./pages/ourteam/OurTeam";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
                 <Route path="/event/:eventId" component={Event} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
+                <Route path="/team" component={OurTeam} />
                 <Route path="*" component={ComingSoon} />
             </Switch>
       <Footer />
