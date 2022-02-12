@@ -10,7 +10,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 
 
@@ -27,14 +27,14 @@ const Footer = () => {
                     </h1>
                     <ul className={classes["footer-links"]}>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <NavLink to="/login" className={classes["footer-link"]}>
                                 <span>&gt;</span> Login
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" className={classes["footer-link"]}>
+                            <NavLink to="/register" className={classes["footer-link"]}>
                                 <span>&gt;</span> Register
-                            </a>
+                            </NavLink>
                         </li>
                         <li>
                             <div className={classes["footer-link"]} onClick={scrollCtx.onScrollToEventCarousel}>

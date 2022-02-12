@@ -1,9 +1,10 @@
 import classes from "./EventCard.module.css";
 import cardImg from "./event-bkg.jpg";
-import Button from "../UI/Button";
 
-const Event = (props) => {
-    const styles = classes["bkg-" + (props.colorId % 5)] + ' ' + classes['card'];
+import { NavLink } from "react-router-dom";
+
+const EventCard = (props) => {
+    const styles = classes["bkg-" + props.colorId] + ' ' + classes['card'];
     return (
         <div className={styles}>
             <h2 className={classes["card-quote"]}>{`"${props.quote}"`}</h2>
@@ -26,8 +27,8 @@ const Event = (props) => {
                 </div>
             </div>
             <div className={classes["card-btn__group"]}>
-                <Button className={classes["card-btn"]}>Resgister</Button>
-                <Button className={classes["card-btn"]}>Know More</Button>
+                <NavLink to="/register" className={classes["card-btn"]}>Resgister</NavLink>
+                <NavLink to={"/event/" + props.id} className={classes["card-btn"]}>Know More</NavLink>
             </div>
             <svg viewBox="0 0 1 1">
                 <defs>
@@ -44,4 +45,4 @@ const Event = (props) => {
     );
 };
 
-export default Event;
+export default EventCard;

@@ -1,51 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import EventContext from "../../store/event-context";
 
 import Carousel from "../UI/Carousel";
 import EventCard from "./EventCard";
 
 import classes from "./EventCarousel.module.css";
 
-const EVENTS = [
-    {
-        title: "Metallomania",
-    },
-    {
-        title: "Enigma",
-    },
-    {
-        title: "Metaclix",
-    },
-    {
-        title: "Technova",
-    },
-    {
-        title: "Excavate",
-    },
-    {
-        title: "Metallomania",
-    },
-    {
-        title: "Enigma",
-    },
-    {
-        title: "Metaclix",
-    },
-    {
-        title: "Technova",
-    },
-    {
-        title: "Excavate",
-    }
-];
-
 const EventCarousel = React.forwardRef((props, ref) => {
+    const eventCtx = useContext(EventContext);
+
     return (
         <Carousel heading="Events" ref={ref}>
-            {EVENTS.map((event, index) => (
-                <div className={classes["event-carousel__item"]} key={index}>
+            {eventCtx.events.map((event, index) => (
+                <div className={classes["event-carousel__item"]} key={event.id}>
                     <EventCard
                         quote="Get ready for a wonderful treasurehunt"
-                        colorId={index}
+                        id={event.id}
+                        colorId={index % 5}
                         title={event.title}
                     />
                 </div>

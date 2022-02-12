@@ -16,7 +16,7 @@ const Schedule = () => {
 
     return (
         <div className={classes["container"]} ref={scrollCtx.scheduleRef}>
-            <h2>SCHEDULE</h2>
+            <h2 className={classes["heading"]}>Schedule</h2>
             <div className={classes["tab_container"]}>
                 <div className={classes["tab-block"]}>
                     <button

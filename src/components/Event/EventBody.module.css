@@ -1,59 +1,86 @@
 .eventBody {
-  display: flex;
-  margin-top: 82px;
-  height: fit-content;
-  background: linear-gradient(113.37deg, #31cdd7 0.6%, #42f053 86.58%);
+    display: flex;
+    margin-top: 8.2rem;
+    height: fit-content;
+    /* background: linear-gradient(113.37deg, #31cdd7 0.6%, #42f053 86.58%); */
+}
+
+.bkg-0 {
+    background: linear-gradient(162.44deg, #d842f0 0%, #7a31d7 100%);
+}
+
+.bkg-1 {
+    background: linear-gradient(162.44deg, #f04242 0%, #d79531 100%);
+}
+
+.bkg-2 {
+    background: linear-gradient(162.44deg, #42f053 0%, #31cdd7 100%);
+}
+
+.bkg-3 {
+    background: linear-gradient(162.44deg, #4542f0 0%, #31d79b 100%);
+}
+
+.bkg-4 {
+    background: linear-gradient(162.44deg, #21ffd7 0%, #c728ff 100%);
 }
 
 .eventsvg {
-  width: 40%;
-  padding-top: 4%;
-  padding-bottom: 4%;
+    width: 40%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 .eventContent {
-  width: 60%;
-  padding-top: 4%;
-  padding-bottom: 4%;
+    width: 60%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 .eventName {
-  font-family: "Raleway", sans-serif;
-  font-size: 52px;
-  /* line-height: 128px; */
-  color: rgb(30, 30, 28);
-  border: 8px solid;
-  margin-left: 30%;
-  width: fit-content;
+    font-family: "Raleway", sans-serif;
+    font-size: 52px;
+    /* line-height: 128px; */
+    text-transform: uppercase;
+    color: rgb(30, 30, 28);
+    border: .8rem solid;
+    margin-left: 30%;
+    width: fit-content;
 
-  border-image-source: linear-gradient(162.44deg, #39f3d2 0%, #59e328 100%);
+    border-image-source: linear-gradient(162.44deg, #39f3d2 0%, #59e328 100%);
 }
 .eventSubName {
-  margin-top: 15px;
-  font-size: 24px;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  padding-left: 20px;
+    margin-top: 1.5rem;
+    font-size: 2.4rem;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    padding-left: 2rem;
 }
 .eventDescription {
-  padding-left: 10px;
-  width: 85%;
-  font-family: "Raleway", sans-serif;
-  font-weight: 100;
-  line-height: 38px;
-  font-size: 16px;
-  margin-top: 10px;
+    padding-left: 10px;
+    width: 85%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+    line-height: 3.8rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
 }
 .registerButton {
-  margin-left: 30%;
-  margin-top: 15px;
-  border-radius: 30px;
-  padding: 15px;
-  padding-left: 42px;
-  padding-right: 42px;
+    margin-left: 30%;
+    border-radius: 3rem;
+    padding: 1.5rem;
+    padding-left: 4.2rem;
+    padding-right: 4.2rem;
+    font-family: "Poppins";
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    background-color: rgba(240, 240, 240, .4);
+    border: none;
 }
 .date {
-  margin-left: 25%;
-  margin-top: 30px;
-  font-family: "Montserrat", sans-serif;
-  color: rgb(51, 51, 51);
-  font-size: 22px;
+    margin-left: 25%;
+    margin-top: 3rem;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 2.2rem;
 }
