@@ -29,7 +29,7 @@
 }
 
 .form__btn {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     height: 6rem;
     font-family: "Nunito Sans";
     font-weight: 600;
@@ -46,7 +46,6 @@
 .form__btn:hover,
 .form__btn:active {
     background-color: rgb(234,151,26);
-    /* color: purple; */
 }
 
 .input {
@@ -58,7 +57,7 @@
 }
 
 .input__label {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     display: block;
     font-size: 1.8rem;
     margin-bottom: 2rem;
@@ -67,7 +66,7 @@
 }
 
 .input__field {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     padding: 1.5rem;
     font-size: 1.8rem;
     color: grey;
@@ -101,7 +100,7 @@
 }
 
 .select__field {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     padding: 1.5rem;
     font-size: 1.8rem;
     color: grey;
@@ -116,4 +115,10 @@
 
 .select__option:hover {
     background-color: var(--color-primary);
+}
+
+@media (max-width: 450px) {
+    .form {
+        margin-left: -1rem;
+    }
 }

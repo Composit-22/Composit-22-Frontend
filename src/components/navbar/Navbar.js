@@ -152,6 +152,18 @@ const Navbar = () => {
                 <ul className={classes["secondary-navigation__list"]}>
                     <li>
                         <NavLink
+                            to="/login"
+                            className={classes["secondary-navigation__link"]}
+                        >
+                            Login
+                        </NavLink>
+                        <NavLink
+                            to="/register"
+                            className={classes["secondary-navigation__link"]}
+                        >
+                            Register
+                        </NavLink>
+                        <NavLink
                             to="/home"
                             className={classes["secondary-navigation__link"]}
                         >

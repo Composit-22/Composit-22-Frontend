@@ -35,6 +35,7 @@ const PrevArrow = (props) => {
                 ...style,
                 display: "block",
                 fontSize: "4rem",
+                color: "red",
                 background: "transparent",
                 position: "absolute",
                 top: "50%",
@@ -83,6 +84,14 @@ const Carousel = React.forwardRef((props, ref) => {
                     initialSlide: 2,
                 },
             },
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 2,
+                },
+            }
         ],
     };
 

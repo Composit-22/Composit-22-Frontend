@@ -6,8 +6,8 @@ const Landingabout = () => {
   return (
     <div className="container">
       <div id="parent">
-        <div className="BOX1"></div>
-        <div className="BOX2"></div>
+        {/* <div className="BOX1"></div>
+        <div className="BOX2"></div> */}
       </div>
 
       <div className="content">

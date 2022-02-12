@@ -29,7 +29,7 @@
 }
 
 .form__btn {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     height: 6rem;
     font-family: "Nunito Sans";
     font-weight: 600;
@@ -58,7 +58,7 @@
 }
 
 .input__label {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     display: block;
     font-size: 1.8rem;
     margin-bottom: 2rem;
@@ -67,7 +67,7 @@
 }
 
 .input__field {
-    width: max(40%, 35rem);
+    width: max(40%, 25rem);
     padding: 1.5rem;
     font-size: 1.8rem;
     color: grey;
@@ -98,4 +98,10 @@
     margin-top: 1rem;
     text-align: left;
     color: rgba(255, 0, 0, 0.8);
+}
+
+@media (max-width: 450px) {
+    .form {
+        margin-left: -1rem;
+    }
 }

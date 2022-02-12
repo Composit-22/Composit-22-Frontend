@@ -64,9 +64,13 @@
 }
 
 .heading-large {
-    font-size: min(13.4rem, max(13.4vw, 7.4rem));
+    font-size: min(13.4rem, max(13.4vw, 6rem));
     font-weight: 600;
     letter-spacing: .3rem;
     color: rgb(138,96,49);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+
+@media (max-width: 450px) {
+    
 }

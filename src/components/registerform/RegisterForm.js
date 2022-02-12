@@ -204,6 +204,7 @@ const RegisterForm = () => {
                             </p>
                         )} */}
                         <input type="text" value={collegeName} className={classes["input__field"]} onChange={collegeNameChangeHandler} />
+                        
                     </div>
                     <div className={`${classes["input"]}`}>
                         <label
