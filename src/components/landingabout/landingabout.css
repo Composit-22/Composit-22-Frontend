@@ -1,42 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:wght@100&display=swap");
 .container {
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: center;
+  margin-top: 8.5rem;
+  margin-bottom: 6rem;
+  margin-left: 25rem;
+}
+#parent {
+  display: flex;
+  position: relative;
+  width: 400;
+  height: 400;
 }
 .BOX1 {
-  
   background: url("./img/limg.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  width: 46rem;
-  /* left: 445px; */
-  margin-left: 1rem;
-  margin-right: 1rem;
-  /* top: calc(50% - 480px / 2 + 35px); */
+  background-position: left;
+  width: 40rem;
+  left: 445px;
+  margin-left: -30rem;
+  margin-right: 0rem;
+  top: calc(50% - 480px / 2 + 35px);
   border-radius: 24px;
-  
-  border: 2px solid darkblue;
-  text-align: center;
-  font-size: 2rem;
-  color: white;
-  font-weight: bold;
+  border: 1px;
   line-height: 1.4;
+  width: 25rem;
+  height: 25rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  opacity: 0.3;
+}
+.BOX2 {
+  background: url("./img/rimg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  width: 35rem;
+  left: 445px;
+  margin-left: -30rem;
+  margin-right: 1rem;
+  top: calc(50% - 480px / 2 + 35px);
+  border-radius: 24px;
+  border: 1px ;
+  line-height: 1.4;
+  width: 25rem;
+  height: 25rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
 }
 .content {
-  display: flex; 
+  display: flex;
   justify-content: left;
   flex-direction: column;
   width: 50rem;
   padding-right: 5vw;
-  
 }
 
 .content > h2 {
-  /* display: flex; */
-  /* justify-content: left;  */
   margin-top: 2rem;
   margin-left: 2rem;
   font-family: Montserrat;
@@ -50,24 +79,19 @@
 }
 
 .content > p {
-  /* display: flex; */
-  /* justify-content: center; */
   width: 100%;
-  
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
   margin-left: 3rem;
   color: #222222;
   text-align: left;
   opacity: 0.7;
 }
-.content > button {
+.landing-about_btn {
   font-family: "Montserrat";
-  /* display: flex; */
-  /* justify-content: center; */
   align-items: left;
   margin-top: 1.8rem;
   margin-left: 2rem;
@@ -88,4 +112,5 @@
   padding: 1.5rem 2rem;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  text-decoration: none;
 }
