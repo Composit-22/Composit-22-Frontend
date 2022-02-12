@@ -1,0 +1,12 @@
+.register {
+    padding: 12rem 0 10rem;
+    background-image: url("register-bkg.jpg");
+    background-size: cover;
+    height: 180vh;
+}
+
+@media (max-width: 800px) {
+    .register {
+        height: 200vh;
+    }
+}

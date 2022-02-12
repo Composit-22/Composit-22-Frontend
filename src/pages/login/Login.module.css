@@ -1,0 +1,12 @@
+.login {
+    padding: 12rem 0 10rem;
+    background-image: url("login-bkg.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+@media (max-width: 800px) {
+    .login {
+        height: 140vh;
+    }
+}

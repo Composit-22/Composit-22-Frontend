@@ -1,6 +1,8 @@
 import React from "react";
 import "./landingabout.css";
 
+import { NavLink } from "react-router-dom";
+
 const Landingabout = () => {
     return (
         <div className="container">
@@ -25,10 +27,9 @@ const Landingabout = () => {
                     organized on a large scale every year, as it would be
                     organized this year.
                 </p>
-
-                <button onclick="myFunction()" id="myBtn">
+                <NavLink to="/about" className={"landing-about__btn"}>
                     Learn more &#8594;
-                </button>
+                </NavLink>
             </div>
         </div>
     );

@@ -33,6 +33,7 @@
   text-decoration: none;
   color: grey;
   font-size: 1.6rem;
+  cursor: pointer;
 }
 
 .footer-link:hover,

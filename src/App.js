@@ -8,8 +8,9 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Event from "./pages/event/Event";
 import ComingSoon from "./pages/comingsoon/ComingSoon";
-
+import Login from "./pages/login/Login";
 import Profile from "./components/myprofile/Profile";
+import Register from "./pages/register/Register";
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
                 <Route path="/home" component={Home} exact />
                 <Route path="/about" component={About} />
                 <Route path="/event/:eventId" component={Event} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
                 <Route path="*" component={ComingSoon} />
             </Switch>
       <Footer />
