@@ -1,19 +1,22 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 
 const ScrollContext = React.createContext({
     eventCarouselRef: null,
     scheduleRef: null,
     galleryRef: null,
+    isSecondaryNavOpen: false,
     onScrollToEventCarousel: () => {},
     onScrollToSchedule: () => {},
-    onScrollToGallery: () => {}
+    onScrollToGallery: () => {},
+    onToggleSecondaryNav: () => {}
 });
 
 export const ScrollContextProvider = (props) => {
     const eventCarouselRef = useRef();
     const scheduleRef = useRef();
     const galleryRef = useRef();
+    const [isSecondaryNavOpen, setIsSecondaryNavOpen] = useState(false);
 
     const history = useHistory();
 
@@ -30,6 +33,7 @@ export const ScrollContextProvider = (props) => {
             history.push("/");
             setTimeout(performScroll, 100);
         }
+        setIsSecondaryNavOpen(false);
     };
 
     const scrollToScheduleHandler = () => {
@@ -45,6 +49,7 @@ export const ScrollContextProvider = (props) => {
             history.push("/");
             setTimeout(performScroll, 100);
         }
+        setIsSecondaryNavOpen(false);
     };
 
     const scrollToGalleryHandler = () => {
@@ -60,7 +65,16 @@ export const ScrollContextProvider = (props) => {
             history.push("/");
             setTimeout(performScroll, 100);
         }
+        setIsSecondaryNavOpen(false);
     };
+
+    const toggleSecondaryNavHandler = () => {
+        setIsSecondaryNavOpen(prev => !prev);
+    };
+
+    history.listen((location, action) => {
+        setIsSecondaryNavOpen(false);
+    });
 
     return (
         <ScrollContext.Provider
@@ -68,9 +82,11 @@ export const ScrollContextProvider = (props) => {
                 eventCarouselRef,
                 scheduleRef,
                 galleryRef,
+                isSecondaryNavOpen,
                 onScrollToEventCarousel: scrollToEventCarouselHandler,
                 onScrollToSchedule: scrollToScheduleHandler,
-                onScrollToGallery: scrollToGalleryHandler
+                onScrollToGallery: scrollToGalleryHandler,
+                onToggleSecondaryNav: toggleSecondaryNavHandler
             }}
         >
             {props.children}

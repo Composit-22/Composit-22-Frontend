@@ -4,6 +4,6 @@
 
 @media (max-width: 450px) {
     .event-carousel__item {
-        padding: 5rem;
+        padding: 2rem;
     }
 }

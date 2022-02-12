@@ -1,4 +1,5 @@
 import { Route, Switch, Redirect } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -13,6 +14,7 @@ import Register from "./pages/register/Register";
 import OurTeam from "./pages/ourteam/OurTeam";
 
 const App = () => {
+
   return (
     <>
       <Navbar />

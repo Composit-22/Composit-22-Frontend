@@ -1,21 +1,15 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
-import Button from "../UI/Button";
 import classes from "./Navbar.module.css";
 
 import logo from "./react.png";
 
 const Navbar = () => {
-    const [isVisible, setIsVisible] = useState(false);
 
     const scrollCtx = useContext(ScrollContext);
 
-    const handleClick = () => {
-        setIsVisible((prev) => !prev);
-    };
-
-    const menuToggleIcon = !isVisible ? (
+    const menuToggleIcon = !scrollCtx.isSecondaryNavOpen ? (
         <svg
             viewBox="0 0 100 80"
             width="40"
@@ -66,7 +60,7 @@ const Navbar = () => {
 
     const secondaryHeaderClasses =
         classes["secondary-header"] +
-        (isVisible ? ` ${classes["active"]}` : "");
+        (scrollCtx.isSecondaryNavOpen ? ` ${classes["active"]}` : "");
 
     return (
         <header className={classes["navbar"]}>
@@ -78,7 +72,7 @@ const Navbar = () => {
                         className={classes["logo-img"]}
                     />
                 </div>
-                <button className={classes["nav-toggle"]} onClick={handleClick}>
+                <button className={classes["nav-toggle"]} onClick={scrollCtx.onToggleSecondaryNav}>
                     {menuToggleIcon}
                 </button>
                 <nav className={classes["primary-navigation"]}>
