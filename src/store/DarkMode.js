@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 const DarkContext = createContext();
 
-const DarkMode = (props) => {
+export const DarkModeProvider = (props) => {
 
   const [theme, setTheme] = useState({ mode: 'light' });
 
@@ -39,4 +39,4 @@ const DarkMode = (props) => {
   );
 };
 
-export { DarkContext, DarkMode };
+export default DarkContext;

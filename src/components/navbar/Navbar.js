@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 import Button from "../UI/Button";
 import classes from "./Navbar.module.css";
-import { DarkContext, DarkMode } from "../darkmode/DarkMode";
+import DarkContext from "../../store/DarkMode";
 import logo from "./react.png";
 
 const Navbar = () => {

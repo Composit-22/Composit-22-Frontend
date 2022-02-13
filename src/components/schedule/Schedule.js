@@ -3,14 +3,14 @@ import classes from './Schedule.module.css';
 import { useState, useContext } from "react";
 
 import ScrollContext from '../../store/scroll-context';
-import { DarkContext, Darkmode } from '../darkmode/DarkMode';
+// import DarkContext from '../../store/DarkMode';
 
 const Schedule = () => {
 
     const [tab, changeTab] = useState(1);
 
     const scrollCtx = useContext(ScrollContext);
-    const {theme, switchTheme} = useContext(DarkContext);
+    // const {theme} = useContext(DarkContext);
 
     const switchTab = (newTab) => {
         changeTab(newTab);
@@ -20,12 +20,13 @@ const Schedule = () => {
         <div className={classes["container"]} ref={scrollCtx.scheduleRef}>
             <h2 className={classes["heading"]}>Schedule</h2>
             <div className={classes["tab_container"]}>
+                {/* <div className={theme.mode==='dark'? `${classes['tab-block']} ${classes['sample_dark']}`: classes["tab-block"]}> */}
                 <div className={classes["tab-block"]}>
                     <button
                         className={tab === 1 ? `${classes["tabs"]} ${classes["active-tabs"]}` : classes["tabs"]}
                         onClick={() => switchTab(1)}
                     >
-                        <h3 className={theme.mode==='dark'?classes['dark-try']:classes['default-class']}>Inaugration Day</h3>
+                        <h3>Inaugration Day</h3>
                         <h6>11 March</h6>
                     </button>
                     <button
@@ -94,9 +95,6 @@ const Schedule = () => {
 
                     <div className={tab === 3 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
                         <h2>No money for prize.</h2>
-                        <div className={localStorage.getItem('theme')==='dark'? classes["dark-try"]:classes["default-class"]}>
-                            shouldchange;
-                        </div>
                     </div>
                 </div>
             </div>

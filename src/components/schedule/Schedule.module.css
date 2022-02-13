@@ -132,14 +132,9 @@
   color: #222222;
 }
 
-.default-class{
-  background-color: #f4f2f1;
-  color: #222222;
-}
-
-.dark-try{
+.sample_dark{
   background-color: #222222;
-  color: #f4f2f1;
+  color: white;
 }
 
 @media (max-width: 900px) {
