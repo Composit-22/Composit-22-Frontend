@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 import classes from "./Navbar.module.css";
-
+import DarkContext from "../../store/DarkMode";
 import logo from "./react.png";
 
 const Navbar = () => {
 
     const scrollCtx = useContext(ScrollContext);
+    const darkCtx = useContext(DarkContext);
 
     const menuToggleIcon = !scrollCtx.isSecondaryNavOpen ? (
         <svg
@@ -124,6 +125,11 @@ const Navbar = () => {
                             >
                                 Our Team
                             </NavLink>
+                        </li>
+                        <li>
+                            <button className={classes["primary-navigation__link"]} onClick={darkCtx.switchThemeOnClick}>
+                                Dark Button
+                            </button>
                         </li>
                     </ul>
                 </nav>
