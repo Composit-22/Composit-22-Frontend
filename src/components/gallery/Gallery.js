@@ -1,46 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Carousel from "../UI/Carousel";
 import Moment from "./Moment";
 
 import classes from "./Gallery.module.css";
 
-import mercury from "./imgs/mercury.jpg";
-import venus from "./imgs/venus.jpg";
-import earth from "./imgs/earth.jpg";
-import mars from "./imgs/mars.jpg";
-import jupiter from "./imgs/jupiter.jpg";
-import saturn from "./imgs/saturn.jpg";
-import uranus from "./imgs/uranus.jpg";
-import neptune from "./imgs/neptune.jpg";
+const imgs = [];
+
+const loadImages = async (n) => {
+    let getter;
+    for (let i = 0; i < n; i++) {
+        getter = await import("./imgs/" + i + ".jpg").then(result => {imgs.push(result.default);});
+    }
+};
 
 const Gallery = React.forwardRef((props, ref) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    
+    useEffect(() => {
+        loadImages(5).then(() => setIsLoaded(true));
+    }, []);
+
     return (
         <Carousel heading="Gallery" ref={ref}>
-            <div className={classes["gallery__item"]}>
-                <Moment image={mercury} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={venus} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={earth} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={mars} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={jupiter} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={saturn} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={uranus} />
-            </div>
-            <div className={classes["gallery__item"]}>
-                <Moment image={neptune} />
-            </div>
+            {console.log(imgs.length)}
+            {imgs.map((img, index) => {
+                return (
+                    <div className={classes["gallery__item"]}>
+                        <Moment key={index} image={img} />
+                    </div>
+                )
+            })}
         </Carousel>
     );
 });

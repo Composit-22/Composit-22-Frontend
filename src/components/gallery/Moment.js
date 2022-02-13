@@ -31,7 +31,7 @@ const Moment = (props) => {
             <div className={classes["moment"]} onClick={openOverlayHandler}>
                 <img
                     src={props.image}
-                    alt="saturn"
+                    alt="moment"
                     className={classes["moment-normal"]}
                 />
             </div>
