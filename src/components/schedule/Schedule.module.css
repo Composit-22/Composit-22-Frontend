@@ -132,6 +132,16 @@
   color: #222222;
 }
 
+.default-class{
+  background-color: #f4f2f1;
+  color: #222222;
+}
+
+.dark-try{
+  background-color: #222222;
+  color: #f4f2f1;
+}
+
 @media (max-width: 900px) {
   .container>h2 {
     font-size: 4rem;

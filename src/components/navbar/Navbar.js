@@ -3,13 +3,14 @@ import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 import Button from "../UI/Button";
 import classes from "./Navbar.module.css";
-
+import { DarkContext, DarkMode } from "../darkmode/DarkMode";
 import logo from "./react.png";
 
 const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const scrollCtx = useContext(ScrollContext);
+    const darkCtx = useContext(DarkContext);
 
     const handleClick = () => {
         setIsVisible((prev) => !prev);
@@ -130,6 +131,11 @@ const Navbar = () => {
                             >
                                 Our Team
                             </NavLink>
+                        </li>
+                        <li>
+                            <button className={classes["primary-navigation__link"]} onClick={darkCtx.switchThemeOnClick}>
+                                Dark Button
+                            </button>
                         </li>
                     </ul>
                 </nav>

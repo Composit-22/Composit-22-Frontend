@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { ScrollContextProvider } from "./store/scroll-context";
 import { EventContextProvider } from "./store/event-context";
+import { DarkContext, DarkMode } from "./components/darkmode/DarkMode";
 
 import "./index.css";
 
@@ -11,7 +12,9 @@ ReactDOM.render(
     <BrowserRouter>
         <EventContextProvider>
             <ScrollContextProvider>
-                <App />
+                <DarkMode>
+                    <App />
+                </DarkMode>
             </ScrollContextProvider>
         </EventContextProvider>
     </BrowserRouter>,
