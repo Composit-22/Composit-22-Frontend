@@ -1,12 +1,18 @@
+import { useContext } from 'react';
 import classes from './About.module.css';
+import DarkContext from '../../store/DarkMode';
 
 const About = () => {
+
+    const {theme} = useContext(DarkContext);
+
     return (
         <div className={classes["container"]}>
             <div className={classes["bkg"]}>
                 <div className={classes["left_img"]} />
 
-                <div className={classes["content"]}>
+                <div className={theme.mode==='dark'? `${classes['content']} ${classes['sample_dark']}`: classes["content"]}>
+                {/* <div className={classes["content"]}> */}
                     <h2>COMPOSIT ’22</h2>
 
                     <p>

@@ -78,6 +78,11 @@
     background-size: cover;
 }
 
+.sample_dark>h2{
+    background-color: #222222;
+    color: white;
+}
+
 @media (max-width: 1000px) {
     .bkg{
         margin: 0%;
