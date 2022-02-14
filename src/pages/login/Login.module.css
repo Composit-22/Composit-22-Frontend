@@ -1,7 +1,8 @@
 .login {
     padding: 12rem 0 10rem;
-    background-image: url("login-bkg.jpg");
+    background-image: url("imgs/login-bkg.png");
     background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 

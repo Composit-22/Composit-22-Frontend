@@ -1,6 +1,7 @@
 .register {
     padding: 12rem 0 10rem;
-    background-image: url("register-bkg.jpg");
+    background-image: url("imgs/register-bkg.png");
     background-size: cover;
+    background-position: center;
     height: 220vh;
 }

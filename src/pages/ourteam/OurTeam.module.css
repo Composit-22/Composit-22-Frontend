@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    background-image: url("team-bkg.jpg");
+    background-image: url("imgs/team-bkg.png");
     background-size: cover;
     padding: 10rem 0;
     font-family: "Montserrat";
@@ -20,4 +20,5 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 5rem;
+    list-style: none;
 }

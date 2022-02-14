@@ -1,16 +1,26 @@
-.card {
-    background-image: url("event-bkg.jpg");
-    background-size: cover;
-    background-position: top;
+/* .card {
     height: 42rem;
     border-radius: .5rem;
-    padding: 3rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     overflow: hidden;
     transform: scale(.95);
     transition: all .3s;
+} */
+
+.card {
+    height: 42rem;
+    border: .5rem;
+    gap: 1.2rem;
+    object-fit: contain;
+    transform: scale(.95);
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.card__img {
+    width: 100%;
 }
 
 .card:hover {

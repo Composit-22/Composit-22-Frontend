@@ -20,7 +20,7 @@ const Home = () => {
             <Schedule />
             <Gallery ref={scrollCtx.galleryRef} />
             <Landingabout />
-            {/* <Sponsor /> */}
+            <Sponsor />
         </>
     );
 };
