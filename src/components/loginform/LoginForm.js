@@ -61,8 +61,8 @@ const LoginForm = () => {
         .then((data)=>console.log(data))
         .catch((e)=>console.log(e));
 
-        // resetUserName();
-        // resetPassword();
+        resetUserName();
+        resetPassword();
     };
 
     return (
@@ -106,11 +106,7 @@ const LoginForm = () => {
                         </label>
                         <input
                             className={passwordInputClasses}
-<<<<<<< HEAD
                             id="password"
-=======
-                            id="userName"
->>>>>>> 02807ba8270422596749a9788dd299214b8d20da
                             type="password"
                             value={password}
                             name='password'

@@ -1,14 +1,10 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
+import DarkContext from "../../store/DarkMode";
 import classes from "./Navbar.module.css";
-<<<<<<< HEAD
 
 import logo from "./logo.png";
-=======
-import DarkContext from "../../store/DarkMode";
-import logo from "./react.png";
->>>>>>> 02807ba8270422596749a9788dd299214b8d20da
 
 const Navbar = () => {
 
