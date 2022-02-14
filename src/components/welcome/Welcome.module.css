@@ -58,13 +58,13 @@
 }
 
 .heading-small {
-    font-size: min(3rem, max(3vw, 2rem));
+    font-size: min(5vw, 3rem);
     color: rgb(75, 75, 75);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
 }
 
 .heading-large {
-    font-size: min(13.4rem, max(13.4vw, 6rem));
+    font-size: min(13.2rem, 12vw);
     font-weight: 600;
     letter-spacing: .3rem;
     color: rgb(138,96,49);
@@ -72,5 +72,10 @@
 }
 
 @media (max-width: 450px) {
-    
+    .welcome-btn__group {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+        width: 75%;
+    }
 }

@@ -1,14 +1,3 @@
-.form__title {
-    margin: 0 auto;
-    margin-bottom: 4rem;
-    display: flex;
-    padding: 1rem 2rem;
-    justify-content: flex-start;
-    font-size: 2rem;
-    text-transform: uppercase;
-    text-align: center;
-}
-
 .form {
     width: 75%;
     margin: 0 auto;
@@ -18,6 +7,17 @@
     text-align: center;
     font-family: "Open Sans";
     font-weight: 700;
+}
+
+.form__title {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: left;
+    white-space: nowrap;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: left;
 }
 
 .form__btn-group {

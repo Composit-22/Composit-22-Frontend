@@ -62,13 +62,13 @@ const LoginForm = () => {
                     <div className={`${classes["input"]}`}>
                         <label
                             className={`${classes["input__label"]}`}
-                            htmlFor="name"
+                            htmlFor="userName"
                         >
                             Username
                         </label>
                         <input
                             className={userNameInputClasses}
-                            id="name"
+                            id="userName"
                             type="text"
                             value={userName}
                             onChange={userNameChangeHandler}
@@ -84,14 +84,14 @@ const LoginForm = () => {
                     <div className={`${classes["input"]}`}>
                         <label
                             className={`${classes["input__label"]}`}
-                            htmlFor="userName"
+                            htmlFor="password"
                         >
                             Password
                         </label>
                         <input
                             className={passwordInputClasses}
-                            id="userName"
-                            type="text"
+                            id="password"
+                            type="password"
                             value={password}
                             onChange={passwordChangeHandler}
                             onBlur={passwordInputBlurHandler}
