@@ -139,7 +139,6 @@ const RegisterForm = () => {
         }
 
         fetch('http://127.0.0.1:8000/signup',{
-            mode: 'no-cors',
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
