@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 import classes from "./Navbar.module.css";
 
-import logo from "./react.png";
+import logo from "./logo.png";
 
 const Navbar = () => {
 
