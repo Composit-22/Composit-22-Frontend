@@ -61,8 +61,8 @@ const LoginForm = () => {
         .then((data)=>console.log(data))
         .catch((e)=>console.log(e));
 
-        // resetUserName();
-        // resetPassword();
+        resetUserName();
+        resetPassword();
     };
 
     return (
@@ -77,13 +77,13 @@ const LoginForm = () => {
                     <div className={`${classes["input"]}`}>
                         <label
                             className={`${classes["input__label"]}`}
-                            htmlFor="name"
+                            htmlFor="userName"
                         >
                             Username
                         </label>
                         <input
                             className={userNameInputClasses}
-                            id="name"
+                            id="userName"
                             type="text"
                             value={userName}
                             name='username'
@@ -100,13 +100,13 @@ const LoginForm = () => {
                     <div className={`${classes["input"]}`}>
                         <label
                             className={`${classes["input__label"]}`}
-                            htmlFor="userName"
+                            htmlFor="password"
                         >
                             Password
                         </label>
                         <input
                             className={passwordInputClasses}
-                            id="userName"
+                            id="password"
                             type="password"
                             value={password}
                             name='password'

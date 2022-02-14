@@ -1,13 +1,13 @@
 import classes from "./EventCard.module.css";
-import cardImg from "./event-bkg.jpg";
+import cardImg from "./imgs/event-bkg.jpg";
 
 import { NavLink } from "react-router-dom";
 
 const EventCard = (props) => {
-    const styles = classes["bkg-" + props.colorId] + ' ' + classes['card'];
+    // const styles = classes["bkg-" + props.colorId] + ' ' + classes['card'];
     return (
-        <div className={styles}>
-            <h2 className={classes["card-quote"]}>{`"${props.quote}"`}</h2>
+        <div className={classes["card"]}>
+            {/* <h2 className={classes["card-quote"]}>{`"${props.quote}"`}</h2>
             <h1 className={classes["card-title"]}>{props.title}</h1>
             <div className={classes["card-desc"]}>
                 <div className={classes["card-desc__frag"]}>
@@ -40,7 +40,14 @@ const EventCard = (props) => {
                         />
                     </clipPath>
                 </defs>
-            </svg>
+            </svg> */}
+            <NavLink to={"/event/" + props.id}>
+                <img
+                    src={props.image}
+                    alt="event-card"
+                    className={classes["card__img"]}
+                />
+            </NavLink>
         </div>
     );
 };

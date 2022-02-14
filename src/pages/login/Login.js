@@ -3,8 +3,11 @@ import classes from "./Login.module.css";
 
 const Login = () => {
     return (
-        <div className={classes["login"]}>
-            <LoginForm />
+        <div className={classes['container']}>
+            <div className={classes["login"]}>
+                <div className={classes["molecule_img"]} />
+                <LoginForm />
+            </div>
         </div>
     );
 };

@@ -113,6 +113,7 @@
 @media (max-width: 800px) {
     .nav-toggle {
         display: block;
+        margin-right: 2rem;
     }
 
     .primary-navigation {

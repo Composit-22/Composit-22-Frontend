@@ -1,8 +1,32 @@
+.container{
+    overflow-x: hidden;
+}
+
 .login {
     padding: 12rem 0 10rem;
-    background-image: url("login-bkg.jpg");
+    background-image: url("imgs/login-bkg.png");
     background-size: cover;
+    background-position: center;
     height: 100vh;
+}
+
+.molecule_img{
+    position: absolute;
+    right: 0rem;
+    top: 20vh;
+    background-image: url("imgs/molecule.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50vw;
+    height: 78vh;
+    opacity: 0.7;
+}
+
+@media (max-width: 1100px){
+    .molecule_img{
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {

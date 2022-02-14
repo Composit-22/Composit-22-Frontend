@@ -43,7 +43,7 @@ const RegisterForm = () => {
         valueChangeHandler: emailChangeHandler,
         inputBlurHandler: emailInputBlurHandler,
         reset: resetEmail,
-    } = useInput(isNotEmpty);
+    } = useInput(isEmail);
 
     const {
         value: collegeName,
@@ -85,6 +85,8 @@ const RegisterForm = () => {
     if (
         nameIsValid &&
         userNameIsValid &&
+        numberIsValid &&
+        emailIsValid &&
         collegeNameIsValid &&
         passwordIsValid &&
         confirmPasswordIsValid
@@ -148,13 +150,13 @@ const RegisterForm = () => {
         .then((data)=>console.log(data))
         .catch((e) => console.log(e));
 
-        // resetName();
-        // resetUserName();
-        // resetNumber();
-        // resetEmail();
-        // resetCollegeName();
-        // resetPassword();
-        // resetConfirmPassword();
+        resetName();
+        resetUserName();
+        resetNumber();
+        resetEmail();
+        resetCollegeName();
+        resetPassword();
+        resetConfirmPassword();
     };
 
     // const state = {
@@ -261,9 +263,9 @@ const RegisterForm = () => {
                             onChange={numberChangeHandler}
                             onBlur={numberInputBlurHandler}
                         />
-                        {userNameInputHasError && (
+                        {numberInputHasError && (
                             <p className={`${classes["input__message"]}`}>
-                                Username must not be empty.
+                                Contact number must not be empty.
                             </p>
                         )}
                     </div>
@@ -283,9 +285,9 @@ const RegisterForm = () => {
                             onChange={emailChangeHandler}
                             onBlur={emailInputBlurHandler}
                         />
-                        {userNameInputHasError && (
+                        {emailInputHasError && (
                             <p className={`${classes["input__message"]}`}>
-                                Username must not be empty.
+                                Invallid Email.
                             </p>
                         )}
                     </div>

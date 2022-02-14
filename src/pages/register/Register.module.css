@@ -1,12 +1,30 @@
-.register {
-    padding: 12rem 0 10rem;
-    background-image: url("register-bkg.jpg");
-    background-size: cover;
-    height: 180vh;
+.container{
+    overflow-x: hidden;
 }
 
-@media (max-width: 800px) {
-    .register {
-        height: 200vh;
+.register {
+    padding: 12rem 0 10rem;
+    background-image: url("imgs/register-bkg.png");
+    background-size: cover;
+    background-position: center;
+    height: 220vh;
+}
+
+.molecule_img{
+    position: absolute;
+    right: 0rem;
+    top: 60vh;
+    background-image: url("imgs/molecule.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 53vw;
+    height: 80vh;
+    opacity: 0.5;
+}
+
+@media (max-width: 1100px){
+    .molecule_img{
+        display: none;
     }
 }

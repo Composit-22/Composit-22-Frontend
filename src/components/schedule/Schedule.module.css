@@ -132,6 +132,11 @@
   color: #222222;
 }
 
+.sample_dark{
+  background-color: #222222;
+  color: white;
+}
+
 @media (max-width: 900px) {
   .container>h2 {
     font-size: 4rem;
