@@ -9,7 +9,6 @@ import About from "./pages/about/About";
 import Event from "./pages/event/Event";
 import ComingSoon from "./pages/comingsoon/ComingSoon";
 import Login from "./pages/login/Login";
-import Profile from "./components/myprofile/Profile";
 import Register from "./pages/register/Register";
 import OurTeam from "./pages/ourteam/OurTeam";
 

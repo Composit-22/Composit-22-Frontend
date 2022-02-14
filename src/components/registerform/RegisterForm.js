@@ -28,6 +28,24 @@ const RegisterForm = () => {
     } = useInput(isNotEmpty);
 
     const {
+        value: number,
+        isValid: numberIsValid,
+        hasError: numberInputHasError,
+        valueChangeHandler: numberChangeHandler,
+        inputBlurHandler: numberInputBlurHandler,
+        reset: resetNumber,
+    } = useInput(isNotEmpty);
+
+    const {
+        value: email,
+        isValid: emailIsValid,
+        hasError: emailInputHasError,
+        valueChangeHandler: emailChangeHandler,
+        inputBlurHandler: emailInputBlurHandler,
+        reset: resetEmail,
+    } = useInput(isNotEmpty);
+
+    const {
         value: collegeName,
         isValid: collegeNameIsValid,
         hasError: collegeNameInputHasError,
@@ -81,6 +99,14 @@ const RegisterForm = () => {
         ? `${classes["input__field"]} ${classes["input__error"]}`
         : `${classes["input__field"]}`;
 
+    const numberInputClasses = numberInputHasError
+        ? `${classes["input__field"]} ${classes["input__error"]}`
+        : `${classes["input__field"]}`;
+
+    const emailInputClasses = emailInputHasError
+        ? `${classes["input__field"]} ${classes["input__error"]}`
+        : `${classes["input__field"]}`;
+
     const collegeNameInputClasses = collegeNameInputHasError
         ? `${classes["input__field"]} ${classes["input__error"]}`
         : `${classes["input__field"]}`;
@@ -98,15 +124,72 @@ const RegisterForm = () => {
 
         if (!formIsValid) return;
 
-        const data = { name, userName, collegeName, password };
+        const data = { name, userName, email, collegeName, password };
         console.log(data);
+        const state = {
+            "username": userName,
+            "name": name,
+            "email": email,
+            "collegeName": collegeName,
+            "password": password,
+            "number": number,
+            "events_registered": ""
+        }
 
-        resetName();
-        resetUserName();
-        resetCollegeName();
-        resetPassword();
-        resetConfirmPassword();
+        fetch('http://127.0.0.1:8000/signup',{
+            method: 'POST',
+            body: JSON.stringify(state),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response=>response.json())
+        .then((data)=>console.log(data))
+        .catch((e) => console.log(e));
+
+        // resetName();
+        // resetUserName();
+        // resetNumber();
+        // resetEmail();
+        // resetCollegeName();
+        // resetPassword();
+        // resetConfirmPassword();
     };
+
+    // const state = {
+    //     "username": userName,
+    //     "first_name": name,
+    //     "last_name": "",
+    //     "email": email,
+    //     "password": "awd",
+    //     "number": "324",
+    //     "events_registered": ""
+    // }
+    // let headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
+    // headers.append('Accept', 'application/json');
+    // headers.append('Origin', 'http://127.0.0.1:8000/signup');
+    // function func() {
+        // fetch('http://127.0.0.1:8000/signup', {
+        //     method: 'POST',
+        //     body: JSON.stringify(state),
+        //     headers: headers
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => console.log(data))
+        //     .catch((e) => console.log(e));
+        // fetch('http://127.0.0.1:8000/signup',{
+        //     method: 'POST',
+        //     body: JSON.stringify(state),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        // .then(response=>response.json())
+        // .then((data)=>console.log(data))
+        // .catch((e) => console.log(e));
+    // };
+    // func()
 
     return (
         <>
@@ -131,6 +214,7 @@ const RegisterForm = () => {
                             value={name}
                             onChange={nameChangeHandler}
                             onBlur={nameInputBlurHandler}
+                            autoComplete
                         />
                         {nameInputHasError && (
                             <p className={`${classes["input__message"]}`}>
@@ -153,6 +237,50 @@ const RegisterForm = () => {
                             value={userName}
                             onChange={userNameChangeHandler}
                             onBlur={userNameInputBlurHandler}
+                        />
+                        {userNameInputHasError && (
+                            <p className={`${classes["input__message"]}`}>
+                                Username must not be empty.
+                            </p>
+                        )}
+                    </div>
+
+                    <div className={`${classes["input"]}`}>
+                        <label
+                            className={`${classes["input__label"]}`}
+                            htmlFor="number"
+                        >
+                            Enter Contact Number
+                        </label>
+                        <input
+                            className={numberInputClasses}
+                            id="number"
+                            type="text"
+                            value={number}
+                            onChange={numberChangeHandler}
+                            onBlur={numberInputBlurHandler}
+                        />
+                        {userNameInputHasError && (
+                            <p className={`${classes["input__message"]}`}>
+                                Username must not be empty.
+                            </p>
+                        )}
+                    </div>
+
+                    <div className={`${classes["input"]}`}>
+                        <label
+                            className={`${classes["input__label"]}`}
+                            htmlFor="email"
+                        >
+                            Enter Email
+                        </label>
+                        <input
+                            className={emailInputClasses}
+                            id="email"
+                            type="email"
+                            value={email}
+                            onChange={emailChangeHandler}
+                            onBlur={emailInputBlurHandler}
                         />
                         {userNameInputHasError && (
                             <p className={`${classes["input__message"]}`}>
@@ -204,7 +332,7 @@ const RegisterForm = () => {
                             </p>
                         )} */}
                         <input type="text" value={collegeName} className={classes["input__field"]} onChange={collegeNameChangeHandler} />
-                        
+
                     </div>
                     <div className={`${classes["input"]}`}>
                         <label
@@ -253,7 +381,7 @@ const RegisterForm = () => {
                 <div className={`${classes["form__btn-group"]}`}>
                     <button
                         className={`${classes["form__btn"]}`}
-                        // disabled={!formIsValid}
+                    // disabled={!formIsValid}
                     >
                         Register
                     </button>

@@ -45,9 +45,24 @@ const LoginForm = () => {
 
         const data = { userName, password };
         console.log(data);
+        const state = {
+            "username": userName,
+            "password": password,
+        }
 
-        resetUserName();
-        resetPassword();
+        fetch('http://127.0.0.1:8000/signin',{
+            method: 'POST',
+            body: JSON.stringify(state),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response=>response.json())
+        .then((data)=>console.log(data))
+        .catch((e)=>console.log(e));
+
+        // resetUserName();
+        // resetPassword();
     };
 
     return (
@@ -71,6 +86,7 @@ const LoginForm = () => {
                             id="userName"
                             type="text"
                             value={userName}
+                            name='username'
                             onChange={userNameChangeHandler}
                             onBlur={userNameInputBlurHandler}
                         />
@@ -90,9 +106,14 @@ const LoginForm = () => {
                         </label>
                         <input
                             className={passwordInputClasses}
+<<<<<<< HEAD
                             id="password"
+=======
+                            id="userName"
+>>>>>>> 02807ba8270422596749a9788dd299214b8d20da
                             type="password"
                             value={password}
+                            name='password'
                             onChange={passwordChangeHandler}
                             onBlur={passwordInputBlurHandler}
                         />
@@ -106,7 +127,7 @@ const LoginForm = () => {
                 <div className={`${classes["form__btn-group"]}`}>
                     <button
                         className={`${classes["form__btn"]}`}
-                        // disabled={!formIsValid}
+                    // disabled={!formIsValid}
                     >
                         Login
                     </button>
