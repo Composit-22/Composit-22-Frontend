@@ -3,58 +3,58 @@
     margin-top: 8.2rem;
     height: fit-content;
     /* background: linear-gradient(113.37deg, #31cdd7 0.6%, #42f053 86.58%); */
-}
-
-.bkg-0 {
+  }
+  
+  .bkg-0 {
     background: linear-gradient(162.44deg, #d842f0 0%, #7a31d7 100%);
-}
-
-.bkg-1 {
+  }
+  
+  .bkg-1 {
     background: linear-gradient(162.44deg, #f04242 0%, #d79531 100%);
-}
-
-.bkg-2 {
+  }
+  
+  .bkg-2 {
     background: linear-gradient(162.44deg, #42f053 0%, #31cdd7 100%);
-}
-
-.bkg-3 {
+  }
+  
+  .bkg-3 {
     background: linear-gradient(162.44deg, #4542f0 0%, #31d79b 100%);
-}
-
-.bkg-4 {
+  }
+  
+  .bkg-4 {
     background: linear-gradient(162.44deg, #21ffd7 0%, #c728ff 100%);
-}
-
-.eventsvg {
+  }
+  
+  .eventsvg {
     width: 40%;
     padding-top: 4%;
     padding-bottom: 4%;
-}
-.eventContent {
+  }
+  .eventContent {
     width: 60%;
     padding-top: 4%;
     padding-bottom: 4%;
-}
-.eventName {
+  }
+  .eventName {
     font-family: "Raleway", sans-serif;
     font-size: 52px;
     /* line-height: 128px; */
     text-transform: uppercase;
     color: rgb(30, 30, 28);
-    border: .8rem solid;
+    border: 0.8rem solid;
     margin-left: 30%;
     width: fit-content;
-
+  
     border-image-source: linear-gradient(162.44deg, #39f3d2 0%, #59e328 100%);
-}
-.eventSubName {
+  }
+  .eventSubName {
     margin-top: 1.5rem;
     font-size: 2.4rem;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     padding-left: 2rem;
-}
-.eventDescription {
+  }
+  .eventDescription {
     padding-left: 10px;
     width: 85%;
     font-family: "Raleway", sans-serif;
@@ -62,8 +62,8 @@
     line-height: 3.8rem;
     font-size: 1.6rem;
     margin-top: 1rem;
-}
-.registerButton {
+  }
+  .registerButton {
     margin-left: 30%;
     border-radius: 3rem;
     padding: 1.5rem;
@@ -74,13 +74,41 @@
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    background-color: rgba(240, 240, 240, .4);
+    background-color: rgba(240, 240, 240, 0.4);
     border: none;
-}
-.date {
+  }
+  .date {
     margin-left: 25%;
     margin-top: 3rem;
     font-family: "Montserrat", sans-serif;
     color: rgb(51, 51, 51);
     font-size: 2.2rem;
-}
+  }
+  @media only screen and (max-width: 720px) {
+    .eventBody {
+      flex-direction: column;
+    }
+    .eventContent {
+      width: 100%;
+    }
+    .date {
+      margin-left: 0%;
+    }
+    .registerButton {
+      margin-left: 0%;
+    }
+    .registerDate {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .eventsvg {
+      width: 100%;
+    }
+    .eventName {
+      margin: 0 auto;
+    }
+  }
+  
