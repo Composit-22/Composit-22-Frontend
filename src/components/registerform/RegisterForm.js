@@ -138,16 +138,33 @@ const RegisterForm = () => {
             "events_registered": ""
         }
 
-        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
-            method: 'POST',
-            body: JSON.stringify(state),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
+        axios.post('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup', {
+            "username": userName,
+            "name": name,
+            "email": email,
+            "collegeName": collegeName,
+            "password": password,
+            "number": number,
+            "events_registered": ""
         })
-        .then(response=>response.json())
-        .then((data)=>console.log(data))
-        .catch((e) => console.log(e));
+            .then(function (response) {
+                console.log(response);
+            })
+            .then((data)=>console.log(data))
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        // fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
+        //     method: 'POST',
+        //     body: JSON.stringify(state),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        // .then(response=>response.json())
+        // .then((data)=>console.log(data))
+        // .catch((e) => console.log(e));
 
         resetName();
         resetUserName();
@@ -172,24 +189,24 @@ const RegisterForm = () => {
     // headers.append('Accept', 'application/json');
     // headers.append('Origin', 'http://127.0.0.1:8000/signup');
     // function func() {
-        // fetch('http://127.0.0.1:8000/signup', {
-        //     method: 'POST',
-        //     body: JSON.stringify(state),
-        //     headers: headers
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => console.log(data))
-        //     .catch((e) => console.log(e));
-        // fetch('http://127.0.0.1:8000/signup',{
-        //     method: 'POST',
-        //     body: JSON.stringify(state),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //     },
-        // })
-        // .then(response=>response.json())
-        // .then((data)=>console.log(data))
-        // .catch((e) => console.log(e));
+    // fetch('http://127.0.0.1:8000/signup', {
+    //     method: 'POST',
+    //     body: JSON.stringify(state),
+    //     headers: headers
+    // })
+    //     .then((response) => response.json())
+    //     .then((data) => console.log(data))
+    //     .catch((e) => console.log(e));
+    // fetch('http://127.0.0.1:8000/signup',{
+    //     method: 'POST',
+    //     body: JSON.stringify(state),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    // })
+    // .then(response=>response.json())
+    // .then((data)=>console.log(data))
+    // .catch((e) => console.log(e));
     // };
     // func()
 
