@@ -138,7 +138,7 @@ const RegisterForm = () => {
             "events_registered": ""
         }
 
-        fetch('http://127.0.0.1:8000/signup',{
+        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
