@@ -1,6 +1,5 @@
 import useInput from "../../hooks/use-input";
 import classes from "./RegisterForm.module.css";
-import axios from 'axios';
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -139,41 +138,25 @@ const RegisterForm = () => {
             "events_registered": ""
         }
 
-        axios.post('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup', {
-            "username": userName,
-            "name": name,
-            "email": email,
-            "collegeName": collegeName,
-            "password": password,
-            "number": number,
-            "events_registered": ""
+        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/',{
+            method: 'POST',
+            body: JSON.stringify(state),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Accept': 'application/json',
+            },
         })
-            .then(function (response) {
-                console.log(response);
-            })
-            .then((data)=>console.log(data))
-            .catch(function (error) {
-                console.log(error);
-            });
+        .then(response=>response.json())
+        .then((data)=>console.log(data))
+        .catch((e) => console.log(e));
 
-        // fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
-        //     method: 'POST',
-        //     body: JSON.stringify(state),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //     },
-        // })
-        // .then(response=>response.json())
-        // .then((data)=>console.log(data))
-        // .catch((e) => console.log(e));
-
-        resetName();
-        resetUserName();
-        resetNumber();
-        resetEmail();
-        resetCollegeName();
-        resetPassword();
-        resetConfirmPassword();
+        // resetName();
+        // resetUserName();
+        // resetNumber();
+        // resetEmail();
+        // resetCollegeName();
+        // resetPassword();
+        // resetConfirmPassword();
     };
 
     // const state = {
