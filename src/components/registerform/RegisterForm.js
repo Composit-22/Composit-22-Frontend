@@ -1,5 +1,6 @@
 import useInput from "../../hooks/use-input";
 import classes from "./RegisterForm.module.css";
+import axios from 'axios';
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
