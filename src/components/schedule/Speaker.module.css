@@ -7,6 +7,7 @@
 }
 
 .info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,11 +16,15 @@
 
 .speaker>img {
     width: 5.5rem;
+    margin-right: 0.5rem;
     border-radius: 100%;
 }
 
 .info>span {
+    width: 100%;
     font-family: Raleway, sans-serif;
+    text-align: start;
+    overflow-wrap: normal;
     font-style: normal;
     font-size: 1.5rem;
     line-height: 2.4rem;
@@ -27,8 +32,10 @@
 }
 
 .info>p {
+    width: 100%;
     font-family: Raleway, sans-serif;
     font-style: normal;
+    text-align: start;
     font-size: 1.5rem;
     line-height: 2.4rem;
     color: #222222;

@@ -9,11 +9,11 @@
 }
 
 .container>h2 {
-    text-transform: uppercase;
-    font-family: "Montserrat";
-    font-size: 2.4rem;
-    display: flex;
-    align-items: center;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
 }
 
 .tab_container {
@@ -107,7 +107,7 @@
   border-right: solid 1px #d9d9d9;
 }
 
-.row>div {
+.row-cell {
   width: 25%;
   text-align: center;
   padding: 0.5em 0.5em;
@@ -121,6 +121,10 @@
   color: #222222;
 }
 
+.row-cell > div{
+  margin-left: 13%;
+}
+
 .table-heading>div {
   left: 4rem;
   font-family: Raleway, sans-serif;
@@ -132,7 +136,7 @@
   color: #222222;
 }
 
-.sample_dark{
+.sample_dark {
   background-color: #222222;
   color: white;
 }
@@ -150,8 +154,14 @@
     margin-bottom: 3rem;
   }
 
-  .row>div {
+  .row-cell {
     width: 100%
+  }
+
+  .row-cell > div{
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }
 
   .row>div:last-child {
