@@ -138,19 +138,7 @@ const RegisterForm = () => {
             "events_registered": ""
         }
 
-        // await fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup/',{
-        //     method: 'POST',
-        //     body: JSON.stringify(state),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //         'Accept': 'application/json',
-        //     },
-        // })
-        // .then(response=>response.json())
-        // .then((data)=>console.log(data))
-        // .catch((e) => console.log(e));
-
-        fetch('http://127.0.0.1:8000/signup', {
+        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup/',{
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
@@ -161,6 +149,18 @@ const RegisterForm = () => {
         .then(response=>response.json())
         .then((data)=>console.log(data))
         .catch((e) => console.log(e));
+
+        // fetch('http://127.0.0.1:8000/signup', {
+        //     method: 'POST',
+        //     body: JSON.stringify(state),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //         'Accept': 'application/json',
+        //     },
+        // })
+        // .then(response=>response.json())
+        // .then((data)=>console.log(data))
+        // .catch((e) => console.log(e));
 
         // resetName();
         // resetUserName();
