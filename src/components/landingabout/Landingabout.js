@@ -10,13 +10,6 @@ const Landingabout = () => {
   const {theme} = useContext(DarkContext);
   return (
     <div className="container">
-<<<<<<< HEAD
-      <div id="parent">
-        <div className="BOX1">
-          <img src="./img/rimg.svg" alt="abc" className="BOX2"/>
-        </div>
-      </div>
-=======
        {/* <div id="parent">
         <div className="BOX1">
           <img src="./img/rimg.svg" alt="abc" className="BOX2"/>
@@ -24,7 +17,6 @@ const Landingabout = () => {
       </div>  */}
        {/* <div className={theme.mode==='dark'? `${classes['content']} ${classes['content-dark']}`: classes["content"]}> */}
       <div className="content"> 
->>>>>>> 689bdcba4a4386d3ad845af8c8e55fdf5311deaf
 
         <h2 >ABOUT COMPOSIT</h2>
         <p>

@@ -6,7 +6,9 @@
 }
 .footer-container-dark
 {
+    background: none;
     background-color: #1e1408;
+    padding-top: 0;
 }
 
 .footer {
