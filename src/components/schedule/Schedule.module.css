@@ -6,6 +6,21 @@
   margin-top: 5rem;
   width: 100%;
   overflow: hidden;
+  /* background-color: aqua; */
+}
+.container-dark
+{
+  background-color: #1e1408;
+
+}
+
+.heading
+{
+color: black;
+}
+.heading-dark
+{
+  color:white;
 }
 
 .container>h2 {
@@ -134,11 +149,19 @@
   line-height: 3.8rem;
   padding: 2rem 0;
   color: #222222;
+  
 }
 
-.sample_dark {
-  background-color: #222222;
+.sample_dark{
+  background-color:#1e1408;
   color: white;
+}
+
+.sample_dark_2
+{
+  background-color:rgb(175, 214, 31);
+  color: white;
+
 }
 
 @media (max-width: 900px) {

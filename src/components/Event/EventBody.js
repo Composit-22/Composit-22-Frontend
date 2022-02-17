@@ -1,10 +1,17 @@
 import { NavLink } from "react-router-dom";
 
 import styles from "./EventBody.module.css";
+import { useContext } from 'react';
+import DarkContext from '../../store/DarkMode';
+import classes from "./EventBody.module.css";
+
 const EventBody = (props) => {
   const bkg = styles["bkg-" + props.colorId];
 
+  const {theme} = useContext(DarkContext);
   return (
+    <div className={theme.mode==='dark'? `${classes['bkgrnd']} ${classes['bkgrnd-dark']}`: classes["bkgrnd"]}>
+        {/* <div className={classes["bkg"]}> */}
     <div className={styles.eventBody + " " + bkg}>
       <div className={styles.eventsvg}></div>
       <div className={styles.eventContent}>
@@ -18,6 +25,7 @@ const EventBody = (props) => {
           <div className={styles.date}>DATE: March 23rd, 2020</div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

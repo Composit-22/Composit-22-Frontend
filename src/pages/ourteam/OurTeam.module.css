@@ -8,11 +8,22 @@
     font-family: "Montserrat";
     font-weight: 700;
 }
+.team__container-dark
+{
+    background-image: url("imgs/team-bkg-dark.jpg");
+    
+
+}
 
 .team__heading {
     font-size: 2.4rem;
     margin: 5rem auto;
     text-align: center;
+    color: black;
+}
+.team__heading-dark
+{
+    color: white;
 }
 
 .team__members {
@@ -21,4 +32,8 @@
     flex-wrap: wrap;
     gap: 5rem;
     list-style: none;
+    color: black;
+}
+.team__members-dark{
+    color: #EA971A;
 }

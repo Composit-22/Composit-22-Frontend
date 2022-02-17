@@ -18,6 +18,11 @@
     font-size: 2rem;
     text-transform: uppercase;
     text-align: left;
+    color: rgb(0, 0, 0);
+}
+.form__title-dark
+{
+    color: white;
 }
 
 .form__btn-group {
@@ -54,6 +59,11 @@
     padding: 1rem 2rem;
     font-size: 2rem;
     text-align: left;
+    color: rgb(0, 0, 0);
+}
+.input-dark
+{
+    color: white;
 }
 
 .input__label {

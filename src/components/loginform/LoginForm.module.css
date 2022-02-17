@@ -8,6 +8,11 @@
     font-size: 2rem;
     text-transform: uppercase;
     text-align: center;
+    color: black;
+}
+.form__title-dark
+{
+    color:white;
 }
 
 .form {
@@ -56,6 +61,11 @@
     padding: 1rem 2rem;
     font-size: 2rem;
     text-align: left;
+    color: black;
+    
+}
+.input-dark{
+    color:white;
 }
 
 .input__label {
@@ -65,6 +75,10 @@
     margin-bottom: 2rem;
     text-align: left;
     pointer-events: none;
+}
+.input__label-dark
+{
+    color:white;
 }
 
 .input__field {
@@ -76,6 +90,10 @@
     background-color: rgba(255, 255, 255, .2);
     border: 2px solid #ccc;
     outline: none;
+}
+.input__field-dark
+{
+    color: white;
 }
 
 .input__field:focus {

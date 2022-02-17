@@ -1,5 +1,8 @@
 import useInput from "../../hooks/use-input";
 import classes from "./RegisterForm.module.css";
+import { useContext } from "react";
+
+import DarkContext from '../../store/DarkMode';
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -9,6 +12,7 @@ const isAge = (value) => {
 };
 
 const RegisterForm = () => {
+    const {theme} = useContext(DarkContext);
     const {
         value: name,
         isValid: nameIsValid,
@@ -217,9 +221,11 @@ const RegisterForm = () => {
                 onSubmit={submitHandler}
                 action=''
             >
-                <h1 className={classes["form__title"]}>Register to Composit</h1>
+                <h1 className={theme.mode==='dark'? `${classes['form__title']} ${classes['form__title-dark']}`: classes["form__title"]}>
+                {/* <h1 className={classes["form__title"]}>*/}Register to Composit</h1> 
                 <div className={`${classes["form__inputs"]}`}>
-                    <div className={`${classes["input"]}`}>
+                <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="name"
@@ -241,7 +247,8 @@ const RegisterForm = () => {
                         )}
                     </div>
 
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="userName"
@@ -263,7 +270,8 @@ const RegisterForm = () => {
                         )}
                     </div>
 
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="number"
@@ -285,7 +293,8 @@ const RegisterForm = () => {
                         )}
                     </div>
 
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="email"
@@ -329,7 +338,8 @@ const RegisterForm = () => {
                         )}
                     </div> */}
 
-                    <div className={`${classes["input"]}`}>
+<div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="collegeName"
@@ -352,7 +362,8 @@ const RegisterForm = () => {
                         <input type="text" value={collegeName} className={classes["input__field"]} onChange={collegeNameChangeHandler} />
 
                     </div>
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="primaryPassword"
@@ -374,7 +385,8 @@ const RegisterForm = () => {
                         )}
                     </div>
 
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="confirmPassword"
