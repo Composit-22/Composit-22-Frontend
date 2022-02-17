@@ -9,26 +9,34 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
-import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
 import ScrollContext from "../../store/scroll-context";
+import DarkContext from '../../store/DarkMode';
+
 
 const Footer = () => {
     const scrollCtx = useContext(ScrollContext);
+    const {theme} = useContext(DarkContext);
 
     return (
-        <div className={classes["footer-container"]}>
-            <footer className={classes["footer"]}>
+        <div className={theme.mode==='dark'? `${classes['footer-container']} ${classes['footer-container-dark']}`: classes["footer-container"]}>
+
+        {/* <div className={classes["footer-container"]}> */}
+            <footer className={theme.mode==='dark'? `${classes['footer']} ${classes['footer-dark']}`: classes["footer"]}>
+            {/* <footer className={classes["footer"]}> */}
                 <div className={classes["footer-top"]}>
                     <div>
-                        <h1 className={classes["footer-top__heading"]}>
+                        <h1 className={theme.mode==='dark'? `${classes['footer-top__heading']} ${classes['footer-top__heading-dark']}`: classes["footer-top__heading"]}>
+                        {/* <h1 className={classes["footer-top__heading"]}> */}
                             Quick Links
                         </h1>
                         <ul className={classes["footer-links"]}>
                             <li>
                                 <NavLink
                                     to="/login"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+                                    // className={classes["footer-link"]}
                                 >
                                     <span>&gt;</span> Login
                                 </NavLink>
@@ -36,14 +44,18 @@ const Footer = () => {
                             <li>
                                 <NavLink
                                     to="/register"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
                                     <span>&gt;</span> Register
                                 </NavLink>
                             </li>
                             <li>
                                 <div
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                     onClick={scrollCtx.onScrollToEventCarousel}
                                 >
                                     <span>&gt;</span> Events
@@ -51,7 +63,9 @@ const Footer = () => {
                             </li>
                             <li>
                                 <div
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                     onClick={scrollCtx.onScrollToGallery}
                                 >
                                     <span>&gt;</span> Gallery
@@ -59,7 +73,9 @@ const Footer = () => {
                             </li>
                             <li>
                                 <div
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                     onClick={scrollCtx.onScrollToSchedule}
                                 >
                                     <span>&gt;</span> Schedule
@@ -68,7 +84,9 @@ const Footer = () => {
                             <li>
                                 <Link
                                     to="/about"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
                                     <span>&gt;</span> About
                                 </Link>
@@ -77,7 +95,9 @@ const Footer = () => {
                                 <Link
                                     to="/team"
                                     href="#"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
                                     <span>&gt;</span> Our Team
                                 </Link>
@@ -85,25 +105,33 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h1 className={classes["footer-top__heading"]}>
+                    <h1 className={theme.mode==='dark'? `${classes['footer-top__heading']} ${classes['footer-top__heading-dark']}`: classes["footer-top__heading"]}>
+                        {/* <h1 className={classes["footer-top__heading"]}> */}
                             Contact Us
                         </h1>
                         <ul className={classes["footer-links"]}>
-                            <li className={classes["footer-contact"]}>
-                                <span className={classes["footer-icon"]}>
+                            <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
+                            {/* <li className={classes["footer-contact"]}> */}
+
+                                <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faMapMarkerAlt} />
                                 </span>
                                 Department of Metallurgical and Materials
                                 Engineering, IIT Kharagpur, West Bengal 721302
                             </li>
-                            <li className={classes["footer-contact"]}>
-                                <span className={classes["footer-icon"]}>
+                            <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
+                            {/* <li className={classes["footer-contact"]}> */}
+                            <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faPhoneAlt} />
                                 </span>
                                 096104 08669
                             </li>
-                            <li className={classes["footer-contact"]}>
-                                <span className={classes["footer-icon"]}>
+                            <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
+                            {/* <li className={classes["footer-contact"]}> */}
+                            <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faEnvelope} />
                                 </span>
                                 composit2k22@gmail.com
@@ -111,7 +139,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h1 className={classes["footer-top__heading"]}>
+                    <h1 className={theme.mode==='dark'? `${classes['footer-top__heading']} ${classes['footer-top__heading-dark']}`: classes["footer-top__heading"]}>
+                        {/* <h1 className={classes["footer-top__heading"]}> */}
                             Social Connect
                         </h1>
                         <ul className={classes["footer-links"]}>
@@ -119,9 +148,12 @@ const Footer = () => {
                                 <a
                                     href="https://www.facebook.com/composit.iitkgp"
                                     target="_blank"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
-                                    <span className={classes["footer-icon"]}>
+                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                         <FontAwesomeIcon icon={faFacebook} />
                                     </span>
                                     Facebook
@@ -131,9 +163,12 @@ const Footer = () => {
                                 <a
                                     href="https://www.linkedin.com/compnay/composit-iit-kharagpur/"
                                     target="_blank"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
-                                    <span className={classes["footer-icon"]}>
+                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                         <FontAwesomeIcon icon={faLinkedin} />
                                     </span>
                                     LinkedIn
@@ -143,9 +178,12 @@ const Footer = () => {
                                 <a
                                     href="https://www.youtube.com/c/composit"
                                     target="_blank"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
-                                    <span className={classes["footer-icon"]}>
+                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                         <FontAwesomeIcon icon={faYoutube} />
                                     </span>
                                     YouTube
@@ -155,9 +193,12 @@ const Footer = () => {
                                 <a
                                     href="https://www.composit.in/"
                                     target="_blank"
-                                    className={classes["footer-link"]}
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
                                 >
-                                    <span className={classes["footer-icon"]}>
+                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
                                         <FontAwesomeIcon icon={faGoogle} />
                                     </span>
                                     Google
@@ -166,8 +207,12 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className={classes["footer-rule"]}></div>
-                <div className={classes["footer-bottom"]}>
+                <div className={theme.mode==='dark'? `${classes['footer-rule']} ${classes['footer-rule-dark']}`: classes["footer-rule"]}>
+
+                {/* <div className={classes["footer-rule"]}>*/}</div> 
+                <div className={theme.mode==='dark'? `${classes['footer-bottom']} ${classes['footer-bottom-dark']}`: classes["footer-bottom"]}>
+
+                {/* <div className={classes["footer-bottom"]}> */}
                     <p>
                         2022 Composit IIT Kharagpur 27th Edition. All Rights
                         Reserved.

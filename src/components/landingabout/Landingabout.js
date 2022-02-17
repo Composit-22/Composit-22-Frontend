@@ -1,18 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./landingabout.css";
+// import "./landingabout.css";
+import classes from './landingabout.css';
+import { useContext } from "react";
+
+import DarkContext from '../../store/DarkMode';
 
 const Landingabout = () => {
+  const {theme} = useContext(DarkContext);
   return (
     <div className="container">
-      {/* <div id="parent">
+       {/* <div id="parent">
         <div className="BOX1">
           <img src="./img/rimg.svg" alt="abc" className="BOX2"/>
         </div>
-      </div> */}
+      </div>  */}
+       {/* <div className={theme.mode==='dark'? `${classes['content']} ${classes['content-dark']}`: classes["content"]}> */}
+      <div className="content"> 
 
-      <div className="content">
-        <h2>ABOUT COMPOSIT</h2>
+        <h2 >ABOUT COMPOSIT</h2>
         <p>
           Composit is the Congress of Metallurgical proffesionals involving
           Students, Industrialists and Teachers. It was conceived in 1994 by
@@ -27,11 +33,13 @@ const Landingabout = () => {
           large scale every year, as it would be organized this year.
         </p>
 
-        <NavLink to="/about" className="landing-about_btn">
+        
+{/* <NavLink to="/about" className={theme.mode==='dark'? `${classes['landing-about_btn']} ${classes['landing-about_btn-dark']}`: classes["landing-about_btn"]}> */}
+<NavLink to="/about" className="landing-about_btn">
           Learn more &#8594;
         </NavLink>
       </div>
-    </div>
+     </div>
   );
 };
 

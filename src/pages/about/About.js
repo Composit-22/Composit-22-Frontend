@@ -1,12 +1,18 @@
 import classes from './About.module.css';
+// import ScrollContext from "../../store/scroll-context";
+import DarkContext from '../../store/DarkMode';
+import { useContext } from 'react';
 
 const About = () => {
+    // const scrollCtx = useContext(ScrollContext);
+    const {theme} = useContext(DarkContext);
     return (
         <div className={classes["container"]}>
-            <div className={classes["bkg"]}>
+            <div className={theme.mode==='dark'? `${classes['bkg']} ${classes['bkg-dark']}`: classes["bkg"]}>
+            {/* <div className={classes["bkg"]}> */}
                 <div className={classes["left_img"]} />
-
-                <div className={classes["content"]}>
+                <div className={theme.mode==='dark'? `${classes['content']} ${classes['content-dark']}`: classes["content"]}>
+                {/* <div className={classes["content"]}> */}
                     <h2>COMPOSIT ’22</h2>
 
                     <p>
