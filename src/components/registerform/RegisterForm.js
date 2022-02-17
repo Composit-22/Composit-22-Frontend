@@ -136,13 +136,13 @@ const RegisterForm = () => {
             "username": userName,
             "name": name,
             "email": email,
-            "collegeName": collegeName,
+            "collegeName": "collegeName",
             "password": password,
             "number": number,
             "events_registered": ""
         }
 
-        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
+        fetch('http://composit-test.eba-mwzbzgpt.us-west-2.elasticbeanstalk.com/signup',{
             // mode: 'no-cors',
             method: 'POST',
             body: JSON.stringify(state),
@@ -150,7 +150,6 @@ const RegisterForm = () => {
                 'Access-Control-Allow-Origin': 'http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com',
                 'Content-type': 'application/json; charset=UTF-8',
                 'Accept': 'application/json',
-                'Origin': 'http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com',
             },
         })
         .then(response=>response.json())
