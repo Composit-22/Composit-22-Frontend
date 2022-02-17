@@ -138,12 +138,15 @@ const RegisterForm = () => {
             "events_registered": ""
         }
 
-        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup/',{
+        fetch('http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com/signup',{
+            // mode: 'no-cors',
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
+                // 'Access-Control-Allow-Origin': 'http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com',
                 'Content-type': 'application/json; charset=UTF-8',
                 'Accept': 'application/json',
+                'Origin': 'http://composit-aws-env.eba-925f2pku.us-west-2.elasticbeanstalk.com',
             },
         })
         .then(response=>response.json())
@@ -212,6 +215,7 @@ const RegisterForm = () => {
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
+                action=''
             >
                 <h1 className={classes["form__title"]}>Register to Composit</h1>
                 <div className={`${classes["form__inputs"]}`}>
@@ -229,7 +233,6 @@ const RegisterForm = () => {
                             value={name}
                             onChange={nameChangeHandler}
                             onBlur={nameInputBlurHandler}
-                            autoComplete
                         />
                         {nameInputHasError && (
                             <p className={`${classes["input__message"]}`}>
