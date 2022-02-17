@@ -1,5 +1,10 @@
 import useInput from "../../hooks/use-input";
 import classes from "./LoginForm.module.css";
+import { useContext } from "react";
+
+import DarkContext from '../../store/DarkMode';
+
+
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -9,6 +14,9 @@ const isAge = (value) => {
 };
 
 const LoginForm = () => {
+    
+    const {theme} = useContext(DarkContext);
+    
     const {
         value: userName,
         isValid: userNameIsValid,
@@ -30,7 +38,7 @@ const LoginForm = () => {
     let formIsValid = false;
     if (userNameIsValid && passwordIsValid) formIsValid = true;
 
-    const userNameInputClasses = userNameInputHasError
+    const userNameInputClasses =userNameInputHasError
         ? `${classes["input__field"]} ${classes["input__error"]}`
         : `${classes["input__field"]}`;
 
@@ -64,18 +72,23 @@ const LoginForm = () => {
         resetUserName();
         resetPassword();
     };
+    
 
     return (
+        
         <>
             <form
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
             >
-                <h1 className={classes["form__title"]}>Login to Composit</h1>
+                <h1 className={theme.mode==='dark'? `${classes['form__title']} ${classes['form__title-dark']}`: classes["form__title"]}>
+                {/* <h1 className={classes["form__title"]}>*/}Login to Composit</h1> 
                 <div className={`${classes["form__inputs"]}`}>
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
+                            
                             className={`${classes["input__label"]}`}
                             htmlFor="userName"
                         >
@@ -97,7 +110,8 @@ const LoginForm = () => {
                         )}
                     </div>
 
-                    <div className={`${classes["input"]}`}>
+                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="password"

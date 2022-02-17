@@ -37,3 +37,11 @@
     cursor: pointer;
     box-shadow: 0 .3rem .8rem rgba(0, 0, 0, 0.24);
 }
+.btn-sponsor-dark
+{
+    color:black;
+    background-color: #EA971A;
+    border: 1px solid #EA971A;
+
+    
+}

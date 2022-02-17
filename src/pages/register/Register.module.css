@@ -9,6 +9,12 @@
     background-position: center;
     height: 220vh;
 }
+.register-dark
+{
+    background-image: url("imgs/register-bkg-dark.jpg");
+
+
+}
 
 .molecule_img{
     position: absolute;

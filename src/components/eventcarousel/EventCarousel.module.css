@@ -2,6 +2,7 @@
     padding: 0.5rem;
 }
 
+
 @media (max-width: 450px) {
     .event-carousel__item {
         padding: 2rem;

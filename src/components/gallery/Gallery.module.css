@@ -2,3 +2,20 @@
     padding: 1rem;
     cursor: pointer;
 }
+.bkg
+{
+    background-color: white;
+}
+.bkg-dark
+{
+    background-color: rgb(30, 20, 8);
+}
+/* .heading
+{
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    color: black;
+} */

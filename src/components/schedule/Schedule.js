@@ -3,25 +3,29 @@ import classes from './Schedule.module.css';
 import { useState, useContext } from "react";
 
 import ScrollContext from '../../store/scroll-context';
-// import DarkContext from '../../store/DarkMode';
+import DarkContext from '../../store/DarkMode';
 
 const Schedule = () => {
 
     const [tab, changeTab] = useState(1);
 
     const scrollCtx = useContext(ScrollContext);
-    // const {theme} = useContext(DarkContext);
+    const {theme} = useContext(DarkContext);
 
     const switchTab = (newTab) => {
         changeTab(newTab);
     };
 
     return (
-        <div className={classes["container"]} ref={scrollCtx.scheduleRef}>
-            <h2 className={classes["heading"]}>Schedule</h2>
+        <div className={theme.mode==='dark'? `${classes['container']} ${classes['container-dark']}` : classes["container"]}ref={scrollCtx.scheduleRef}>
+        {/* // <div className={classes["container"]} ref={scrollCtx.scheduleRef}> */}
+            <h2 className={theme.mode==='dark'? `${classes['heading']} ${classes['heading-dark']}` : classes["heading"]}>
+            {/* <h2 className={classes["heading"]}>*/}Schedule</h2> 
             <div className={classes["tab_container"]}>
-                {/* <div className={theme.mode==='dark'? `${classes['tab-block']} ${classes['sample_dark']}`: classes["tab-block"]}> */}
-                <div className={classes["tab-block"]}>
+                <div className={theme.mode==='dark'? `${classes['tab-block']} ${classes['sample_dark']}`: classes["tab-block"]}>
+                {/* <div className={classes["tab-block"]}> */}
+                
+
                     <button
                         className={tab === 1 ? `${classes["tabs"]} ${classes["active-tabs"]}` : classes["tabs"]}
                         onClick={() => switchTab(1)}
