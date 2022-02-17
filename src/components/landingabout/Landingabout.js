@@ -5,11 +5,11 @@ import "./landingabout.css";
 const Landingabout = () => {
   return (
     <div className="container">
-      {/* <div id="parent">
+      <div id="parent">
         <div className="BOX1">
           <img src="./img/rimg.svg" alt="abc" className="BOX2"/>
         </div>
-      </div> */}
+      </div>
 
       <div className="content">
         <h2>ABOUT COMPOSIT</h2>
