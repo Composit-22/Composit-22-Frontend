@@ -143,7 +143,6 @@ const RegisterForm = () => {
         }
 
         fetch('http://composit-test.eba-mwzbzgpt.us-west-2.elasticbeanstalk.com/signup',{
-            // mode: 'no-cors',
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
