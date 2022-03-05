@@ -1,6 +1,5 @@
 .container{
     overflow-x: hidden;
-    
 }
 
 .bkg{
@@ -13,12 +12,11 @@
     background-size: cover;
     margin-left: -1.5rem;
     margin-right: 0rem;
-    
 }
+
 .bkg-dark
 {
     background: url("./images/bkgrnd-dark.jpg");
-    
 }
 
 .left_img{
