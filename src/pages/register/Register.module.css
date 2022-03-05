@@ -9,11 +9,10 @@
     background-position: center;
     height: 220vh;
 }
-.register-dark
-{
-    background-image: url("imgs/register-bkg-dark.jpg");
 
-
+.register-dark {
+    background-image: url("imgs/register-bkg-dark.png");
+    background-color: rgb(30, 20, 8);
 }
 
 .molecule_img{

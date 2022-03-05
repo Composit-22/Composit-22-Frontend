@@ -9,9 +9,9 @@
     font-weight: 700;
 }
 
-.team__container-dark
-{
-    background-image: url("imgs/team-bkg-dark.jpg");
+.team__container-dark {
+    background-image: url("imgs/team-bkg-dark.png");
+    background-color: rgb(30, 20, 8);
 }
 
 .team__heading {
