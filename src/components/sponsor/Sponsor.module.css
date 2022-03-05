@@ -10,6 +10,9 @@
     font-family: "Montserrat";
     font-size: 2.4rem;
 }
+.sponsor-heading-dark {
+    color: white;
+}
 
 .sponsor-logo {
     width: 15rem;

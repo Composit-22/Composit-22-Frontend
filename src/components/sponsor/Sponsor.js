@@ -13,7 +13,9 @@ const Sponsor = () => {
     const {theme} = useContext(DarkContext);
     return (
         <div className={classes["sponsor"]}>
-            <h1 className={classes["sponsor-heading"]}>Our Sponsors</h1>
+            <h1 className={theme.mode==='dark'? `${classes['sponsor-heading']} ${classes['sponsor-heading-dark']}`: classes["sponsor-heading"]}
+                //  className={classes["sponsor-heading"]}
+                 >Our Sponsors</h1>
             <div className={classes["sponsor-group"]}>
                 <img src={apple} alt="Apple" className={classes["sponsor-logo"]} />
                 <img src={facebook} alt="Facebook" className={classes["sponsor-logo"]} />
