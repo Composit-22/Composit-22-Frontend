@@ -9,9 +9,10 @@
     background-position: center;
     height: 100vh;
 }
-.login-dark
-{
-    background-image: url("imgs/login-bkg-dark.jpg");
+
+.login-dark {
+    background-image: url("imgs/login-bkg-dark.png");
+    background-color: rgb(30, 20, 8);
 }
 
 .molecule_img{
