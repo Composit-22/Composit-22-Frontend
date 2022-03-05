@@ -12,13 +12,18 @@
     margin-top: 8rem;
 }
 
+.container_dark {
+    background-image: url("./imgs/bkg-dark.png");
+    background-color: rgb(30, 20, 8);
+}   
+
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgba(240,240,240,0.5);
+    background-color: rgba(240,240,240,0.7);
     padding: 3rem 0 8rem;
 }
 
@@ -165,7 +170,7 @@
     padding-bottom: 4rem;
 }
 
-.reg_events > h2{
+.events_heading{
     font-family: Raleway, sans-serif;
     font-style: normal;
     font-weight: bolder;
@@ -174,6 +179,11 @@
     text-align: center;
     margin: 3rem 3rem 10rem 3rem;
     color: #000000;
+}
+
+.events_heading_dark{
+    color: rgb(30, 20, 8);
+    font-weight: bolder;
 }
 
 .event_button{
@@ -218,6 +228,18 @@
 .event_button:hover{
     border: 0.2rem solid #986F04;
     transition: 0.15s;
+}
+
+.text_dark{
+    color: rgb(255, 255, 255);
+}
+
+.bkg_dark{
+    background-color: rgb(30, 20, 8);
+}
+
+.content_dark{
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 950px){
