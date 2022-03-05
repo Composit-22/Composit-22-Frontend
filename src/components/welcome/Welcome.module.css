@@ -14,6 +14,9 @@
     font-family: "Montserrat";
     font-weight: 700;
 }
+.welcome-dark{
+    background-image: url("imgs/login-bkg-dark.jpg");  
+}
 
 .molekule {
     position: absolute;
@@ -66,11 +69,20 @@
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
     margin-top: 5rem;
 }
+.heading-medium-dark {
+    color: #F4ECEC;
+    text-shadow: none;
+}
+
 
 .heading-small {
     font-size: min(5vw, 3rem);
     color: rgb(75, 75, 75);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+.heading-small-dark {
+    color: #F4ECEC;
+    text-shadow: none;
 }
 
 .heading-large {
@@ -79,6 +91,10 @@
     letter-spacing: .3rem;
     color: rgb(138,96,49);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+.heading-large-dark {
+    color: #FEF1C1;
+    text-shadow: none;
 }
 
 @media (max-width: 450px) {

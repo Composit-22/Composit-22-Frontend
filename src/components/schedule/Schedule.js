@@ -51,8 +51,10 @@ const Schedule = () => {
 
                 <div>
                     <div className={tab === 1 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
-                        <div className={classes["table-container"]}>
-                            <div className={`${classes["table-heading"]} ${classes["row"]}`}>
+                        <div className={theme.mode==='dark'? `${classes['table-container']} ${classes['table-container-dark']}`: classes["table-container"]}>
+                            {/* className={classes["table-container"]} */}
+                            <div className={theme.mode==='dark'? `${classes['table-heading']} ${classes['table-heading-dark']}`: classes["table-heading"]}> 
+                                {/* className={`${classes["table-heading"]} ${classes["row"]}`} */}
                                 <div className={classes['row-cell']}>Time</div>
                                 <div className={classes['row-cell']}>Event</div>
                                 <div className={classes['row-cell']}>Speakers</div>
@@ -61,7 +63,7 @@ const Schedule = () => {
                                 <div className={classes['row-cell']}>9 to 10 am</div>
                                 <div className={classes['row-cell']}>Inaugration Ceremony</div>
                                 <div className={classes['row-cell']}>
-                                    <div><Speaker name="Utsav Mehta" img="logo192.png" booth="108" /></div>
+                                    <div><Speaker name="Prof. Karabi Das" img="Avatar.png" booth="108" /></div>
                                 </div>
                                 <div className={classes['row-cell']}>
                                     Starting
@@ -71,9 +73,9 @@ const Schedule = () => {
                                 <div className={classes['row-cell']}>9 to 11 am</div>
                                 <div className={classes['row-cell']}>Inaugration Seremoney</div>
                                 <div className={classes['row-cell']}>
-                                    <div><Speaker name="Utsav Mehta" img="logo192.png" booth="108" /></div>
-                                    <div><Speaker name="Utsav" img="logo192.png" booth="108" /></div>
-                                    <div><Speaker name="Utsav Mehta" img="logo192.png" booth="108" /></div>
+                                    <div><Speaker name="Jayanta Das" img="Avatar1.png" booth="108" /></div>
+                                    <div><Speaker name="Indrani Saha" img="Avatar2.png" booth="108" /></div>
+                                    <div><Speaker name="Shiv Brat Singh" img="Avatar3.png" booth="108" /></div>
                                 </div>
                                 <div className={classes['row-cell']}>
                                     Started
@@ -83,8 +85,8 @@ const Schedule = () => {
                                 <div className={classes['row-cell']}>9 to 12 am</div>
                                 <div className={classes['row-cell']}>Inaugration Seremoni</div>
                                 <div className={classes['row-cell']}>
-                                    <div><Speaker name="Utsav Mehta &LongName" img="logo192.png" booth="108" /></div>
-                                    <div><Speaker name="Utsav Mehta" img="logo192.png" booth="108" /></div>
+                                    <div><Speaker name="Nirupam Chakraborty" img="Avatar4.png" booth="108" /></div>
+                                    <div><Speaker name="Tapas Laha" img="Avatar5.png" booth="108" /></div>
                                 </div>
                                 <div className={classes['row-cell']}>
                                     Ended
