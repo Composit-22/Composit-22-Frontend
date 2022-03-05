@@ -15,6 +15,11 @@
     font-weight: 700;
 }
 
+.welcome__dark {
+    background-image: url("imgs/welcome-bkg-dark.png");
+    background-color: rgb(30, 20, 8);
+}
+
 .molekule {
     position: absolute;
     width: 15vw;
@@ -42,10 +47,22 @@
     border: 1px solid var(--color-secondary-light);
 }
 
+.welcome-btn__left__dark {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: #000;
+}
+
 .welcome-btn__left:hover {
     color: var(--color-secondary-light);
     border: 1px solid var(--color-secondary-light);
     background-color: white;
+}
+
+.welcome-btn__left__dark:hover {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
 }
 
 .welcome-btn__right {
@@ -54,10 +71,21 @@
     border: 1px solid var(--color-primary-light);
 }
 
+.welcome-btn__right__dark {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
 .welcome-btn__right:hover {
     color: var(--color-primary-light);
     border: 1px solid var(--color-primary-light);
     background-color: white;
+}
+
+.welcome-btn__right__dark:hover {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: #000;
 }
 
 .heading-medium {
@@ -67,10 +95,20 @@
     margin-top: 5rem;
 }
 
+.heading-medium__dark {
+    color: #ddd;
+    text-shadow: none;
+}
+
 .heading-small {
     font-size: min(5vw, 3rem);
     color: rgb(75, 75, 75);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+
+.heading-small__dark {
+    color: #ddd;
+    text-shadow: none;
 }
 
 .heading-large {
@@ -79,6 +117,11 @@
     letter-spacing: .3rem;
     color: rgb(138,96,49);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+
+.heading-large__dark {
+    color: #ddd;
+    text-shadow: .4rem .2rem 3px rgb(138, 96, 49);
 }
 
 @media (max-width: 450px) {
