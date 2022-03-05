@@ -11,6 +11,7 @@ import ComingSoon from "./pages/comingsoon/ComingSoon";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import OurTeam from "./pages/ourteam/OurTeam";
+import Profile from "./components/myprofile/Profile";
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/team" component={OurTeam} />
+                <Route path="/profile" component={Profile} />
                 <Route path="*" component={ComingSoon} />
             </Switch>
       <Footer />

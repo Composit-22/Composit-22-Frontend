@@ -1,11 +1,15 @@
 
 .container {
+    background-image: url("./imgs/bkg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 12rem;
+    margin-top: 8rem;
 }
 
 .content {
@@ -14,14 +18,14 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgba(240,240,240,0.7);
-    padding: 3rem 0;
+    background-color: rgba(240,240,240,0.5);
+    padding: 3rem 0 8rem;
 }
 
 .heading{
     font-family: Raleway, sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 2rem;
     line-height: 3.1rem;
     text-align: center;
@@ -36,7 +40,7 @@
 }
 
 .card{
-    width: 23%;
+    width: 19%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -50,7 +54,7 @@
 }
 
 .details{
-    width: 46%;
+    width: 40%;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -121,6 +125,35 @@
     margin: 2rem 0 0.2rem;
 }
 
+.events_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* .metal_bar{
+    background-image: url("./imgs/metalBars.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20vw;
+    height: 30vw;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+.smelting_img{
+    background-image: url("./imgs/smelting.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25%;
+    height: 80vh;
+    align-self: flex-start;
+    justify-self: flex-end;
+} */
+
 .reg_events{
     display: flex;
     justify-content: center;
@@ -135,7 +168,7 @@
 .reg_events > h2{
     font-family: Raleway, sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 2.1rem;
     line-height: 3.5rem;
     text-align: center;

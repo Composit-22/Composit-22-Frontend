@@ -58,22 +58,25 @@ const Profile = () => {
 
             {
                 dummy_reg_events.length > 0 ?
-                    <div className={modules["reg_events"]}>
-                        <h2>Registered Events</h2>
+                    <div className={modules["events_container"]}>
+                        {/* <div className={modules["metal_bar"]}/> */}
+                        <div className={modules["reg_events"]}>
+                            <h2>Registered Events</h2>
 
-                        {
-
-                            dummy_reg_events.map((event) => {
-                                return (
-                                    <div className={modules["event_button"]}>
-                                        <div className={modules["event_name"]}>{event.name}</div>
-                                        <NavLink to={event.link} className={modules["event_link"]}>Track Event</NavLink>
-                                    </div>
-                                );
+                            {
+                                dummy_reg_events.map((event) => {
+                                    return (
+                                        <div className={modules["event_button"]}>
+                                            <div className={modules["event_name"]}>{event.name}</div>
+                                            <NavLink to={event.link} className={modules["event_link"]}>Track Event</NavLink>
+                                        </div>
+                                    );
+                                }
+                                )
                             }
-                            )
-                        }
 
+                        </div>
+                        {/* <div className={modules["smelting_img"]}/> */}
                     </div>
                     : ''
             }

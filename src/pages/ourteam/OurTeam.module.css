@@ -8,11 +8,10 @@
     font-family: "Montserrat";
     font-weight: 700;
 }
+
 .team__container-dark
 {
     background-image: url("imgs/team-bkg-dark.jpg");
-    
-
 }
 
 .team__heading {
