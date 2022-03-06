@@ -30,8 +30,15 @@
     margin-bottom: 0;
 }
 
-.event-img {
+.event-img__container {
     width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.event-img {
+    width: 50rem;
+    margin-left: -5rem;
 }
 
 .event-content {

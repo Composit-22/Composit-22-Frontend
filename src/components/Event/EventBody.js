@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import DarkContext from '../../store/DarkMode';
 import classes from "./EventBody.module.css";
 
+import eventImg from "./imgs/event.png";
+
 const Event = (props) => {
     const bkg = classes["bkg-" + props.colorId];
 
@@ -10,8 +12,8 @@ const Event = (props) => {
 
     return (
         <div className={`${classes["event"]} ${bkg}` + (darkCtx.theme.mode === "dark" ? " " + classes["event__dark"] : "")}>
-            <div className={classes["event-img"]}>
-                <img src={props.img} alt="event-img"></img>
+            <div className={classes["event-img__container"]}>
+                <img src={eventImg} alt="event-img" className={classes["event-img"]}></img>
             </div>
             <div className={classes["event-content"]}>
                 <h1 className={classes["event-title"]}>{props.title}</h1>
