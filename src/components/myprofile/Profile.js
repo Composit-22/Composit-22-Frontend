@@ -7,7 +7,7 @@ import DarkContext from '../../store/DarkMode';
 const Profile = () => {
     const history = useHistory();
     const data = JSON.parse(history.location.state.data);
-    console.log(data);
+    
     const {theme} = useContext(DarkContext);
 
     const profile_data = {

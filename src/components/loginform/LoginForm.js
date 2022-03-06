@@ -72,14 +72,15 @@ const LoginForm = () => {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-            .then(response => response.json())
-            .then((data) => {
-                data = JSON.stringify(data);
-                console.log("reached here ", typeof ((data)));
-                history.push("/profile", {data:data});
-            })
-            // .then((data) => console.log(data))
-            .catch((e) => console.log(e));
+            .then(response => response.json()).then((data) => {
+                if ((data).userRegistered === 'false') {
+                    alert('Invalid Username or Password. Please try again.');
+                }
+                else {
+                    data = JSON.stringify(data);
+                    history.push("/profile", { data: data });
+                }
+            }).catch((e) => console.log(e));
 
         resetUserName();
         resetPassword();
