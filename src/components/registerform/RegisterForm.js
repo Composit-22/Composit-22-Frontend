@@ -193,7 +193,6 @@ const RegisterForm = () => {
         // resetCollegeName();
         // resetPassword();
         // resetConfirmPassword();
->>>>>>> e9d27b50eba2f5afaf4df40f90064313ed8b2049
     };
 
     return (
