@@ -147,20 +147,32 @@ const RegisterForm = () => {
             events_registered: "",
         };
 
-        fetch(
-            "http://composit-test.eba-mwzbzgpt.us-west-2.elasticbeanstalk.com/signup",
-            {
-                method: "POST",
-                body: JSON.stringify(state),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8",
-                    Accept: "application/json",
-                },
-            }
-        )
-            .then((response) => response.json())
-            .then((data) => console.log(data))
-            .catch((e) => console.log(e));
+
+        fetch('https://composit-api.herokuapp.com/signup',{
+            method: 'POST',
+            body: JSON.stringify(state),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                'Accept': 'application/json',
+            },
+        })
+        .then(response=>response.json())
+        .then((data)=>console.log(data))
+        .catch((e) => console.log(e));
+        // fetch(
+        //     "http://composit-test.eba-mwzbzgpt.us-west-2.elasticbeanstalk.com/signup",
+        //     {
+        //         method: "POST",
+        //         body: JSON.stringify(state),
+        //         headers: {
+        //             "Content-type": "application/json; charset=UTF-8",
+        //             Accept: "application/json",
+        //         },
+        //     }
+        // )
+        //     .then((response) => response.json())
+        //     .then((data) => console.log(data))
+        //     .catch((e) => console.log(e));
 
         // fetch('http://127.0.0.1:8000/signup', {
         //     method: 'POST',
@@ -182,41 +194,6 @@ const RegisterForm = () => {
         // resetPassword();
         // resetConfirmPassword();
     };
-
-    // const state = {
-    //     "username": userName,
-    //     "first_name": name,
-    //     "last_name": "",
-    //     "email": email,
-    //     "password": "awd",
-    //     "number": "324",
-    //     "events_registered": ""
-    // }
-    // let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
-    // headers.append('Accept', 'application/json');
-    // headers.append('Origin', 'http://127.0.0.1:8000/signup');
-    // function func() {
-    // fetch('http://127.0.0.1:8000/signup', {
-    //     method: 'POST',
-    //     body: JSON.stringify(state),
-    //     headers: headers
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => console.log(data))
-    //     .catch((e) => console.log(e));
-    // fetch('http://127.0.0.1:8000/signup',{
-    //     method: 'POST',
-    //     body: JSON.stringify(state),
-    //     headers: {
-    //         'Content-type': 'application/json; charset=UTF-8',
-    //     },
-    // })
-    // .then(response=>response.json())
-    // .then((data)=>console.log(data))
-    // .catch((e) => console.log(e));
-    // };
-    // func()
 
     return (
         <>

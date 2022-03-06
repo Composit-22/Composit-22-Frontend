@@ -65,7 +65,7 @@ const LoginForm = () => {
             "password": password,
         }
 
-        fetch('http://127.0.0.1:8000/signin',{
+        fetch('https://composit-api.herokuapp.com/signin',{
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
