@@ -22,9 +22,6 @@ const EventCarousel = React.forwardRef((props, ref) => {
         loadImages(5).then(() => setIsLoaded(true));
     }, []);
 
-
-    // const eventCtx = useContext(EventContext);
-
     return (
         <Carousel heading="Events" ref={ref}>
             {imgs.map((img, index) => (
