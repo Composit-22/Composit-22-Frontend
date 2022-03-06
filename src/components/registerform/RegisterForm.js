@@ -1,18 +1,41 @@
 import useInput from "../../hooks/use-input";
 import classes from "./RegisterForm.module.css";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 
 import DarkContext from "../../store/DarkMode";
 
+import Backdrop from "../UI/Backdrop";
+
+import ReactDOM from "react-dom";
+
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
-const isAge = (value) => {
-    const enteredAge = +value;
-    return enteredAge > 0 && enteredAge < 100;
+
+const OverlayContent = (props) => {
+    return (
+        <div className={classes["message"]}>
+            <h1 className={classes["message-title"]}>{props.title}</h1>
+            <p className={classes["message-content"]}>
+                {props.content}
+            </p>
+            <button className={classes["message-btn"]} onClick={props.onClose}>Close</button>
+        </div>
+    );
+};
+
+const Loader = () => {
+    const darkCtx = useContext(DarkContext);
+    return (
+        <div className={classes["loader"] + (darkCtx.theme.mode === "dark" ? " " + classes["loader__dark"] : "")}>
+            Registering...
+        </div>
+    );
 };
 
 const RegisterForm = () => {
     const darkCtx = useContext(DarkContext);
+    const collegeRef = useRef();
+
     const {
         value: name,
         isValid: nameIsValid,
@@ -50,15 +73,6 @@ const RegisterForm = () => {
     } = useInput(isEmail);
 
     const {
-        value: collegeName,
-        isValid: collegeNameIsValid,
-        hasError: collegeNameInputHasError,
-        valueChangeHandler: collegeNameChangeHandler,
-        inputBlurHandler: collegeNameInputBlurHandler,
-        reset: resetCollegeName,
-    } = useInput(isNotEmpty);
-
-    const {
         value: password,
         isValid: passwordIsValid,
         hasError: passwordInputHasError,
@@ -85,17 +99,25 @@ const RegisterForm = () => {
         resetConfirmPassword();
     };
 
+    const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
+
+    const openConfirmHandler = () => {
+        setConfirmMessageOpen(true);
+    };
+
+    const closeConfirmHandler = () => {
+        setConfirmMessageOpen(false);
+        setIsRegistering(false);
+    };
+
     let formIsValid = false;
-    if (
+
+    formIsValid =
         nameIsValid &&
-        userNameIsValid &&
-        numberIsValid &&
+        userNameIsValid & numberIsValid &&
         emailIsValid &&
-        collegeNameIsValid &&
         passwordIsValid &&
-        confirmPasswordIsValid
-    )
-        formIsValid = true;
+        confirmPasswordIsValid;
 
     const normalClasses =
         classes["input__field"] +
@@ -116,9 +138,7 @@ const RegisterForm = () => {
 
     const emailInputClasses = emailInputHasError ? errorClasses : normalClasses;
 
-    const collegeNameInputClasses = collegeNameInputHasError
-        ? errorClasses
-        : normalClasses;
+    const collegeNameInputClasses = normalClasses;
 
     const passwordInputClasses = passwordInputHasError
         ? errorClasses
@@ -128,25 +148,43 @@ const RegisterForm = () => {
         ? errorClasses
         : normalClasses;
 
-    const optionInputClasses = darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
+    const optionInputClasses =
+        darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
+
+    const [collegeName, setCollegeName] = useState("IIT Kharagpur");
+    const [isRegistering, setIsRegistering] = useState(false);
+    const [overlayTitle, setOverlayTitle] = useState("");
+    const [overlayContent, setOverlayContent] = useState("");
+
+    const collegeChangeHandler = (event) => {
+        setCollegeName(event.target.value);
+    };
 
     const submitHandler = (event) => {
+        console.log("Hello");
         event.preventDefault();
 
         if (!formIsValid) return;
 
-        const data = { name, userName, email, collegeName, password };
-        console.log(data);
+        console.log(collegeRef.current);
+
         const state = {
             username: userName,
             name: name,
             email: email,
-            collegeName: "collegeName",
+            collegeName: collegeName,
             password: password,
             number: number,
             events_registered: "",
         };
 
+        console.log(state);
+
+        setIsRegistering(true);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+       });
 
         fetch('https://composit-api.herokuapp.com/signup',{
             method: 'POST',
@@ -157,47 +195,37 @@ const RegisterForm = () => {
             },
         })
         .then(response=>response.json())
-        .then((data)=>console.log(data))
-        .catch((e) => console.log(e));
-        // fetch(
-        //     "http://composit-test.eba-mwzbzgpt.us-west-2.elasticbeanstalk.com/signup",
-        //     {
-        //         method: "POST",
-        //         body: JSON.stringify(state),
-        //         headers: {
-        //             "Content-type": "application/json; charset=UTF-8",
-        //             Accept: "application/json",
-        //         },
-        //     }
-        // )
-        //     .then((response) => response.json())
-        //     .then((data) => console.log(data))
-        //     .catch((e) => console.log(e));
+        .then((data) => {
+            console.log(data);
+            if (data.success) {
+                setOverlayTitle("Registration Successful");
+                setOverlayContent("Successfully registered for Composit 2022. Please activate your account from your inbox.");
+            } else {
+                setOverlayTitle("Registration Unsuccessful");
+                setOverlayContent("Username already exits. Please try another username.");
+            }
+            openConfirmHandler();
+        })
+        .catch((e) =>  console.log(e));
 
-        // fetch('http://127.0.0.1:8000/signup', {
-        //     method: 'POST',
-        //     body: JSON.stringify(state),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //         'Accept': 'application/json',
-        //     },
-        // })
-        // .then(response=>response.json())
-        // .then((data)=>console.log(data))
-        // .catch((e) => console.log(e));
-
-        // resetName();
-        // resetUserName();
-        // resetNumber();
-        // resetEmail();
-        // resetCollegeName();
-        // resetPassword();
-        // resetConfirmPassword();
+        resetName();
+        resetUserName();
+        resetNumber();
+        resetEmail();
+        resetPassword();
+        resetConfirmPassword();
     };
 
     return (
         <>
-            <form
+            {confirmMessageOpen && <Backdrop onClose={closeConfirmHandler} />}
+            {confirmMessageOpen &&
+                ReactDOM.createPortal(
+                    <OverlayContent title={overlayTitle} content={overlayContent} onClose={closeConfirmHandler}/>,
+                    document.getElementById("overlay-root")
+                )}
+            {isRegistering && <Loader />}
+            {!isRegistering && <form
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
@@ -383,13 +411,38 @@ const RegisterForm = () => {
                             name="languages"
                             id="collegeName"
                             className={collegeNameInputClasses}
-                            
+                            onChange={collegeChangeHandler}
                         >
-                            <option className={optionInputClasses}>IIT Kharagpur</option>
-                            <option className={optionInputClasses}>IIT Delhi</option>
-                            <option className={optionInputClasses}>IIT Bombay</option>
-                            <option className={optionInputClasses}>BITS Pilani</option>
-                            <option className={optionInputClasses}>IIIT Hyderabad</option>
+                            <option
+                                value="IIT Kharagpur"
+                                className={optionInputClasses}
+                            >
+                                IIT Kharagpur
+                            </option>
+                            <option
+                                value="IIT Delhi"
+                                className={optionInputClasses}
+                            >
+                                IIT Delhi
+                            </option>
+                            <option
+                                value="IIT Bombay"
+                                className={optionInputClasses}
+                            >
+                                IIT Bombay
+                            </option>
+                            <option
+                                value="BITS Pilani"
+                                className={optionInputClasses}
+                            >
+                                BITS Pilani
+                            </option>
+                            <option
+                                value="IIIT Hyderabad"
+                                className={optionInputClasses}
+                            >
+                                IIIT Hyderabad
+                            </option>
                         </select>
                     </div>
                     <div
@@ -453,12 +506,12 @@ const RegisterForm = () => {
                 <div className={`${classes["form__btn-group"]}`}>
                     <button
                         className={`${classes["form__btn"]}`}
-                        // disabled={!formIsValid}
+                        onClick={submitHandler}
                     >
                         Register
                     </button>
                 </div>
-            </form>
+            </form>}
         </>
     );
 };
