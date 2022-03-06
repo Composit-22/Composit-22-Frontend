@@ -6,7 +6,7 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
-    background: url("./images/bkgrnd.jpg");
+    background-image: url("images/bkgrnd.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -16,7 +16,8 @@
 
 .bkg-dark
 {
-    background: url("./images/bkgrnd-dark.jpg");
+    background-image: url("images/bkgrnd-dark.png");
+    background-color: rgb(30, 20, 8);
 }
 
 .left_img{

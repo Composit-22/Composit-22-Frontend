@@ -1,5 +1,5 @@
 .combined_bkg{
-    background-image: url('./about_spons_combine_bkg.png');
+    background-image: url('imgs//about_spons_combine_bkg.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -7,6 +7,6 @@
 }
 
 .combined_bkg-dark{
-    background-image: none;
+    background-image: url('imgs/about_spons_combine_bkg-dark.png');
     background-color: #1e1408;
 }
