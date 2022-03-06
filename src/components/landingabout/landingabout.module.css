@@ -7,7 +7,7 @@
   align-content: center;
   justify-content: center;
   width: 100%;
-  margin: 3rem 0;
+  padding: 3rem 0;
 }
 
 #parent {
@@ -66,7 +66,7 @@
 .landing-about_btn {
   font-family: "Montserrat";
   align-items: left;
-  margin-top: 1.8rem;
+  margin-top: 5rem;
   margin-left: 2rem;
   font-style: normal;
   font-weight: bold;
@@ -79,17 +79,28 @@
   padding: 1.5rem 2rem;
   font-size: 16px;
   border-radius: 0.5rem;
-  border: 1px solid royalblue;
+  border: 1px solid #1a54ea;
   width: 20rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
   text-decoration: none;
+  transition: all .2s;
 }
 
-.landing-about_btn-dark
-{
-  background-color: #EA971A;
+.landing-about_btn:hover {
+    color: #1a54ea;
+    background-color: transparent;
+}
+
+.landing-about_btn-dark {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.landing-about_btn-dark:hover {
+    background-color: transparent;
+    color: var(--color-primary);
 }
 
 @media (max-width: 900px) {
