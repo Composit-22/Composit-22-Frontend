@@ -18,37 +18,14 @@
   justify-content: center;
 }
 
-.BOX1 {
-  background: url("./img/limg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 70%;
-  
-  position: absolute;
-  opacity: 0.3;
-}
-
-.BOX2 {
-  position: absolute;
-}
-
 .content {
   display: flex;
   justify-content: left;
   flex-direction: column;
-  width: 50rem;
+  width: 60%;
   padding-right: 5vw;
   color: #4B4949;
 }
-/* .content-dark{
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  width: 50rem;
-  padding-right: 5vw;
-  color: white;
-} */
 
 .content > h2 {
   
@@ -62,14 +39,11 @@
   padding: 0 1rem;
   padding-left: 0;
   text-align: left;
-  /* color: grey; */
 }
-/* .content-dark > h2
+.content-dark > h2
 {
-  
   color: white;
-
-} */
+}
 
 .content > p {
   width: 100%;
@@ -81,12 +55,13 @@
   padding: 0 2rem;
   color: grey;
   text-align: left;
-  opacity: 0.7;
+  opacity: 0.8;
 }
-/* .content-dark > p
+
+.content-dark > p
 {
   color: white;
-} */
+}
 
 .landing-about_btn {
   font-family: "Montserrat";
@@ -99,7 +74,6 @@
   line-height: 1.5rem;
   text-align: left;
   background-color: #1a54ea;
-  /* background-color: #EA971A; */
   border: none;
   color: white;
   padding: 1.5rem 2rem;
@@ -112,12 +86,13 @@
   cursor: pointer;
   text-decoration: none;
 }
-/* .landing-about_btn-dark
+
+.landing-about_btn-dark
 {
   background-color: #EA971A;
-} */
+}
 
-@media (max-width: 400px) {
+@media (max-width: 900px) {
     .container {
         display: flex;
         flex-direction: column;
@@ -127,12 +102,4 @@
     .content {
         width: 100%;
     }
-
-    /* .BOX1{
-      margin: 0;
-    }
-
-    .BOX2{
-      margin: 0;
-    } */
 }

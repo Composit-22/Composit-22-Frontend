@@ -22,9 +22,9 @@ const Sponsor = () => {
                 <img src={nokia} alt="Nokia" className={classes["sponsor-logo"]} />
                 <img src={oracle} alt="Oracle" className={classes["sponsor-logo"]} />
             </div>
-            <Button className={theme.mode==='dark'? `${classes['btn-sponsor']} ${classes['btn-sponsor-dark']}`: classes["btn-sponsor"]}>
-            {/* <Button className={classes["btn-sponsor"]}> */}
-                Become a Sponsor</Button>
+            {/* <Button className={theme.mode==='dark'? `${classes['btn-sponsor']} ${classes['btn-sponsor-dark']}`: classes["btn-sponsor"]}>
+            <Button className={classes["btn-sponsor"]}>
+                Become a Sponsor</Button> */}
         </div>
     );
 };
