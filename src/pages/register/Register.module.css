@@ -28,6 +28,10 @@
     opacity: 0.5;
 }
 
+.molecule_img_dark{
+    display: none;
+}
+
 @media (max-width: 1100px){
     .molecule_img{
         display: none;

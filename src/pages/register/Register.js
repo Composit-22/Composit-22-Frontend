@@ -8,7 +8,7 @@ const Register = () => {
     const darkCtx = useContext(DarkContext);
     return (
         <div className={classes['container']}>
-            <div className={classes['molecule_img']}></div>
+            <div className={darkCtx.theme.mode === 'dark' ? classes['molecule_img_dark'] : classes['molecule_img']}/>
             <div className={classes["register"] + (darkCtx.theme.mode === "dark" ? " " + classes["register-dark"] : "")}>
                 <RegisterForm />
             </div>
