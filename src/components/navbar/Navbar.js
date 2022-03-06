@@ -233,9 +233,7 @@ const Navbar = () => {
                                 : "")
                         }
                         onClick={darkCtx.switchThemeOnClick}
-                    >
-                        
-                    </button>
+                    />
                 </div>
             </header>
             <header className={secondaryHeaderClasses}>
@@ -301,6 +299,16 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                 </ul>
+                <button
+                        className={
+                            classes["dark-icon"] +
+                            (darkCtx.theme.mode === "dark"
+                                ? " " +
+                                  classes["dark-icon__dark"]
+                                : "")
+                        }
+                        onClick={darkCtx.switchThemeOnClick}
+                    />
             </header>
         </header>
     );

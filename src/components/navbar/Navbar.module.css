@@ -180,6 +180,10 @@
     .secondary-header.active {
         transform: translateX(50%);
     }
+
+    .dark-icon{
+        margin: 1rem 1rem;
+    }
 }
 
 .hamburger__bar {
