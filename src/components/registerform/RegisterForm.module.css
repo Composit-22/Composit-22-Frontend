@@ -188,6 +188,21 @@
     background-color: #fff;
 }
 
+.loader {
+    color: #000;
+    position: absolute;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader__dark {
+    color: #ddd;
+}
+
 @media (max-width: 450px) {
     .form {
         margin-left: -1rem;

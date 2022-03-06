@@ -14,12 +14,20 @@ const isEmail = (value) => value.includes("@");
 const OverlayContent = (props) => {
     return (
         <div className={classes["message"]}>
-            <h1 className={classes["message-title"]}>Confirmation Message</h1>
+            <h1 className={classes["message-title"]}>{props.title}</h1>
             <p className={classes["message-content"]}>
-                Successfully registered. Please check your inbox to activate
-                account.
+                {props.content}
             </p>
             <button className={classes["message-btn"]} onClick={props.onClose}>Close</button>
+        </div>
+    );
+};
+
+const Loader = () => {
+    const darkCtx = useContext(DarkContext);
+    return (
+        <div className={classes["loader"] + (darkCtx.theme.mode === "dark" ? " " + classes["loader__dark"] : "")}>
+            Registering...
         </div>
     );
 };
@@ -99,6 +107,7 @@ const RegisterForm = () => {
 
     const closeConfirmHandler = () => {
         setConfirmMessageOpen(false);
+        setIsRegistering(false);
     };
 
     let formIsValid = false;
@@ -143,6 +152,9 @@ const RegisterForm = () => {
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
     const [collegeName, setCollegeName] = useState("IIT Kharagpur");
+    const [isRegistering, setIsRegistering] = useState(false);
+    const [overlayTitle, setOverlayTitle] = useState("");
+    const [overlayContent, setOverlayContent] = useState("");
 
     const collegeChangeHandler = (event) => {
         setCollegeName(event.target.value);
@@ -168,6 +180,12 @@ const RegisterForm = () => {
 
         console.log(state);
 
+        setIsRegistering(true);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+       });
+
         fetch('https://composit-api.herokuapp.com/signup',{
             method: 'POST',
             body: JSON.stringify(state),
@@ -179,6 +197,13 @@ const RegisterForm = () => {
         .then(response=>response.json())
         .then((data) => {
             console.log(data);
+            if (data.success) {
+                setOverlayTitle("Registration Successful");
+                setOverlayContent("Successfully registered for Composit 2022. Please activate your account from your inbox.");
+            } else {
+                setOverlayTitle("Registration Unsuccessful");
+                setOverlayContent("Username already exits. Please try another username.");
+            }
             openConfirmHandler();
         })
         .catch((e) =>  console.log(e));
@@ -196,10 +221,11 @@ const RegisterForm = () => {
             {confirmMessageOpen && <Backdrop onClose={closeConfirmHandler} />}
             {confirmMessageOpen &&
                 ReactDOM.createPortal(
-                    <OverlayContent onClose={closeConfirmHandler}/>,
+                    <OverlayContent title={overlayTitle} content={overlayContent} onClose={closeConfirmHandler}/>,
                     document.getElementById("overlay-root")
                 )}
-            <form
+            {isRegistering && <Loader />}
+            {!isRegistering && <form
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
@@ -485,7 +511,7 @@ const RegisterForm = () => {
                         Register
                     </button>
                 </div>
-            </form>
+            </form>}
         </>
     );
 };
