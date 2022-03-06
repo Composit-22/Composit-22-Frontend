@@ -86,6 +86,14 @@
     outline: none;
 }
 
+.input__field__dark {
+    color: #fff;
+}
+
+.option__dark {
+    color: #000;
+}
+
 .input__field:focus {
     border-bottom: .4rem solid var(--color-primary-light);
 }
