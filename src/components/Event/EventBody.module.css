@@ -37,7 +37,7 @@
 }
 
 .event-img {
-    width: 50rem;
+    width: min(75%, 50rem);
     margin-left: -5rem;
 }
 
@@ -100,6 +100,11 @@
 
     .event-content {
         width: 100%;
+    }
+
+    .event-img__container {
+        width: 100%;
+        justify-content: start;
     }
 
     .event-btn__group {
