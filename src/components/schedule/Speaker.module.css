@@ -41,3 +41,11 @@
     color: #222222;
     opacity: 0.5;
 }
+
+.info-dark > span{
+    color: white;
+}
+
+.info-dark > p{
+    color: white;
+}

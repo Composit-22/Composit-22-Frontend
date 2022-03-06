@@ -62,8 +62,8 @@
     font-size: 2rem;
     text-align: left;
     color: black;
-    
 }
+
 .input-dark{
     color:white;
 }
@@ -91,9 +91,9 @@
     border: 2px solid #ccc;
     outline: none;
 }
-.input__field-dark
-{
-    color: white;
+
+.input__field__dark {
+    color: #fff;
 }
 
 .input__field:focus {

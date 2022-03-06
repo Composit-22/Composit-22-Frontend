@@ -6,12 +6,11 @@ import DarkContext from '../../store/DarkMode';
 
 const Login = () => {
     
-    const {theme} = useContext(DarkContext);
+    const darkCtx = useContext(DarkContext);
     return (
         <div className={classes['container']}>
-            <div className={theme.mode==='dark'? `${classes['login']} ${classes['login-dark']}`: classes["login"]}>
-            {/* <div className={classes["login"]}> */}
-                <div className={classes["molecule_img"]} />
+            <div className={classes['login'] + (darkCtx.theme.mode==='dark' ? " " + classes["login-dark"] : "")}>
+                <div className={darkCtx.theme.mode === 'dark' ? classes['molecule_img__dark']: classes['molecule_img']}/>
                 <LoginForm />
             </div>
         </div>

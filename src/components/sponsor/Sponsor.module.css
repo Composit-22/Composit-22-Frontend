@@ -10,6 +10,9 @@
     font-family: "Montserrat";
     font-size: 2.4rem;
 }
+.sponsor-heading-dark {
+    color: white;
+}
 
 .sponsor-logo {
     width: 15rem;
@@ -22,7 +25,7 @@
     gap: 8rem;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 5rem;
+    margin: 5rem 0;
 }
 
 .btn-sponsor {

@@ -13,7 +13,7 @@
 
 .primary-header {
     display: flex;
-    background-color: rgb(240, 240, 240);
+    background-color: #ddd;
     backdrop-filter: blur(.2rem);
     justify-content: space-around;
     align-items: stretch;
@@ -82,7 +82,7 @@
 
 .nav-btn__register__dark {
     background-color: #222;
-    color: white;
+    color: #ddd;
 }
 
 .nav-btn__register:hover {
@@ -104,7 +104,7 @@
 }
 
 .primary-navigation__link__dark {
-    color: #fff;
+    color: #ddd;
 }
 
 .primary-navigation__link:last-child {
@@ -180,6 +180,10 @@
     .secondary-header.active {
         transform: translateX(50%);
     }
+
+    .dark-icon{
+        margin: 1rem 1rem;
+    }
 }
 
 .hamburger__bar {
@@ -187,7 +191,7 @@
 }
 
 .hamburger__bar__dark {
-    fill: #fff;
+    fill: #ddd;
 }
 
 .close__fragment {
@@ -207,7 +211,7 @@
 .secondary-navigation__link {
     display: block;
     padding: 1rem;
-    color: white;
+    color: #ddd;
     text-decoration: none;
     cursor: pointer;
 }

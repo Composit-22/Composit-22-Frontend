@@ -1,116 +1,119 @@
-
-.eventBody {
+.event {
     display: flex;
-    margin-top: 8.2rem;
-    height: fit-content;
-    /* background: linear-gradient(113.37deg, #31cdd7 0.6%, #42f053 86.58%); */
-  
-  }
-  
-  .bkg-0 {
-    background: linear-gradient(162.44deg, #d842f0 0%, #7a31d7 100%);
-  }
-  
-  .bkg-1 {
-    background: linear-gradient(162.44deg, #f04242 0%, #d79531 100%);
-  }
-  
-  .bkg-2 {
-    background: linear-gradient(162.44deg, #42f053 0%, #31cdd7 100%);
-  }
-  
-  .bkg-3 {
-    background: linear-gradient(162.44deg, #4542f0 0%, #31d79b 100%);
-  }
-  
-  .bkg-4 {
-    background: linear-gradient(162.44deg, #21ffd7 0%, #c728ff 100%);
-  }
-  
-  .eventsvg {
-    width: 40%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-  }
-  .eventContent {
-    width: 60%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-  }
-  .eventName {
-    font-family: "Raleway", sans-serif;
-    font-size: 52px;
-    /* line-height: 128px; */
+    gap: 10rem;
+    padding: 5rem;
+    padding-top: 12rem;
+    margin-bottom: -4rem;
+}
+
+.bkg-0 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #d842f0cc 0%, #7a31d7cc 100%);
+}
+
+.bkg-1 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #f04242cc 0%, #d79531cc 100%);
+}
+
+.bkg-2 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #42f053cc 0%, #31cdd7cc 100%);
+}
+
+.bkg-3 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #4542f0cc 0%, #31d79bcc 100%);
+}
+
+.bkg-4 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #21ffd7cc 0%, #c728ffcc 100%);
+}
+
+.event__dark {
+    margin-bottom: 0;
+}
+
+.event-img__container {
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.event-img {
+    width: 95%;
+    margin-left: -5rem;
+}
+
+.event-content {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.event-title {
+    font-family: "Raleway";
+    font-weight: 800;
     text-transform: uppercase;
-    color: rgb(30, 30, 28);
-    border: 0.8rem solid;
-    margin-left: 30%;
-    width: fit-content;
-  
-    border-image-source: linear-gradient(162.44deg, #39f3d2 0%, #59e328 100%);
-  }
-  .eventSubName {
-    margin-top: 1.5rem;
-    font-size: 2.4rem;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    padding-left: 2rem;
-  }
-  .eventDescription {
-    padding-left: 10px;
-    width: 85%;
-    font-family: "Raleway", sans-serif;
-    font-weight: 100;
-    line-height: 3.8rem;
-    font-size: 1.6rem;
-    margin-top: 1rem;
-  }
-  .registerButton {
-    margin-left: 30%;
-    border-radius: 3rem;
-    padding: 1.5rem;
-    padding-left: 4.2rem;
-    padding-right: 4.2rem;
-    font-family: "Poppins";
-    font-size: 1.8rem;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    background-color: rgba(240, 240, 240, 0.4);
-    border: none;
-  }
-  .date {
-    margin-left: 25%;
-    margin-top: 3rem;
-    font-family: "Montserrat", sans-serif;
-    color: rgb(51, 51, 51);
+    font-size: 6rem;
+    align-self: center;
+}
+
+.title {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.desc {
+    font-family: "Montserrat";
+    font-weight: 400;
     font-size: 2.2rem;
-  }
-  @media only screen and (max-width: 720px) {
-    .eventBody {
-      flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.event-btn__group {
+    display: flex;
+    justify-content: center;
+    gap: 20rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.event-btn, .event-btn:link {
+    color: #000;
+    margin-top: 2.5rem;
+    padding: 1rem 4rem;
+    background-color: #ffffffaa;
+    border-radius: 10rem;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.event-btn:hover {
+    background-color: #fff;
+}
+
+@media (max-width: 600px) {
+    .event {
+        flex-direction: column;
     }
-    .eventContent {
-      width: 100%;
+
+    .event-content {
+        width: 100%;
     }
-    .date {
-      margin-left: 0%;
+
+    .event-img__container {
+        width: 100%;
+        justify-content: start;
     }
-    .registerButton {
-      margin-left: 0%;
+
+    .event-btn__group {
+        flex-direction: column;
+        gap: 0;
     }
-    .registerDate {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    .event-btn {
+        width: 100%;
+        text-align: center;
     }
-  
-    .eventsvg {
-      width: 100%;
-    }
-    .eventName {
-      margin: 0 auto;
-    }
-  }
-  
+}

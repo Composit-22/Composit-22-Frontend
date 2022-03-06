@@ -15,7 +15,7 @@ const isAge = (value) => {
 
 const LoginForm = () => {
     
-    const {theme} = useContext(DarkContext);
+    const darkCtx = useContext(DarkContext);
     
     const {
         value: userName,
@@ -38,13 +38,20 @@ const LoginForm = () => {
     let formIsValid = false;
     if (userNameIsValid && passwordIsValid) formIsValid = true;
 
-    const userNameInputClasses =userNameInputHasError
-        ? `${classes["input__field"]} ${classes["input__error"]}`
-        : `${classes["input__field"]}`;
+    const normalClasses =
+        classes["input__field"] +
+        (darkCtx.theme.mode === "dark"
+            ? " " + classes["input__field__dark"]
+            : "");
+    const errorClasses = `${normalClasses} ${classes["input__error"]}`;
+
+    const userNameInputClasses = userNameInputHasError
+        ? errorClasses
+        : normalClasses;
 
     const passwordInputClasses = passwordInputHasError
-        ? `${classes["input__field"]} ${classes["input__error"]}`
-        : `${classes["input__field"]}`;
+        ? errorClasses
+        : normalClasses;
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -82,10 +89,10 @@ const LoginForm = () => {
                 autoComplete="off"
                 onSubmit={submitHandler}
             >
-                <h1 className={theme.mode==='dark'? `${classes['form__title']} ${classes['form__title-dark']}`: classes["form__title"]}>
+                <h1 className={darkCtx.theme.mode==='dark'? `${classes['form__title']} ${classes['form__title-dark']}`: classes["form__title"]}>
                 {/* <h1 className={classes["form__title"]}>*/}Login to Composit</h1> 
                 <div className={`${classes["form__inputs"]}`}>
-                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    <div className={darkCtx.theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
                     {/* <div className={`${classes["input"]}`}> */}
                         <label
                             
@@ -110,7 +117,7 @@ const LoginForm = () => {
                         )}
                     </div>
 
-                    <div className={theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
+                    <div className={darkCtx.theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
                     {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}

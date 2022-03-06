@@ -3,21 +3,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5rem;
+  padding-top: 5rem;
   width: 100%;
   overflow: hidden;
-  /* background-color: aqua; */
 }
+
 .container-dark
 {
   background-color: #1e1408;
-
 }
 
 .heading
 {
 color: black;
 }
+
 .heading-dark
 {
   color:white;
@@ -56,7 +56,7 @@ color: black;
 }
 
 .tabs>h3 {
-  color: #222222;
+  color: #5f5f5f;
   font-family: Montserrat;
   font-size: 1.8rem;
   font-style: normal;
@@ -66,14 +66,22 @@ color: black;
 }
 
 .tabs>h6 {
-  color: #222222;
+  color: #5f5f5f;
   font-family: Montserrat;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
   text-align: left;
-  opacity: 0.2;
+  opacity: 0.4;
+}
+
+.dark-tab{
+  background-color:#1e1408;
+}
+
+.dark_text{
+  color: white;
 }
 
 .active-tabs>h3 {
@@ -107,6 +115,10 @@ color: black;
   width: 100%;
 }
 
+.table-container-dark {
+  background-color:#1e1408;
+}
+
 .table-heading {
   display: flex;
   flex-flow: row wrap;
@@ -115,8 +127,16 @@ color: black;
   border-radius: 1rem 1rem 0 0;
 }
 
+.table-heading-dark{
+  background-color: #53431e;
+}
+
+.table-heading > div{
+  border: none;
+}
 .row {
   display: flex;
+  flex-direction: row;
   flex-flow: row wrap;
   border-left: solid 1px #d9d9d9;
   border-right: solid 1px #d9d9d9;
@@ -148,20 +168,15 @@ color: black;
   font-size: 2rem;
   line-height: 3.8rem;
   padding: 2rem 0;
-  color: #222222;
-  
 }
 
-.sample_dark{
+.tabs_dark{
   background-color:#1e1408;
-  color: white;
+  color: yellow;
 }
 
-.sample_dark_2
-{
-  background-color:rgb(175, 214, 31);
+.row-cell-dark{
   color: white;
-
 }
 
 @media (max-width: 900px) {
