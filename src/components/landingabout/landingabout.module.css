@@ -92,7 +92,7 @@
   background-color: #EA971A;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 900px) {
     .container {
         display: flex;
         flex-direction: column;
@@ -102,12 +102,4 @@
     .content {
         width: 100%;
     }
-
-    /* .BOX1{
-      margin: 0;
-    }
-
-    .BOX2{
-      margin: 0;
-    } */
 }
