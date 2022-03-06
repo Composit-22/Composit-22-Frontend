@@ -11,7 +11,7 @@ const Login = () => {
         <div className={classes['container']}>
             <div className={classes['login'] + (darkCtx.theme.mode==='dark' ? " " + classes["login-dark"] : "")}>
             {/* <div className={classes["login"]}> */}
-                <div className={classes["molecule_img"]} />
+                <div className={classes["molecule_img"] + (darkCtx.theme.mode === "dark" ? " " + classes["molecule_img__dark"] : "")} />
                 <LoginForm />
             </div>
         </div>

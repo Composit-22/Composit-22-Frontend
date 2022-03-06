@@ -15,7 +15,7 @@ const Event = () => {
     const event = eventCtx.events[eventIndex];
 
     return (
-        <EventBody title={event.title} desc={event.desc} colorId={eventIndex % 5}/>
+        <EventBody title={event.title} desc={event.desc} id={eventIndex} colorId={eventIndex % 5} min={event.min} max={event.max} />
     );
 };
 

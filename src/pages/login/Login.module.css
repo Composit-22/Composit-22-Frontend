@@ -28,6 +28,11 @@
     opacity: 0.7;
 }
 
+.molecule_img__dark {
+    background-blend-mode: saturation;
+    filter: hue-rotate(180deg);
+}
+
 @media (max-width: 1100px){
     .molecule_img{
         display: none;
