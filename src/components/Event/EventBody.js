@@ -16,12 +16,12 @@ const Event = (props) => {
                 <img src={eventImg} alt="event-img" className={classes["event-img"]}></img>
             </div>
             <div className={classes["event-content"]}>
-                <h1 className={classes["event-title"]}>{props.title}</h1>
-                <div className={classes["event-about"]}>
-                    <h2 className={classes["title"]}>What is it?</h2>
-                    <p className={classes["desc"]}>{props.desc}</p>
-                </div>
-                <div>
+                <h1 className={classes["event-title"]}>Coming Soon</h1>
+                {/* <div className={classes["event-about"]}>
+                    <h2 className={classes["title"]}>Coming Soon</h2>
+                    {/* <p className={classes["desc"]}>{props.desc}</p>
+                </div> */}
+                {/* <div>
                     <h2 className={classes["title"]}>Team Size</h2>
                     <p className={classes["desc"]}>{`Minimum ${props.min} to maximum ${props.max} members`}</p>
                 </div>
@@ -32,7 +32,7 @@ const Event = (props) => {
                 <div className={classes["event-btn__group"]}>
                     <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]}>Register</NavLink>
                     <a href="https://docs.google.com/document/d/1oNCzSuExxPLDksFdoc9fBDn5bBq_dh2r3g6Q6IP9Zu4/edit" className={classes["event-btn"]}>Details</a>
-                </div>
+                </div> */}
             </div>
         </div>
     
