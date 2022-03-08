@@ -24,11 +24,11 @@ export const DarkModeProvider = (props) => {
     if (theme.mode === 'dark') {
       localStorage.setItem("theme", "light");
       toggleTheme('light');
-      console.log("Light mode activated");
+      // console.log("Light mode activated");
     } else {
       localStorage.setItem("theme", "dark");
       toggleTheme('dark');
-      console.log("Dark mode activated");
+      // console.log("Dark mode activated");
     }
   };
 

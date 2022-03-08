@@ -26,7 +26,7 @@ const Home = () => {
             <Gallery ref={scrollCtx.galleryRef} />
             <div className={theme.mode==='dark'? `${classes['combined_bkg']} ${classes['combined_bkg-dark']}` : classes["combined_bkg"]}>  
                 <Landingabout />
-                <Sponsor />
+                {/* <Sponsor /> */}
             </div>
         </>
     );
