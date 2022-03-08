@@ -15,10 +15,10 @@ const OverlayContent = (props) => {
     return (
         <div className={classes["message"]}>
             <h1 className={classes["message-title"]}>{props.title}</h1>
-            <p className={classes["message-content"]}>
-                {props.content}
-            </p>
-            <button className={classes["message-btn"]} onClick={props.onClose}>Close</button>
+            <p className={classes["message-content"]}>{props.content}</p>
+            <button className={classes["message-btn"]} onClick={props.onClose}>
+                Close
+            </button>
         </div>
     );
 };
@@ -26,7 +26,14 @@ const OverlayContent = (props) => {
 const Loader = () => {
     const darkCtx = useContext(DarkContext);
     return (
-        <div className={classes["loader"] + (darkCtx.theme.mode === "dark" ? " " + classes["loader__dark"] : "")}>
+        <div
+            className={
+                classes["loader"] +
+                (darkCtx.theme.mode === "dark"
+                    ? " " + classes["loader__dark"]
+                    : "")
+            }
+        >
             Registering...
         </div>
     );
@@ -109,6 +116,18 @@ const RegisterForm = () => {
     };
 
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
+    const [userNameExists, setUserNameExists] = useState(false);
+    const [emailExists, setEmailExists] = useState(false);
+
+    const masterUserNameChangeHandler = (event) => {
+        setUserNameExists(false);
+        userNameChangeHandler(event);
+    };
+
+    const masterEmailChangeHandler = (event) => {
+        setEmailExists(false);
+        emailChangeHandler(event);
+    };
 
     const openConfirmHandler = () => {
         setConfirmMessageOpen(true);
@@ -124,7 +143,8 @@ const RegisterForm = () => {
     formIsValid =
         nameIsValid &&
         userNameIsValid & numberIsValid &&
-        emailIsValid && locationIsValid &&
+        emailIsValid &&
+        locationIsValid &&
         passwordIsValid &&
         confirmPasswordIsValid;
 
@@ -137,9 +157,8 @@ const RegisterForm = () => {
 
     const nameInputClasses = nameInputHasError ? errorClasses : normalClasses;
 
-    const userNameInputClasses = userNameInputHasError
-        ? errorClasses
-        : normalClasses;
+    const userNameInputClasses =
+        userNameInputHasError || userNameExists ? errorClasses : normalClasses;
 
     const numberInputClasses = numberInputHasError
         ? errorClasses
@@ -149,7 +168,8 @@ const RegisterForm = () => {
         ? errorClasses
         : normalClasses;
 
-    const emailInputClasses = emailInputHasError ? errorClasses : normalClasses;
+    const emailInputClasses =
+        emailInputHasError || emailExists ? errorClasses : normalClasses;
 
     const collegeNameInputClasses = normalClasses;
 
@@ -174,7 +194,12 @@ const RegisterForm = () => {
     };
 
     const today = new Date();
-    const registration_date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    const registration_date =
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear();
 
     const submitHandler = (event) => {
         console.log("Hello");
@@ -201,39 +226,49 @@ const RegisterForm = () => {
         setIsRegistering(true);
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
-       });
+            behavior: "smooth",
+        });
 
-        fetch('https://composit-api.herokuapp.com/signup',{
-            method: 'POST',
+        fetch("https://composit-api.herokuapp.com/signup", {
+            method: "POST",
             body: JSON.stringify(state),
             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'Accept': 'application/json',
+                "Content-type": "application/json; charset=UTF-8",
+                Accept: "application/json",
             },
         })
-        .then(response=>response.json())
-        .then((data) => {
-            const message = JSON.parse(data);
-            console.log(message);
-            if (message.success === "true") {
-                setOverlayTitle("Registration Successful");
-                setOverlayContent("Successfully registered for Composit 2022. Please activate your account from your inbox.");
-            } else {
-                setOverlayTitle("Registration Unsuccessful");
-                setOverlayContent("Username already exits. Please try another username.");
-            }
-            openConfirmHandler();
-        })
-        .catch((e) =>  console.log(e));
-
-        resetName();
-        resetUserName();
-        resetNumber();
-        resetLocation();
-        resetEmail();
-        resetPassword();
-        resetConfirmPassword();
+            .then((response) => response.json())
+            .then((data) => {
+                const message = JSON.parse(data);
+                console.log(message);
+                if (message.success === "true") {
+                    setOverlayTitle("Registration Successful");
+                    setOverlayContent(
+                        "Successfully registered for Composit 2022. Please activate your account from your inbox."
+                    );
+                    openConfirmHandler();
+                    resetName();
+                    resetUserName();
+                    resetNumber();
+                    resetLocation();
+                    resetEmail();
+                    resetPassword();
+                    resetConfirmPassword();
+                } else {
+                    if (message.emailExists === "true") {
+                        setEmailExists(true);
+                    }
+                    if (message.userNameExists === "true") {
+                        setUserNameExists(true);
+                    }
+                    setOverlayTitle("Registration Unsuccessful");
+                    setOverlayContent(
+                        "Username or email already exits. Please use a different one."
+                    );
+                    openConfirmHandler();
+                }
+            })
+            .catch((e) => console.log(e));
     };
 
     return (
@@ -241,144 +276,153 @@ const RegisterForm = () => {
             {confirmMessageOpen && <Backdrop onClose={closeConfirmHandler} />}
             {confirmMessageOpen &&
                 ReactDOM.createPortal(
-                    <OverlayContent title={overlayTitle} content={overlayContent} onClose={closeConfirmHandler}/>,
+                    <OverlayContent
+                        title={overlayTitle}
+                        content={overlayContent}
+                        onClose={closeConfirmHandler}
+                    />,
                     document.getElementById("overlay-root")
                 )}
             {isRegistering && <Loader />}
-            {!isRegistering && <form
-                className={`${classes["form"]}`}
-                autoComplete="off"
-                onSubmit={submitHandler}
-                action=""
-            >
-                <h1
-                    className={
-                        darkCtx.theme.mode === "dark"
-                            ? `${classes["form__title"]} ${classes["form__title-dark"]}`
-                            : classes["form__title"]
-                    }
+            {!isRegistering && (
+                <form
+                    className={`${classes["form"]}`}
+                    autoComplete="off"
+                    onSubmit={submitHandler}
+                    action=""
                 >
-                    {/* <h1 className={classes["form__title"]}>*/}Register to
-                    Composit
-                </h1>
-                <div className={`${classes["form__inputs"]}`}>
-                    <div
+                    <h1
                         className={
                             darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
+                                ? `${classes["form__title"]} ${classes["form__title-dark"]}`
+                                : classes["form__title"]
                         }
                     >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="name"
+                        {/* <h1 className={classes["form__title"]}>*/}Register
+                        to Composit
+                    </h1>
+                    <div className={`${classes["form__inputs"]}`}>
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Name
-                        </label>
-                        <input
-                            className={nameInputClasses}
-                            id="name"
-                            type="text"
-                            value={name}
-                            onChange={nameChangeHandler}
-                            onBlur={nameInputBlurHandler}
-                        />
-                        {nameInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Name must not be empty.
-                            </p>
-                        )}
-                    </div>
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="name"
+                            >
+                                Name
+                            </label>
+                            <input
+                                className={nameInputClasses}
+                                id="name"
+                                type="text"
+                                value={name}
+                                onChange={nameChangeHandler}
+                                onBlur={nameInputBlurHandler}
+                            />
+                            {nameInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    Name must not be empty.
+                                </p>
+                            )}
+                        </div>
 
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="userName"
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Create username
-                        </label>
-                        <input
-                            className={userNameInputClasses}
-                            id="userName"
-                            type="text"
-                            value={userName}
-                            onChange={userNameChangeHandler}
-                            onBlur={userNameInputBlurHandler}
-                        />
-                        {userNameInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Username must not be empty.
-                            </p>
-                        )}
-                    </div>
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="userName"
+                            >
+                                Create username
+                            </label>
+                            <input
+                                className={userNameInputClasses}
+                                id="userName"
+                                type="text"
+                                value={userName}
+                                onChange={masterUserNameChangeHandler}
+                                onBlur={userNameInputBlurHandler}
+                            />
+                            {(userNameInputHasError || userNameExists) && (
+                                <p className={`${classes["input__message"]}`}>
+                                    {userNameExists
+                                        ? "Username already exists."
+                                        : "Username must not be empty."}
+                                </p>
+                            )}
+                        </div>
 
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="number"
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Enter Contact Number
-                        </label>
-                        <input
-                            className={numberInputClasses}
-                            id="number"
-                            type="text"
-                            value={number}
-                            onChange={numberChangeHandler}
-                            onBlur={numberInputBlurHandler}
-                        />
-                        {numberInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Contact number must not be empty.
-                            </p>
-                        )}
-                    </div>
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="number"
+                            >
+                                Enter Contact Number
+                            </label>
+                            <input
+                                className={numberInputClasses}
+                                id="number"
+                                type="text"
+                                value={number}
+                                onChange={numberChangeHandler}
+                                onBlur={numberInputBlurHandler}
+                            />
+                            {numberInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    Contact number must not be empty.
+                                </p>
+                            )}
+                        </div>
 
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="email"
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Enter Email
-                        </label>
-                        <input
-                            className={emailInputClasses}
-                            id="email"
-                            type="email"
-                            value={email}
-                            onChange={emailChangeHandler}
-                            onBlur={emailInputBlurHandler}
-                        />
-                        {emailInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Invallid Email.
-                            </p>
-                        )}
-                    </div>
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="email"
+                            >
+                                Enter Email
+                            </label>
+                            <input
+                                className={emailInputClasses}
+                                id="email"
+                                type="email"
+                                value={email}
+                                onChange={masterEmailChangeHandler}
+                                onBlur={emailInputBlurHandler}
+                            />
+                            {(emailInputHasError || emailExists) && (
+                                <p className={`${classes["input__message"]}`}>
+                                    {emailExists
+                                        ? "Email already exists."
+                                        : "Invallid Email."}
+                                </p>
+                            )}
+                        </div>
 
-                    {/* <div className={`${classes["input"]}`}>
+                        {/* <div className={`${classes["input"]}`}>
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="collegeName"
@@ -399,50 +443,50 @@ const RegisterForm = () => {
                             </p>
                         )}
                     </div> */}
-                    
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="location"
-                        >
-                            City
-                        </label>
-                        <input
-                            className={locationInputClasses}
-                            id="location"
-                            type="text"
-                            value={location}
-                            onChange={locationChangeHandler}
-                            onBlur={locationBlurHandler}
-                        />
-                        {locationInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                City must not be empty.
-                            </p>
-                        )}
-                    </div>
 
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="collegeName"
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Choose your college
-                        </label>
-                        {/* <input
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="location"
+                            >
+                                City
+                            </label>
+                            <input
+                                className={locationInputClasses}
+                                id="location"
+                                type="text"
+                                value={location}
+                                onChange={locationChangeHandler}
+                                onBlur={locationBlurHandler}
+                            />
+                            {locationInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    City must not be empty.
+                                </p>
+                            )}
+                        </div>
+
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
+                        >
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="collegeName"
+                            >
+                                Choose your college
+                            </label>
+                            {/* <input
                             className={collegeNameInputClasses}
                             id="collegeName"
                             type="text"
@@ -455,111 +499,112 @@ const RegisterForm = () => {
                                 Please choose a valid college.
                             </p>
                         )} */}
-                        <select
-                            name="languages"
-                            id="collegeName"
-                            className={collegeNameInputClasses}
-                            onChange={collegeChangeHandler}
+                            <select
+                                name="languages"
+                                id="collegeName"
+                                className={collegeNameInputClasses}
+                                onChange={collegeChangeHandler}
+                            >
+                                <option
+                                    value="IIT Kharagpur"
+                                    className={optionInputClasses}
+                                >
+                                    IIT Kharagpur
+                                </option>
+                                <option
+                                    value="IIT Delhi"
+                                    className={optionInputClasses}
+                                >
+                                    IIT Delhi
+                                </option>
+                                <option
+                                    value="IIT Bombay"
+                                    className={optionInputClasses}
+                                >
+                                    IIT Bombay
+                                </option>
+                                <option
+                                    value="BITS Pilani"
+                                    className={optionInputClasses}
+                                >
+                                    BITS Pilani
+                                </option>
+                                <option
+                                    value="IIIT Hyderabad"
+                                    className={optionInputClasses}
+                                >
+                                    IIIT Hyderabad
+                                </option>
+                            </select>
+                        </div>
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            <option
-                                value="IIT Kharagpur"
-                                className={optionInputClasses}
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="primaryPassword"
                             >
-                                IIT Kharagpur
-                            </option>
-                            <option
-                                value="IIT Delhi"
-                                className={optionInputClasses}
-                            >
-                                IIT Delhi
-                            </option>
-                            <option
-                                value="IIT Bombay"
-                                className={optionInputClasses}
-                            >
-                                IIT Bombay
-                            </option>
-                            <option
-                                value="BITS Pilani"
-                                className={optionInputClasses}
-                            >
-                                BITS Pilani
-                            </option>
-                            <option
-                                value="IIIT Hyderabad"
-                                className={optionInputClasses}
-                            >
-                                IIIT Hyderabad
-                            </option>
-                        </select>
-                    </div>
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="primaryPassword"
-                        >
-                            Create Password
-                        </label>
-                        <input
-                            className={passwordInputClasses}
-                            id="passoword"
-                            type="password"
-                            value={password}
-                            onChange={passwordChangeHandler}
-                            onBlur={passwordInputBlurHandler}
-                        />
-                        {passwordInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Please choose a valid password.
-                            </p>
-                        )}
-                    </div>
+                                Create Password
+                            </label>
+                            <input
+                                className={passwordInputClasses}
+                                id="passoword"
+                                type="password"
+                                value={password}
+                                onChange={passwordChangeHandler}
+                                onBlur={passwordInputBlurHandler}
+                            />
+                            {passwordInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    Please choose a valid password.
+                                </p>
+                            )}
+                        </div>
 
-                    <div
-                        className={
-                            darkCtx.theme.mode === "dark"
-                                ? `${classes["input"]} ${classes["input-dark"]}`
-                                : classes["input"]
-                        }
-                    >
-                        {/* <div className={`${classes["input"]}`}> */}
-                        <label
-                            className={`${classes["input__label"]}`}
-                            htmlFor="confirmPassword"
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
                         >
-                            Confirm Password
-                        </label>
-                        <input
-                            className={confirmPasswordInputClasses}
-                            id="confimPassword"
-                            type="password"
-                            value={confirmPassword}
-                            onChange={confirmPasswordChangeHandler}
-                            onBlur={confirmPasswordInputBlurHandler}
-                        />
-                        {confirmPasswordInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Passwords do not match.
-                            </p>
-                        )}
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="confirmPassword"
+                            >
+                                Confirm Password
+                            </label>
+                            <input
+                                className={confirmPasswordInputClasses}
+                                id="confimPassword"
+                                type="password"
+                                value={confirmPassword}
+                                onChange={confirmPasswordChangeHandler}
+                                onBlur={confirmPasswordInputBlurHandler}
+                            />
+                            {confirmPasswordInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    Passwords do not match.
+                                </p>
+                            )}
+                        </div>
                     </div>
-                </div>
-                <div className={`${classes["form__btn-group"]}`}>
-                    <button
-                        className={`${classes["form__btn"]}`}
-                        onClick={submitHandler}
-                    >
-                        Register
-                    </button>
-                </div>
-            </form>}
+                    <div className={`${classes["form__btn-group"]}`}>
+                        <button
+                            className={`${classes["form__btn"]}`}
+                            onClick={submitHandler}
+                        >
+                            Register
+                        </button>
+                    </div>
+                </form>
+            )}
         </>
     );
 };
