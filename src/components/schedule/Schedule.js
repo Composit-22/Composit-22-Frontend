@@ -27,28 +27,28 @@ const Schedule = () => {
                         onClick={() => switchTab(1)}
                     >
                         <h3>Inaugration Day</h3>
-                        <h6>11 March</h6>
+                        {/* <h6>11 March</h6> */}
                     </button>
                     <button
                         className={`${tab === 2 ? `${classes["tabs"]} ${classes["active-tabs"]}` : classes["tabs"]} ${theme.mode === 'dark' ? classes["dark-tab"] : ''}`}
                         onClick={() => switchTab(2)}
                     >
                         <h3>Paper Presentation</h3>
-                        <h6>12 March</h6>
+                        {/* <h6>12 March</h6> */}
                     </button>
                     <button
                         className={`${tab === 3 ? `${classes["tabs"]} ${classes["active-tabs"]}` : classes["tabs"]} ${theme.mode === 'dark' ? classes["dark-tab"] : ''}`}
                         onClick={() => switchTab(3)}
                     >
                         <h3>Prize Distribution</h3>
-                        <h6>13 March</h6>
+                        {/* <h6>13 March</h6> */}
                     </button>
                 </div>
 
                 <div>
                     <div className={tab === 1 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
-                        <div className={theme.mode === 'dark' ? `${classes['table-container']} ${classes['table-container-dark']}` : classes["table-container"]}>
-                            <div className={theme.mode==='dark'? `${classes["table-heading"]} ${classes["table-heading-dark"]}`: classes["table-heading"]}>
+                        {/* <div className={theme.mode === 'dark' ? `${classes['table-container']} ${classes['table-container-dark']}` : classes["table-container"]}>
+                            <div className={theme.mode === 'dark' ? `${classes["table-heading"]} ${classes["table-heading-dark"]}` : classes["table-heading"]}>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Time</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Event</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Speakers</div>
@@ -86,15 +86,29 @@ const Schedule = () => {
                                     Ended
                                 </div>
                             </div>
+                            
+                        </div> */}
+                        <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
+                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
+                                Releasing Soon
+                            </div>
                         </div>
                     </div>
 
                     <div className={tab === 2 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
-                        <h2>*Website Presentation.</h2>
+                        <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
+                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
+                                Releasing Soon
+                            </div>
+                        </div>
                     </div>
 
                     <div className={tab === 3 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
-                        <h2>No money for prize.</h2>
+                        <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
+                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
+                                Releasing Soon
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
