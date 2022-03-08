@@ -196,8 +196,9 @@ const RegisterForm = () => {
         })
         .then(response=>response.json())
         .then((data) => {
-            console.log(data);
-            if (data.success) {
+            const message = JSON.parse(data);
+            console.log(message);
+            if (message.success === "true") {
                 setOverlayTitle("Registration Successful");
                 setOverlayContent("Successfully registered for Composit 2022. Please activate your account from your inbox.");
             } else {
