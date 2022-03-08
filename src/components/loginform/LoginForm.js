@@ -3,8 +3,7 @@ import classes from "./LoginForm.module.css";
 import { useContext } from "react";
 
 import DarkContext from '../../store/DarkMode';
-
-
+import { useHistory } from "react-router-dom";
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -14,9 +13,10 @@ const isAge = (value) => {
 };
 
 const LoginForm = () => {
-    
+    const history = useHistory();
+
     const darkCtx = useContext(DarkContext);
-    
+
     const {
         value: userName,
         isValid: userNameIsValid,
@@ -65,37 +65,41 @@ const LoginForm = () => {
             "password": password,
         }
 
-        fetch('https://composit-api.herokuapp.com/signin',{
+        fetch('https://composit-api.herokuapp.com/signin', {
             method: 'POST',
             body: JSON.stringify(state),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-        .then(response=>response.json())
-        .then((data)=>console.log(data))
-        .catch((e)=>console.log(e));
+            .then(response => response.json()).then((data) => {
+                if ((data).userRegistered === 'false') {
+                    alert('Invalid Username or Password. Please try again.');
+                }
+                else {
+                    data = JSON.stringify(data);
+                    history.push("/profile", { data: data });
+                }
+            }).catch((e) => console.log(e));
 
         resetUserName();
         resetPassword();
     };
-    
 
     return (
-        
         <>
             <form
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
             >
-                <h1 className={darkCtx.theme.mode==='dark'? `${classes['form__title']} ${classes['form__title-dark']}`: classes["form__title"]}>
-                {/* <h1 className={classes["form__title"]}>*/}Login to Composit</h1> 
+                <h1 className={darkCtx.theme.mode === 'dark' ? `${classes['form__title']} ${classes['form__title-dark']}` : classes["form__title"]}>
+                    {/* <h1 className={classes["form__title"]}>*/}Login to Composit</h1>
                 <div className={`${classes["form__inputs"]}`}>
-                    <div className={darkCtx.theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
-                    {/* <div className={`${classes["input"]}`}> */}
+                    <div className={darkCtx.theme.mode === 'dark' ? `${classes['input']} ${classes['input-dark']}` : classes["input"]}>
+                        {/* <div className={`${classes["input"]}`}> */}
                         <label
-                            
+
                             className={`${classes["input__label"]}`}
                             htmlFor="userName"
                         >
@@ -117,8 +121,8 @@ const LoginForm = () => {
                         )}
                     </div>
 
-                    <div className={darkCtx.theme.mode==='dark'? `${classes['input']} ${classes['input-dark']}`: classes["input"]}>
-                    {/* <div className={`${classes["input"]}`}> */}
+                    <div className={darkCtx.theme.mode === 'dark' ? `${classes['input']} ${classes['input-dark']}` : classes["input"]}>
+                        {/* <div className={`${classes["input"]}`}> */}
                         <label
                             className={`${classes["input__label"]}`}
                             htmlFor="password"

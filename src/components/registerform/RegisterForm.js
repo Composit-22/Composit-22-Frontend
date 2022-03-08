@@ -73,6 +73,15 @@ const RegisterForm = () => {
     } = useInput(isEmail);
 
     const {
+        value: location,
+        isValid: locationIsValid,
+        hasError: locationInputHasError,
+        valueChangeHandler: locationChangeHandler,
+        inputBlurHandler: locationBlurHandler,
+        reset: resetLocation,
+    } = useInput(isNotEmpty);
+
+    const {
         value: password,
         isValid: passwordIsValid,
         hasError: passwordInputHasError,
@@ -115,7 +124,7 @@ const RegisterForm = () => {
     formIsValid =
         nameIsValid &&
         userNameIsValid & numberIsValid &&
-        emailIsValid &&
+        emailIsValid && locationIsValid &&
         passwordIsValid &&
         confirmPasswordIsValid;
 
@@ -133,6 +142,10 @@ const RegisterForm = () => {
         : normalClasses;
 
     const numberInputClasses = numberInputHasError
+        ? errorClasses
+        : normalClasses;
+
+    const locationInputClasses = locationInputHasError
         ? errorClasses
         : normalClasses;
 
@@ -160,6 +173,9 @@ const RegisterForm = () => {
         setCollegeName(event.target.value);
     };
 
+    const today = new Date();
+    const registration_date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+
     const submitHandler = (event) => {
         console.log("Hello");
         event.preventDefault();
@@ -173,6 +189,8 @@ const RegisterForm = () => {
             name: name,
             email: email,
             collegeName: collegeName,
+            city: location,
+            registration_date: registration_date,
             password: password,
             number: number,
             events_registered: "",
@@ -212,6 +230,7 @@ const RegisterForm = () => {
         resetName();
         resetUserName();
         resetNumber();
+        resetLocation();
         resetEmail();
         resetPassword();
         resetConfirmPassword();
@@ -380,6 +399,34 @@ const RegisterForm = () => {
                             </p>
                         )}
                     </div> */}
+                    
+                    <div
+                        className={
+                            darkCtx.theme.mode === "dark"
+                                ? `${classes["input"]} ${classes["input-dark"]}`
+                                : classes["input"]
+                        }
+                    >
+                        <label
+                            className={`${classes["input__label"]}`}
+                            htmlFor="location"
+                        >
+                            City
+                        </label>
+                        <input
+                            className={locationInputClasses}
+                            id="location"
+                            type="text"
+                            value={location}
+                            onChange={locationChangeHandler}
+                            onBlur={locationBlurHandler}
+                        />
+                        {locationInputHasError && (
+                            <p className={`${classes["input__message"]}`}>
+                                City must not be empty.
+                            </p>
+                        )}
+                    </div>
 
                     <div
                         className={
