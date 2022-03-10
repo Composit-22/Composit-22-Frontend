@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 8rem;
+    margin-top: 7rem;
 }
 
 .container_dark {
@@ -240,6 +240,29 @@
 
 .content_dark{
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.reset-pwd-container{
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.reset-pwd-btn {
+    width: max(30%, 20rem);
+    height: 6rem;
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-primary);
+    color: black;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
 @media (max-width: 950px){
