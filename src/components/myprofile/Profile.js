@@ -16,7 +16,7 @@ const Profile = () => {
         place: "Apne, Ghar se.",
         email: data.email,
         phone: data.number,
-        registered_on: "29/02/2022",
+        registered_on: data.date,
         college: data.collegeName
     };
     
