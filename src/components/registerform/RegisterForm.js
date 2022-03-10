@@ -391,7 +391,7 @@ const RegisterForm = () => {
                             <input
                                 className={numberInputClasses}
                                 id="number"
-                                type="text"
+                                type="number"
                                 value={number}
                                 onChange={numberChangeHandler}
                                 onBlur={numberInputBlurHandler}
