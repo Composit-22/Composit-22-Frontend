@@ -25,10 +25,12 @@
 
 .logo-container {
     padding: 0.7rem;
+    display: flex;
 }
 
 .logo-img {
     width: 6rem;
+    align-items: center;
 }
 
 .primary-navigation {
@@ -147,10 +149,7 @@
 }
 
 .profile-img__container {
-    width: 10rem;
-    height: 10rem;
-    border: 10rem;
-    overflow: hidden;
+    margin-right: 3rem;
 }
 
 @media (max-width: 800px) {
