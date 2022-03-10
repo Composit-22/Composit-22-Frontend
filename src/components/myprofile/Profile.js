@@ -19,11 +19,10 @@ const Profile = () => {
                     <h2>MY&nbsp;&nbsp;PROFILE</h2>
                 </div>
                 <div className={modules["info"]}>
-                    <div className={theme.mode === 'dark' ? `${modules["card"]} ${modules["bkg_dark"]}`: modules["card"]}>
+                    {/* <div className={theme.mode === 'dark' ? `${modules["card"]} ${modules["bkg_dark"]}`: modules["card"]}>
                         <img src="logo512.png" alt="Profile Picture" className={modules["card_img"]} />
                         <div className={theme.mode === 'dark' ? `${modules["card_name"]} ${modules["text_dark"]}`: modules["card_name"]}>{userCtx.user.userName}</div>
-                        <div className={theme.mode === 'dark' ? `${modules["card_place"]} ${modules["text_dark"]}`: modules["card_place"]}>{userCtx.user.city}</div>
-                    </div>
+                    </div> */}
                     <div className={theme.mode === 'dark' ? `${modules["details"]} ${modules["bkg_dark"]}`: modules["details"]}>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>Name</div>
