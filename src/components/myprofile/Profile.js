@@ -22,7 +22,6 @@ const Profile = () => {
                     <div className={theme.mode === 'dark' ? `${modules["card"]} ${modules["bkg_dark"]}`: modules["card"]}>
                         <img src="logo512.png" alt="Profile Picture" className={modules["card_img"]} />
                         <div className={theme.mode === 'dark' ? `${modules["card_name"]} ${modules["text_dark"]}`: modules["card_name"]}>{userCtx.user.userName}</div>
-                        <div className={theme.mode === 'dark' ? `${modules["card_place"]} ${modules["text_dark"]}`: modules["card_place"]}>{userCtx.user.city}</div>
                     </div>
                     <div className={theme.mode === 'dark' ? `${modules["details"]} ${modules["bkg_dark"]}`: modules["details"]}>
                         <div>

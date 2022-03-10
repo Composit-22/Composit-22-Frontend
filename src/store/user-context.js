@@ -18,7 +18,6 @@ export const UserContextProvider = (props) => {
         const newUser = {
             name: data.name,
             userName: data.username,
-            city: "Kolkata",
             email: data.email,
             phone: data.number,
             registeredOn: data.date,
