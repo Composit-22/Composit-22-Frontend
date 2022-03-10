@@ -268,19 +268,20 @@ const RegisterForm = () => {
                     openConfirmHandler();
                 }
             })
-            .catch((e) => {
-                if (message.emailExists) {
-                    setEmailExists(true);
-                }
-                if (message.userNameExists) {
-                    setUserNameExists(true);
-                }
-                setOverlayTitle("");
-                setOverlayContent(
-                    e
-                );
-                openConfirmHandler();
-            });
+            // CANNOT USE "message" AS A VARIABLE NAME IN THE CODE BELOW
+            // .catch((e) => { 
+            //     if (message.emailExists) {
+            //         setEmailExists(true);
+            //     }
+            //     if (message.userNameExists) {
+            //         setUserNameExists(true);
+            //     }
+            //     setOverlayTitle("");
+            //     setOverlayContent(
+            //         e
+            //     );
+            //     openConfirmHandler();
+            // });
     };
 
     return (
