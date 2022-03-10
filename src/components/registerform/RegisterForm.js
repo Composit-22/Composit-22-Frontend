@@ -270,6 +270,7 @@ const RegisterForm = () => {
                     openConfirmHandler();
                 }
             })
+<<<<<<< HEAD
             .catch((e) => {
                 if (message.emailExists) {
                     setEmailExists(false);
@@ -283,6 +284,22 @@ const RegisterForm = () => {
                 );
                 openConfirmHandler();
             });
+=======
+            // CANNOT USE "message" AS A VARIABLE NAME IN THE CODE BELOW
+            // .catch((e) => { 
+            //     if (message.emailExists) {
+            //         setEmailExists(true);
+            //     }
+            //     if (message.userNameExists) {
+            //         setUserNameExists(true);
+            //     }
+            //     setOverlayTitle("");
+            //     setOverlayContent(
+            //         e
+            //     );
+            //     openConfirmHandler();
+            // });
+>>>>>>> e3a2e69eb5f3e6cc91738d53df6108adfef7d8e4
     };
 
     return (
