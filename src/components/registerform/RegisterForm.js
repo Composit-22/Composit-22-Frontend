@@ -241,7 +241,7 @@ const RegisterForm = () => {
             .then((data) => {
                 const message = JSON.parse(data);
                 console.log(message);
-                if (message.success === "true") {
+                if (message.success) {
                     setOverlayTitle("Registration Successful");
                     setOverlayContent(
                         "Successfully registered for Composit 2022. Please activate your account from your inbox."
@@ -255,10 +255,10 @@ const RegisterForm = () => {
                     resetPassword();
                     resetConfirmPassword();
                 } else {
-                    if (message.emailExists === "true") {
+                    if (message.emailExists) {
                         setEmailExists(true);
                     }
-                    if (message.userNameExists === "true") {
+                    if (message.userNameExists) {
                         setUserNameExists(true);
                     }
                     setOverlayTitle("Registration Unsuccessful");
@@ -268,7 +268,19 @@ const RegisterForm = () => {
                     openConfirmHandler();
                 }
             })
-            .catch((e) => console.log(e));
+            .catch((e) => {
+                if (message.emailExists) {
+                    setEmailExists(true);
+                }
+                if (message.userNameExists) {
+                    setUserNameExists(true);
+                }
+                setOverlayTitle("");
+                setOverlayContent(
+                    e
+                );
+                openConfirmHandler();
+            });
     };
 
     return (
@@ -379,7 +391,7 @@ const RegisterForm = () => {
                             <input
                                 className={numberInputClasses}
                                 id="number"
-                                type="text"
+                                type="number"
                                 value={number}
                                 onChange={numberChangeHandler}
                                 onBlur={numberInputBlurHandler}

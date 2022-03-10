@@ -18,7 +18,7 @@ const Event = (props) => {
             <div className={classes["event-content"]}>
                 <h1 className={classes["event-title"]}>{props.title}</h1>
                 <div className={classes["event-about"]}>
-                    <h2 className={classes["title"]}>What is it?</h2>
+                    {/* <h2 className={classes["title"]}>Coming Soon</h2> */}
                     <p className={classes["desc"]}>{props.desc}</p>
                 </div>
                 <div>
@@ -27,12 +27,12 @@ const Event = (props) => {
                 </div>
                 <div>
                     <h2 className={classes["title"]}>Who will participate</h2>
-                    <p className={classes["desc"]}>Any student pursuing B.TECH, M.TECH degree(no age restriction). Team members from different colleges in INDIA.</p>
-                </div>
+                    <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
+            </div>
                 <div className={classes["event-btn__group"]}>
                     <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]}>Register</NavLink>
-                    <a href="https://docs.google.com/document/d/1oNCzSuExxPLDksFdoc9fBDn5bBq_dh2r3g6Q6IP9Zu4/edit" className={classes["event-btn"]}>Details</a>
-                </div>
+                    <a href = {props.Details}className={classes["event-btn"]}>Details</a>
+                </div> 
             </div>
         </div>
     
