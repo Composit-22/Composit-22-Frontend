@@ -94,11 +94,14 @@ const ResetPwd = () => {
 
 
 
-        
+
         resetUserName();
         resetOldPassword();
         resetNewPassword();
         resetnewPassword();
+        
+        alert("Password reset successful!");
+        window.location.pathname = "/profile";
     };
 
     return (
