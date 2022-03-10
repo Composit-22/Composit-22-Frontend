@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ScrollContext from "../../store/scroll-context";
 import DarkContext from "../../store/DarkMode";
@@ -9,6 +9,14 @@ import logo from "./logo.png";
 const Navbar = () => {
     const scrollCtx = useContext(ScrollContext);
     const darkCtx = useContext(DarkContext);
+
+    const [userLoggedIn, setLogIn] = useState(window.localStorage.getItem("user__name") !== undefined && window.localStorage.getItem("user__name") !== null ? true : false);
+
+    const userLogOut = () => {
+        window.localStorage.removeItem("user__name");
+        setLogIn(false);
+        window.location.pathname = "/home";
+    }
 
     const menuToggleIcon = !scrollCtx.isSecondaryNavOpen ? (
         <svg
@@ -110,9 +118,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                             >
@@ -126,9 +134,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                             >
@@ -141,9 +149,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToEventCarousel}
@@ -157,9 +165,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToSchedule}
@@ -173,9 +181,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToGallery}
@@ -190,9 +198,9 @@ const Navbar = () => {
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
                                         ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        classes[
+                                        "primary-navigation__link__dark"
+                                        ]
                                         : "")
                                 }
                             >
@@ -201,40 +209,81 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className={classes["nav-btn__group"]}>
-                    <NavLink
-                        to="/login"
-                        className={
-                            `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " + classes["nav-btn__dark"]
-                                : "")
-                        }
-                    >
-                        Login
-                    </NavLink>
-                    <NavLink
-                        to="/register"
-                        className={
-                            `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " + classes["nav-btn__register__dark"]
-                                : "")
-                        }
-                    >
-                        Register
-                    </NavLink>
-                    <button
-                        className={
-                            classes["dark-icon"] +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " +
-                                  classes["dark-icon__dark"]
-                                : "")
-                        }
-                        onClick={darkCtx.switchThemeOnClick}
-                    />
-                </div>
+
+                {
+                    userLoggedIn ?
+                        <div className={classes["nav-btn__group"]}>
+                            <NavLink
+                                to="/profile"
+                                className={
+                                    `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " + classes["nav-btn__dark"]
+                                        : "")
+                                }
+                            >
+                                My Profile
+                            </NavLink>
+                            <button
+                                className={
+                                    `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " + classes["nav-btn__register__dark"]
+                                        : "")
+                                }
+
+                                onClick ={() => userLogOut()}
+                            >
+                                Logout
+                            </button>
+                            <button
+                                className={
+                                    classes["dark-icon"] +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " +
+                                        classes["dark-icon__dark"]
+                                        : "")
+                                }
+                                onClick={darkCtx.switchThemeOnClick}
+                            />
+                        </div>
+                        :
+                        <div className={classes["nav-btn__group"]}>
+                            <NavLink
+                                to="/login"
+                                className={
+                                    `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " + classes["nav-btn__dark"]
+                                        : "")
+                                }
+                            >
+                                Login
+                            </NavLink>
+                            <NavLink
+                                to="/register"
+                                className={
+                                    `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " + classes["nav-btn__register__dark"]
+                                        : "")
+                                }
+                            >
+                                Register
+                            </NavLink>
+                            <button
+                                className={
+                                    classes["dark-icon"] +
+                                    (darkCtx.theme.mode === "dark"
+                                        ? " " +
+                                        classes["dark-icon__dark"]
+                                        : "")
+                                }
+                                onClick={darkCtx.switchThemeOnClick}
+                            />
+                        </div>
+                }
+
             </header>
             <header className={secondaryHeaderClasses}>
                 <ul className={classes["secondary-navigation__list"]}>
@@ -300,15 +349,15 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <button
-                        className={
-                            classes["dark-icon"] +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " +
-                                  classes["dark-icon__dark"]
-                                : "")
-                        }
-                        onClick={darkCtx.switchThemeOnClick}
-                    />
+                    className={
+                        classes["dark-icon"] +
+                        (darkCtx.theme.mode === "dark"
+                            ? " " +
+                            classes["dark-icon__dark"]
+                            : "")
+                    }
+                    onClick={darkCtx.switchThemeOnClick}
+                />
             </header>
         </header>
     );
