@@ -268,7 +268,19 @@ const RegisterForm = () => {
                     openConfirmHandler();
                 }
             })
-            .catch((e) => console.log(e));
+            .catch((e) => {
+                if (message.emailExists) {
+                    setEmailExists(true);
+                }
+                if (message.userNameExists) {
+                    setUserNameExists(true);
+                }
+                setOverlayTitle("");
+                setOverlayContent(
+                    e
+                );
+                openConfirmHandler();
+            });
     };
 
     return (
