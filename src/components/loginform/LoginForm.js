@@ -4,6 +4,7 @@ import { useContext } from "react";
 
 import DarkContext from '../../store/DarkMode';
 import { useHistory } from "react-router-dom";
+import UserContext from "../../store/user-context";
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -16,6 +17,7 @@ const LoginForm = () => {
     const history = useHistory();
 
     const darkCtx = useContext(DarkContext);
+    const userCtx = useContext(UserContext);
 
     const {
         value: userName,
@@ -77,8 +79,7 @@ const LoginForm = () => {
                     alert('Invalid Username or Password. Please try again.');
                 }
                 else {
-                    data = JSON.stringify(data);
-                    history.push("/profile", { data: data });
+                    userCtx.onLogin(data);
                 }
             }).catch((e) => console.log(e));
 

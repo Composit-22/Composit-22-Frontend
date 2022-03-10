@@ -229,6 +229,8 @@ const RegisterForm = () => {
             behavior: "smooth",
         });
 
+        let message = {};
+
         fetch("https://composit-api.herokuapp.com/signup", {
             method: "POST",
             body: JSON.stringify(state),
@@ -239,7 +241,7 @@ const RegisterForm = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                const message = JSON.parse(data);
+                message = JSON.parse(data);
                 console.log(message);
                 if (message.success) {
                     setOverlayTitle("Registration Successful");
@@ -263,17 +265,17 @@ const RegisterForm = () => {
                     }
                     setOverlayTitle("Registration Unsuccessful");
                     setOverlayContent(
-                        "Username or email already exits. Please use a different one."
+                        "Username or email already exists. Please use a different one."
                     );
                     openConfirmHandler();
                 }
             })
             .catch((e) => {
                 if (message.emailExists) {
-                    setEmailExists(true);
+                    setEmailExists(false);
                 }
                 if (message.userNameExists) {
-                    setUserNameExists(true);
+                    setUserNameExists(false);
                 }
                 setOverlayTitle("");
                 setOverlayContent(

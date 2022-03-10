@@ -5,10 +5,57 @@ import DarkContext from "../../store/DarkMode";
 import classes from "./Navbar.module.css";
 
 import logo from "./logo.png";
+import UserContext from "../../store/user-context";
 
 const Navbar = () => {
     const scrollCtx = useContext(ScrollContext);
     const darkCtx = useContext(DarkContext);
+    const userCtx = useContext(UserContext);
+
+    const loginRegisterBtns = (
+        <>
+            <NavLink
+                to="/login"
+                className={
+                    `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
+                    (darkCtx.theme.mode === "dark"
+                        ? " " + classes["nav-btn__dark"]
+                        : "")
+                }
+            >
+                Login
+            </NavLink>
+            <NavLink
+                to="/register"
+                className={
+                    `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
+                    (darkCtx.theme.mode === "dark"
+                        ? " " + classes["nav-btn__register__dark"]
+                        : "")
+                }
+            >
+                Register
+            </NavLink>
+        </>
+    );
+
+    const profileLogoutBtns = (
+        <>
+            <NavLink to="/profile" className={classes["profile-img__container"]}>
+                <img src="Avatar1.png" alt="avatar" />
+            </NavLink>
+            <NavLink
+                to="/home"
+                className={
+                    `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
+                    (darkCtx.theme.mode === "dark"
+                        ? " " + classes["nav-btn__register__dark"]
+                        : "")
+                }
+                onClick={userCtx.onLogout}
+            >Logout</NavLink>
+        </>
+    );
 
     const menuToggleIcon = !scrollCtx.isSecondaryNavOpen ? (
         <svg
@@ -202,34 +249,12 @@ const Navbar = () => {
                     </ul>
                 </nav>
                 <div className={classes["nav-btn__group"]}>
-                    <NavLink
-                        to="/login"
-                        className={
-                            `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " + classes["nav-btn__dark"]
-                                : "")
-                        }
-                    >
-                        Login
-                    </NavLink>
-                    <NavLink
-                        to="/register"
-                        className={
-                            `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " + classes["nav-btn__register__dark"]
-                                : "")
-                        }
-                    >
-                        Register
-                    </NavLink>
+                    {userCtx.isLoggedIn ? profileLogoutBtns : loginRegisterBtns}
                     <button
                         className={
                             classes["dark-icon"] +
                             (darkCtx.theme.mode === "dark"
-                                ? " " +
-                                  classes["dark-icon__dark"]
+                                ? " " + classes["dark-icon__dark"]
                                 : "")
                         }
                         onClick={darkCtx.switchThemeOnClick}
@@ -300,15 +325,14 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <button
-                        className={
-                            classes["dark-icon"] +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " +
-                                  classes["dark-icon__dark"]
-                                : "")
-                        }
-                        onClick={darkCtx.switchThemeOnClick}
-                    />
+                    className={
+                        classes["dark-icon"] +
+                        (darkCtx.theme.mode === "dark"
+                            ? " " + classes["dark-icon__dark"]
+                            : "")
+                    }
+                    onClick={darkCtx.switchThemeOnClick}
+                />
             </header>
         </header>
     );

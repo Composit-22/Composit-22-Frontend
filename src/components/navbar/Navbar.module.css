@@ -146,6 +146,13 @@
     border: 4px solid #fff;
 }
 
+.profile-img__container {
+    width: 10rem;
+    height: 10rem;
+    border: 10rem;
+    overflow: hidden;
+}
+
 @media (max-width: 800px) {
     .nav-toggle {
         display: block;

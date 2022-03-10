@@ -1,26 +1,16 @@
 import modules from "./Profile.module.css";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import DarkContext from '../../store/DarkMode';
+import UserContext from "../../store/user-context";
 
 const Profile = () => {
-    const history = useHistory();
-    const data = JSON.parse(history.location.state.data);
     
     const {theme} = useContext(DarkContext);
-
-    const profile_data = {
-        name: data.name,
-        userName: data.username,
-        place: "Apne, Ghar se.",
-        email: data.email,
-        phone: data.number,
-        registered_on: data.date,
-        college: data.collegeName
-    };
+    const userCtx = useContext(UserContext);
     
-    const reg_events = data.eventsRegistered;
+    // const reg_events = data.eventsRegistered;
+    const reg_events = [];
 
     return (
         <div className={theme.mode === 'dark' ? `${modules["container"]} ${modules["container_dark"]}`: modules["container"]}>
@@ -31,35 +21,35 @@ const Profile = () => {
                 <div className={modules["info"]}>
                     <div className={theme.mode === 'dark' ? `${modules["card"]} ${modules["bkg_dark"]}`: modules["card"]}>
                         <img src="logo512.png" alt="Profile Picture" className={modules["card_img"]} />
-                        <div className={theme.mode === 'dark' ? `${modules["card_name"]} ${modules["text_dark"]}`: modules["card_name"]}>{profile_data.userName}</div>
-                        <div className={theme.mode === 'dark' ? `${modules["card_place"]} ${modules["text_dark"]}`: modules["card_place"]}>{profile_data.place}</div>
+                        <div className={theme.mode === 'dark' ? `${modules["card_name"]} ${modules["text_dark"]}`: modules["card_name"]}>{userCtx.user.userName}</div>
+                        <div className={theme.mode === 'dark' ? `${modules["card_place"]} ${modules["text_dark"]}`: modules["card_place"]}>{userCtx.user.city}</div>
                     </div>
                     <div className={theme.mode === 'dark' ? `${modules["details"]} ${modules["bkg_dark"]}`: modules["details"]}>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>Name</div>
-                            <div className={modules["details_value"]}>{profile_data.name}</div>
+                            <div className={modules["details_value"]}>{userCtx.user.name}</div>
                         </div>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>College</div>
-                            <div className={modules["details_value"]}>{profile_data.college}</div>
+                            <div className={modules["details_value"]}>{userCtx.user.college}</div>
                         </div>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>Mobile</div>
-                            <div className={modules["details_value"]}>{profile_data.phone}</div>
+                            <div className={modules["details_value"]}>{userCtx.user.phone}</div>
                         </div>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>Email</div>
-                            <div className={modules["details_value"]}>{profile_data.email}</div>
+                            <div className={modules["details_value"]}>{userCtx.user.email}</div>
                         </div>
                         <div>
                             <div className={theme.mode === 'dark' ? `${modules["details_category"]} ${modules["text_dark"]}`: modules["details_category"]}>Registered on</div>
-                            <div className={modules["details_value"]}>{profile_data.registered_on}</div>
+                            <div className={modules["details_value"]}>{userCtx.user.registeredOn}</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {
+            { false &&
                 reg_events.length > 0 ?
                     <div className={modules["events_container"]}>
                         {/* <div className={modules["metal_bar"]}/> */}
@@ -77,12 +67,11 @@ const Profile = () => {
                                 }
                                 )
                             }
-
                         </div>
                         {/* <div className={modules["smelting_img"]}/> */}
                     </div>
                     : ''
-            }
+            } 
         </div>
     );
 }
