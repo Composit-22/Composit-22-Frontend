@@ -41,7 +41,7 @@ const Profile = () => {
                     profile_data.phone = data.number;
                     profile_data.registered_on = data.registration_date;
                     profile_data.college = data.collegeName;
-                    profile_data.reg_events = data.eventsRegistered;
+                    profile_data.reg_events = data.eventsRegistered.json();
                 }
             }).catch((e) => {
                 console.log(e);
@@ -120,4 +120,5 @@ const Profile = () => {
         );
     }
 }
+
 export default Profile;

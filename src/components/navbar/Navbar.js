@@ -232,7 +232,7 @@ const Navbar = () => {
                                         : "")
                                 }
 
-                                onClick ={() => userLogOut()}
+                                onClick={() => userLogOut()}
                             >
                                 Logout
                             </button>
@@ -287,26 +287,51 @@ const Navbar = () => {
             </header>
             <header className={secondaryHeaderClasses}>
                 <ul className={classes["secondary-navigation__list"]}>
-                    <li>
-                        <NavLink
-                            to="/login"
-                            className={classes["secondary-navigation__link"]}
-                        >
-                            Login
-                        </NavLink>
-                        <NavLink
-                            to="/register"
-                            className={classes["secondary-navigation__link"]}
-                        >
-                            Register
-                        </NavLink>
-                        <NavLink
-                            to="/home"
-                            className={classes["secondary-navigation__link"]}
-                        >
-                            Home
-                        </NavLink>
-                    </li>
+
+                    {
+                        userLoggedIn ?
+                        <li>
+                            <NavLink
+                                to="/profile"
+                                className={classes["secondary-navigation__link"]}
+                            >
+                                My Profile
+                            </NavLink>
+                            <button
+                                onClick={() => userLogOut()}
+                                className={classes["secondary-navigation__btn"]}
+                            >
+                                Logout
+                            </button>
+                            <NavLink
+                                to="/home"
+                                className={classes["secondary-navigation__link"]}
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                        :
+                        <li>
+                            <NavLink
+                                to="/login"
+                                className={classes["secondary-navigation__link"]}
+                            >
+                                Login
+                            </NavLink>
+                            <NavLink
+                                to="/register"
+                                className={classes["secondary-navigation__link"]}
+                            >
+                                Register
+                            </NavLink>
+                            <NavLink
+                                to="/home"
+                                className={classes["secondary-navigation__link"]}
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                    }
                     <li>
                         <NavLink
                             to="/about"

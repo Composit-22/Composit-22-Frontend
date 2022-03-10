@@ -216,6 +216,15 @@
     cursor: pointer;
 }
 
+.secondary-navigation__btn{
+    display: block;
+    padding: 1rem;
+    background-color: #444444d9;
+    color: #ddd;
+    text-decoration: none;
+    border: none;
+}
+
 .secondary-navigation__link:hover {
     background-color: var(--color-primary);
 }
