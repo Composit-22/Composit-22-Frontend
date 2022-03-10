@@ -12,6 +12,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import OurTeam from "./pages/ourteam/OurTeam";
 import Profile from "./components/myprofile/Profile";
+import Reset from "./pages/resetPassword/resetPassword";
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/register" component={Register} />
                 <Route path="/team" component={OurTeam} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/resetpwd" component={Reset} />
                 <Route path="*" component={ComingSoon} />
             </Switch>
       <Footer />
