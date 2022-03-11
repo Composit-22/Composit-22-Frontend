@@ -252,6 +252,7 @@ const RegisterForm = () => {
                         "Username or email already exists. Please use a different one."
                     );
                     openConfirmHandler();
+                    setIsRegistering(false);
                 }
             })
             .catch((e) => {
