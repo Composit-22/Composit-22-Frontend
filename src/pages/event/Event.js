@@ -11,11 +11,12 @@ const Event = () => {
     const params = useParams();
     console.log(params.eventId);
 
-    const eventIndex = eventCtx.events.findIndex((event) => event.id === +params.eventId);
+    const eventIndex = eventCtx.events.findIndex((event) => +event.id === +params.eventId);
     const event = eventCtx.events[eventIndex];
 
     return (
-        <EventBody title={event.title} desc={event.desc} id={eventIndex} colorId={eventIndex % 5} min={event.min} max={event.max} Details={event.Details} />
+        // <EventBody title={event.title} desc={event.desc} id={eventIndex} colorId={eventIndex % 6} min={event.min} max={event.max} Details={event.Details} />
+        <EventBody title={event.title} desc={event.desc} id={event.id} colorId={event.id % 6} min={event.min} max={event.max} Details={event.Details} />
     );
 };
 

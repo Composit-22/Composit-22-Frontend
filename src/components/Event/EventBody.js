@@ -46,7 +46,7 @@ const Event = (props) => {
             </div>
                 <div className={classes["event-btn__group"]}>
                     <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]}>Register</NavLink>
-                    <a href = {props.Details}className={classes["event-btn"]}>Details</a>
+                    <a href = {props.Details} className={classes["event-btn"]}>Details</a>
                 </div> 
             </div>
         </div>

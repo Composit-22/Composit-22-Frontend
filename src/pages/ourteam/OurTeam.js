@@ -15,6 +15,11 @@ import amImg from "./imgs/Heads/am.jpg";
 import arImg from "./imgs/Heads/ar.jpg";
 import gvjImg from "./imgs/Heads/gvj.jpeg";
 import mbImg from "./imgs/Heads/mb.jpg";
+import hvdImg from "./imgs/Heads/hvd.jpg";
+import pkImg from "./imgs/Heads/pk.jpg";
+import rbImg from "./imgs/Heads/rb.jpg";
+import mpImg from "./imgs/Heads/mp.jpg";
+import srImg from "./imgs/Heads/sr.jpg";
 
 const OurTeam = () => {
     const { theme } = useContext(DarkContext);
@@ -34,6 +39,68 @@ const OurTeam = () => {
                             : classes["team__heading"]
                     }
                 >
+                    Professors in Charge
+                </h1>
+                <ul
+                    className={
+                        theme.mode === "dark"
+                            ? `${classes["team__members"]} ${classes["team__members-dark"]}`
+                            : classes["team__members"]
+                    }
+                >
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Prof. Manas Paliwal"
+                            designation="Professor"
+                            img={mpImg}
+                        />
+                    </li>
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Prof. Siddhartha Roy"
+                            designation="Professor"
+                            img={srImg}
+                        />
+                    </li>
+                </ul>
+                <h1
+                    className={
+                        theme.mode === "dark"
+                            ? `${classes["team__heading"]} ${classes["team__heading-dark"]}`
+                            : classes["team__heading"]
+                    }
+                >
+                    Coordinators
+                </h1>
+                <ul
+                    className={
+                        theme.mode === "dark"
+                            ? `${classes["team__members"]} ${classes["team__members-dark"]}`
+                            : classes["team__members"]
+                    }
+                >
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Harsh Vardhan Dubey"
+                            designation="Coordinator"
+                            img={hvdImg}
+                        />
+                    </li>
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Pranav Krishnan"
+                            designation="Coordinator"
+                            img={pkImg}
+                        />
+                    </li>
+                </ul>
+                <h1
+                    className={
+                        theme.mode === "dark"
+                            ? `${classes["team__heading"]} ${classes["team__heading-dark"]}`
+                            : classes["team__heading"]
+                    }
+                >
                     Heads
                 </h1>
                 <ul
@@ -43,6 +110,20 @@ const OurTeam = () => {
                             : classes["team__members"]
                     }
                 >
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Abhishek Roy"
+                            designation="Events Head"
+                            img={arImg}
+                        />
+                    </li>
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Maitreyo Biswas"
+                            designation="Events Head"
+                            img={mbImg}
+                        />
+                    </li>
                     <li className={classes["team__member"]}>
                         <TeamCard
                             name="Abhishek Kumar"
@@ -59,13 +140,6 @@ const OurTeam = () => {
                     </li>
                     <li className={classes["team__member"]}>
                         <TeamCard
-                            name="Abhishek Roy"
-                            designation="Events Head"
-                            img={arImg}
-                        />
-                    </li>
-                    <li className={classes["team__member"]}>
-                        <TeamCard
                             name="Gauri Vignesh Jawalkar"
                             designation="Publicity Head"
                             img={gvjImg}
@@ -73,9 +147,9 @@ const OurTeam = () => {
                     </li>
                     <li className={classes["team__member"]}>
                         <TeamCard
-                            name="Maitreyo Biswas"
-                            designation="Events Head"
-                            img={mbImg}
+                            name="Riyan Biswas"
+                            designation="Publicity Head"
+                            img={rbImg}
                         />
                     </li>
                 </ul>
