@@ -14,7 +14,6 @@ const isAge = (value) => {
 };
 
 const LoginForm = () => {
-    const history = useHistory();
 
     const darkCtx = useContext(DarkContext);
     const userCtx = useContext(UserContext);
