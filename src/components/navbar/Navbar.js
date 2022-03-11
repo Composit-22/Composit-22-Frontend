@@ -42,7 +42,7 @@ const Navbar = () => {
     const profileLogoutBtns = (
         <>
             <NavLink to="/profile" className={classes["profile-img__container"]}>
-                <img src="Avatar1.png" alt="avatar" className={classes["profile-img"]} />
+                <img src="profile.png" alt="avatar" className={classes["profile-img"]} />
             </NavLink>
             <NavLink
                 to="/home"

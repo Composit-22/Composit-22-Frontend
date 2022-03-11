@@ -1,19 +1,34 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import DarkContext from '../../store/DarkMode';
 import classes from "./EventBody.module.css";
 
 import eventImg from "./imgs/event.png";
+
+const imgs = [];
+
+const loadImages = async (n) => {
+    let getter;
+    for (let i = 0; i < n; i++) {
+        getter = await import("./imgs/" + i + ".png").then(result => {imgs.push(result.default);});
+    }
+};
 
 const Event = (props) => {
     const bkg = classes["bkg-" + props.colorId];
 
     const darkCtx = useContext(DarkContext);
 
+    const [isLoaded, setIsLoaded] = useState(false);
+    
+    useEffect(() => {
+        loadImages(6).then(() => setIsLoaded(true));
+    }, []);
+
     return (
         <div className={`${classes["event"]} ${bkg}` + (darkCtx.theme.mode === "dark" ? " " + classes["event__dark"] : "")}>
             <div className={classes["event-img__container"]}>
-                <img src={eventImg} alt="event-img" className={classes["event-img"]}></img>
+                {isLoaded && <img src={imgs[+props.id]} alt="event-img" className={classes["event-img"]}></img>}
             </div>
             <div className={classes["event-content"]}>
                 <h1 className={classes["event-title"]}>{props.title}</h1>

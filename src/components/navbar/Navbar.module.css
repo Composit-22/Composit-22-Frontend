@@ -149,7 +149,20 @@
 }
 
 .profile-img__container {
+    width: 10rem;
+    height: 10rem;
     margin-right: 3rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6rem;
+    border-radius: 10rem;
 }
 
 @media (max-width: 800px) {

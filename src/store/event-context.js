@@ -109,7 +109,7 @@ const DUMMY_EVENTS = [
             },
             {
                 id: 4,
-                title: "Poster Presentation",
+                title: "Metallomania",
                 desc: "A technical poster presentation competition that acts as a platform to express and present original research to your peers, teachers and industry in the fields of metallurgy and materials. The goal of the poster presentation competition is to offer a venue to students to present their original research in the field of metallurgy and to provide a forum for informal discussion with interested students, teachers and industrialists.",
                 min: 1, 
                 max: 2,
