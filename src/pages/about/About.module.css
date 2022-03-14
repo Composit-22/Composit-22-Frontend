@@ -1,5 +1,4 @@
 .container{
-    padding: 10rem;
     overflow-x: hidden;
     background-image: url("images/bkgrnd.png");
 }
@@ -44,7 +43,7 @@
     align-self: center;
     justify-content: center;
     margin-right: -12rem;
-    margin-top: 3rem;
+    margin-top: 10rem;
 }
 
 .content > h2{
