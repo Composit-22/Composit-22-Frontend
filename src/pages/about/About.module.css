@@ -1,12 +1,14 @@
 .container{
+    padding: 10rem;
     overflow-x: hidden;
+    background-image: url("images/bkgrnd.png");
 }
 
 .bkg{
     height: 100%;
     display: flex;
     justify-content: space-between;
-    background-image: url("images/bkgrnd.png");
+    /* background-image: url("images/bkgrnd.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

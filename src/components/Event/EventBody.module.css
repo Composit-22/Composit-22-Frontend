@@ -7,23 +7,27 @@
 }
 
 .bkg-0 {
-    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #d842f0cc 0%, #7a31d7cc 100%);
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #F0424Ccc 0%, #7a31d7cc 100%);
 }
 
 .bkg-1 {
-    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #f04242cc 0%, #d79531cc 100%);
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #4542F0cc 0%, #31D79Bcc 100%);
 }
 
 .bkg-2 {
-    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #42f053cc 0%, #31cdd7cc 100%);
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #954545cc 0%, #D79531cc 100%);
 }
 
 .bkg-3 {
-    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #4542f0cc 0%, #31d79bcc 100%);
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #21FFD7cc 0%, #C728FFcc 100%);
 }
 
 .bkg-4 {
-    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #21ffd7cc 0%, #c728ffcc 100%);
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #D842F0cc 0%, #7A31D7cc 100%);
+}
+
+.bkg-5 {
+    background: url("imgs/event-bkg.png"), linear-gradient(162.44deg, #42F053cc 0%, #31CDD7cc 100%);
 }
 
 .event__dark {

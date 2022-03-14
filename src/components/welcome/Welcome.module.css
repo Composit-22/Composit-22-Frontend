@@ -124,6 +124,11 @@
     text-shadow: .4rem .2rem 3px rgb(138, 96, 49);
 }
 
+.landing-register {
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 450px) {
     .heading-medium {
         margin-top: -5rem;
