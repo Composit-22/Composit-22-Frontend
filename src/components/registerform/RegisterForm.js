@@ -552,6 +552,30 @@ const RegisterForm = () => {
                                 </p>
                             )}
                         </div>
+
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
+                        >
+                            {/* <div className={`${classes["input"]}`}> */}
+                            <input
+                                className={userNameInputClasses}
+                                id="campusAmbassador"
+                                type="checkbox"
+                                value={userName}
+                                onChange={masterUserNameChangeHandler}
+                                onBlur={userNameInputBlurHandler}
+                            />
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="campusAmbassador"
+                            >
+                                Are you a campus ambassador?
+                            </label>
+                        </div>
                     </div>
                     <div className={`${classes["form__btn-group"]}`}>
                         <button
