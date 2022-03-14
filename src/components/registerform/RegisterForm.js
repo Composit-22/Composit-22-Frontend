@@ -80,6 +80,16 @@ const RegisterForm = () => {
     } = useInput(isEmail);
 
     const {
+        value: collegeName,
+        isValid: collegeNameIsValid,
+        hasError: collegeNameInputHasError,
+        valueChangeHandler: collegeNameChangeHandler,
+        inputBlurHandler: collegeNameInputBlurHandler,
+        reset: resetCollegeName,
+    } = useInput(isEmail);
+    
+
+    const {
         value: password,
         isValid: passwordIsValid,
         hasError: passwordInputHasError,
@@ -157,7 +167,7 @@ const RegisterForm = () => {
     const emailInputClasses =
         emailInputHasError || emailExists ? errorClasses : normalClasses;
 
-    const collegeNameInputClasses = normalClasses;
+    const collegeNameInputClasses = collegeNameInputHasError ? errorClasses : normalClasses;
 
     const passwordInputClasses = passwordInputHasError
         ? errorClasses
@@ -170,14 +180,14 @@ const RegisterForm = () => {
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
-    const [collegeName, setCollegeName] = useState("IIT Kharagpur");
+    // const [collegeName, setCollegeName] = useState("IIT Kharagpur");
     const [isRegistering, setIsRegistering] = useState(false);
     const [overlayTitle, setOverlayTitle] = useState("");
     const [overlayContent, setOverlayContent] = useState("");
 
-    const collegeChangeHandler = (event) => {
-        setCollegeName(event.target.value);
-    };
+    // const collegeChangeHandler = (event) => {
+    //     setCollegeName(event.target.value);
+    // };
 
     const today = new Date();
     const registration_date =
@@ -240,6 +250,7 @@ const RegisterForm = () => {
                     resetEmail();
                     resetPassword();
                     resetConfirmPassword();
+                    resetCollegeName();
                 } else {
                     if (message.emailExists) {
                         setEmailExists(true);
@@ -263,9 +274,7 @@ const RegisterForm = () => {
                     setUserNameExists(false);
                 }
                 setOverlayTitle("");
-                setOverlayContent(
-                    e
-                );
+                setOverlayContent(e);
                 openConfirmHandler();
             });
     };
@@ -433,22 +442,22 @@ const RegisterForm = () => {
                                 className={`${classes["input__label"]}`}
                                 htmlFor="collegeName"
                             >
-                                Choose your college
+                                Enter your college
                             </label>
-                            {/* <input
-                            className={collegeNameInputClasses}
-                            id="collegeName"
-                            type="text"
-                            value={collegeName}
-                            onChange={collegeNameChangeHandler}
-                            onBlur={collegeNameInputBlurHandler}
-                        />
-                        {collegeNameInputHasError && (
-                            <p className={`${classes["input__message"]}`}>
-                                Please choose a valid college.
-                            </p>
-                        )} */}
-                            <select
+                            <input
+                                className={collegeNameInputClasses}
+                                id="collegeName"
+                                type="text"
+                                value={collegeName}
+                                onChange={collegeNameChangeHandler}
+                                onBlur={collegeNameInputBlurHandler}
+                            />
+                            {collegeNameInputHasError && (
+                                <p className={`${classes["input__message"]}`}>
+                                    Please choose a valid college.
+                                </p>
+                            )}
+                            {/* <select
                                 name="languages"
                                 id="collegeName"
                                 className={collegeNameInputClasses}
@@ -484,7 +493,7 @@ const RegisterForm = () => {
                                 >
                                     IIIT Hyderabad
                                 </option>
-                            </select>
+                            </select> */}
                         </div>
                         <div
                             className={

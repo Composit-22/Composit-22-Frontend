@@ -3,14 +3,24 @@ import classes from "./LoginForm.module.css";
 import { useState, useContext, useCallback } from "react";
 
 import DarkContext from "../../store/DarkMode";
-import { useHistory } from "react-router-dom";
 import UserContext from "../../store/user-context";
 
 const isNotEmpty = (value) => value.trim() !== "";
-const isEmail = (value) => value.includes("@");
-const isAge = (value) => {
-    const enteredAge = +value;
-    return enteredAge > 0 && enteredAge < 100;
+
+const Loader = () => {
+    const darkCtx = useContext(DarkContext);
+    return (
+        <div
+            className={
+                classes["loader"] +
+                (darkCtx.theme.mode === "dark"
+                    ? " " + classes["loader__dark"]
+                    : "")
+            }
+        >
+            Loggin In...
+        </div>
+    );
 };
 
 const LoginForm = () => {
@@ -106,7 +116,7 @@ const LoginForm = () => {
 
     return (
         <>
-            {isLoggingIn ? <h1>Logging in...</h1> : <form
+            {isLoggingIn ? <Loader/> : <form
                 className={`${classes["form"]}`}
                 autoComplete="off"
                 onSubmit={submitHandler}
