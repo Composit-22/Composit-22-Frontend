@@ -87,7 +87,7 @@ const RegisterForm = () => {
         inputBlurHandler: collegeNameInputBlurHandler,
         reset: resetCollegeName,
     } = useInput(isEmail);
-    
+
 
     const {
         value: password,
@@ -561,14 +561,16 @@ const RegisterForm = () => {
                             }
                         >
                             {/* <div className={`${classes["input"]}`}> */}
-                            <input
+                            <span>
+                                <input
                                 className={userNameInputClasses}
                                 id="campusAmbassador"
                                 type="checkbox"
                                 value={userName}
                                 onChange={masterUserNameChangeHandler}
                                 onBlur={userNameInputBlurHandler}
-                            />
+                                />
+                            </span>
                             <label
                                 className={`${classes["input__label"]}`}
                                 htmlFor="campusAmbassador"
