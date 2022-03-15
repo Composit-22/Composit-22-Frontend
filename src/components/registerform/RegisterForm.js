@@ -113,9 +113,9 @@ const RegisterForm = () => {
 
     const {
         value: isAmbassador,
-        isValid: userNameIsValid,
+        // isValid: userNameIsValid,
         hasError: ambassadorInputHasError,
-        valueChangeHandler: ambassadorChangeHandler,
+        valueChangeHandler: ambassadorChangeValue,
         inputBlurHandler: ambassadorInputBlurHandler,
         reset: resetIsAmbassador,
     } = useInput();
@@ -126,7 +126,7 @@ const RegisterForm = () => {
     };
 
     const ambassadorChangeHandler = (event) => {
-        ambassadorChangeHandler();
+        ambassadorChangeValue();
     };
 
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
