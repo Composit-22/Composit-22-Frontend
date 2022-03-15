@@ -191,9 +191,7 @@ const RegisterForm = () => {
     const confirmPasswordInputClasses = confirmPasswordInputHasError
         ? errorClasses
         : normalClasses;
-
-    const ambassadorInputClasses = ambassadorInputHasError ? errorClasses : normalClasses;
-
+    
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
