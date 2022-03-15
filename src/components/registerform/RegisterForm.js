@@ -110,6 +110,15 @@ const RegisterForm = () => {
         reset: resetConfirmPassword,
     } = useInput(isConfirmPasswordValid);
 
+    const {
+        value: ambassador,
+        isValid: ambassadorIsValid,
+        hasError: ambassadorInputHasError,
+        valueChangeHandler: ambassadorChangeHandler,
+        inputBlurHandler: ambassadorInputBlurHandler,
+        reset: resetAmbassador,
+    } = useInput(isNotEmpty);
+
     // const {
     //     value: isAmbassador,
     //     // isValid: userNameIsValid,
@@ -267,6 +276,7 @@ const RegisterForm = () => {
                     resetPassword();
                     resetConfirmPassword();
                     resetCollegeName();
+                    resetAmbassador();
                 } else {
                     if (message.emailExists) {
                         setEmailExists(true);
@@ -480,7 +490,7 @@ const RegisterForm = () => {
                             />
                             {collegeNameInputHasError && (
                                 <p className={`${classes["input__message"]}`}>
-                                    Please choose a valid college.
+                                    College name should not be empty.
                                 </p>
                             )}
                             {/* <select
@@ -530,30 +540,18 @@ const RegisterForm = () => {
                         >
                             <label
                                 className={`${classes["input__label"]}`}
-                                htmlFor="campusAmbassador"
+                                htmlFor="ambassador"
                             >
-                                Are you a campuss ambassador?
+                                Enter ambassador code (if applicable)
                             </label>
-                            <div id="campusAmbassador" className={classes["checkbox__group"]}> 
-                                <input
-                                    type="checkbox"
-                                    id="yes"
-                                    value="newsletter"
-                                    className={classes["checkbox"]}
-                                    checked={isAmbassador === "yes"}
-                                    onChange={isAmbassadorChangeHandler}
-                                />
-                                <label htmlFor="yes" className={classes["checkbox__label"]}>Yes</label>
-                                <input
-                                    type="checkbox"
-                                    id="no"
-                                    value="newsletter"
-                                    className={classes["checkbox"]}
-                                    checked={isAmbassador === "no"}
-                                    onChange={isAmbassadorChangeHandler}
-                                />
-                                <label htmlFor="no" className={classes["checkbox__label"]}>No</label>
-                            </div>
+                            <input
+                                className={normalClasses}
+                                id="ambassador"
+                                type="text"
+                                value={ambassador}
+                                onChange={ambassadorChangeHandler}
+                                onBlur={ambassadorInputBlurHandler}
+                            />
                         </div>
                         <div
                             className={
