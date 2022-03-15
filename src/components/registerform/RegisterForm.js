@@ -602,7 +602,7 @@ const RegisterForm = () => {
                                 className={confirmPasswordInputClasses}
                                 id="confimPassword"
                                 type="password"
-                                value={isAmbassador}
+                                value={confirmPassword}
                                 onChange={confirmPasswordChangeHandler}
                                 onBlur={confirmPasswordInputBlurHandler}
                             />
