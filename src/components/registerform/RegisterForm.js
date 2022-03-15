@@ -111,9 +111,22 @@ const RegisterForm = () => {
         reset: resetConfirmPassword,
     } = useInput(isConfirmPasswordValid);
 
+    const {
+        value: isAmbassador,
+        isValid: userNameIsValid,
+        hasError: ambassadorInputHasError,
+        valueChangeHandler: ambassadorChangeHandler,
+        inputBlurHandler: ambassadorInputBlurHandler,
+        reset: resetIsAmbassador,
+    } = useInput();
+
     const passwordChangeHandler = (event) => {
         primaryPasswordChangeHandler(event);
         resetConfirmPassword();
+    };
+
+    const ambassadorChangeHandler = (event) => {
+        ambassadorChangeHandler();
     };
 
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
@@ -176,6 +189,8 @@ const RegisterForm = () => {
     const confirmPasswordInputClasses = confirmPasswordInputHasError
         ? errorClasses
         : normalClasses;
+
+    const ambassadorInputClasses = ambassadorInputHasError ? errorClasses : normalClasses;
 
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
@@ -542,7 +557,7 @@ const RegisterForm = () => {
                                 className={confirmPasswordInputClasses}
                                 id="confimPassword"
                                 type="password"
-                                value={confirmPassword}
+                                value={isAmbassador}
                                 onChange={confirmPasswordChangeHandler}
                                 onBlur={confirmPasswordInputBlurHandler}
                             />
@@ -563,12 +578,12 @@ const RegisterForm = () => {
                             {/* <div className={`${classes["input"]}`}> */}
                             <span>
                                 <input
-                                className={userNameInputClasses}
+                                className={ambassadorInputClasses}
                                 id="campusAmbassador"
                                 type="checkbox"
-                                value={userName}
-                                onChange={masterUserNameChangeHandler}
-                                onBlur={userNameInputBlurHandler}
+                                value={isAmbassador}
+                                onChange={ambassadorChangeHandler}
+                                onBlur={ambassadorInputBlurHandler}
                                 />
                             </span>
                             <label
