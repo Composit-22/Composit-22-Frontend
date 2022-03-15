@@ -110,10 +110,23 @@ const RegisterForm = () => {
         reset: resetConfirmPassword,
     } = useInput(isConfirmPasswordValid);
 
+    // const {
+    //     value: isAmbassador,
+    //     // isValid: userNameIsValid,
+    //     hasError: ambassadorInputHasError,
+    //     valueChangeHandler: ambassadorChangeValue,
+    //     inputBlurHandler: ambassadorInputBlurHandler,
+    //     reset: resetIsAmbassador,
+    // } = useInput();
+
     const passwordChangeHandler = (event) => {
         primaryPasswordChangeHandler(event);
         resetConfirmPassword();
     };
+
+    // const ambassadorChangeHandler = (event) => {
+    //     ambassadorChangeValue();
+    // };
 
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
     const [userNameExists, setUserNameExists] = useState(false);
@@ -179,6 +192,8 @@ const RegisterForm = () => {
         ? errorClasses
         : normalClasses;
 
+    const ambassadorInputClasses = ambassadorInputHasError ? errorClasses : normalClasses;
+
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
@@ -216,6 +231,7 @@ const RegisterForm = () => {
             password: password,
             number: number,
             events_registered: "",
+            // isAmbassador: isAmbassador,
         };
 
         console.log(state);
@@ -588,7 +604,7 @@ const RegisterForm = () => {
                                 className={confirmPasswordInputClasses}
                                 id="confimPassword"
                                 type="password"
-                                value={confirmPassword}
+                                value={isAmbassador}
                                 onChange={confirmPasswordChangeHandler}
                                 onBlur={confirmPasswordInputBlurHandler}
                             />
@@ -598,6 +614,31 @@ const RegisterForm = () => {
                                 </p>
                             )}
                         </div>
+
+                        {/* <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
+                        >
+                            <span>
+                                <input
+                                className={ambassadorInputClasses}
+                                id="campusAmbassador"
+                                type="checkbox"
+                                value={isAmbassador}
+                                onChange={ambassadorChangeHandler}
+                                onBlur={ambassadorInputBlurHandler}
+                                />
+                            </span>
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="campusAmbassador"
+                            >
+                                Are you a campus ambassador?
+                            </label>
+                        </div> */}
                     </div>
                     <div className={`${classes["form__btn-group"]}`}>
                         <button
