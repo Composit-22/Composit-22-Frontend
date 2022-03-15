@@ -111,23 +111,23 @@ const RegisterForm = () => {
         reset: resetConfirmPassword,
     } = useInput(isConfirmPasswordValid);
 
-    const {
-        value: isAmbassador,
-        // isValid: userNameIsValid,
-        hasError: ambassadorInputHasError,
-        valueChangeHandler: ambassadorChangeValue,
-        inputBlurHandler: ambassadorInputBlurHandler,
-        reset: resetIsAmbassador,
-    } = useInput();
+    // const {
+    //     value: isAmbassador,
+    //     // isValid: userNameIsValid,
+    //     hasError: ambassadorInputHasError,
+    //     valueChangeHandler: ambassadorChangeValue,
+    //     inputBlurHandler: ambassadorInputBlurHandler,
+    //     reset: resetIsAmbassador,
+    // } = useInput();
 
     const passwordChangeHandler = (event) => {
         primaryPasswordChangeHandler(event);
         resetConfirmPassword();
     };
 
-    const ambassadorChangeHandler = (event) => {
-        ambassadorChangeValue();
-    };
+    // const ambassadorChangeHandler = (event) => {
+    //     ambassadorChangeValue();
+    // };
 
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
     const [userNameExists, setUserNameExists] = useState(false);
@@ -229,6 +229,7 @@ const RegisterForm = () => {
             password: password,
             number: number,
             events_registered: "",
+            // isAmbassador: isAmbassador,
         };
 
         console.log(state);
@@ -568,14 +569,13 @@ const RegisterForm = () => {
                             )}
                         </div>
 
-                        <div
+                        {/* <div
                             className={
                                 darkCtx.theme.mode === "dark"
                                     ? `${classes["input"]} ${classes["input-dark"]}`
                                     : classes["input"]
                             }
                         >
-                            {/* <div className={`${classes["input"]}`}> */}
                             <span>
                                 <input
                                 className={ambassadorInputClasses}
@@ -592,7 +592,7 @@ const RegisterForm = () => {
                             >
                                 Are you a campus ambassador?
                             </label>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={`${classes["form__btn-group"]}`}>
                         <button
