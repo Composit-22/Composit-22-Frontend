@@ -87,7 +87,6 @@ const RegisterForm = () => {
         inputBlurHandler: collegeNameInputBlurHandler,
         reset: resetCollegeName,
     } = useInput(isEmail);
-    
 
     const {
         value: password,
@@ -119,6 +118,7 @@ const RegisterForm = () => {
     const [confirmMessageOpen, setConfirmMessageOpen] = useState(false);
     const [userNameExists, setUserNameExists] = useState(false);
     const [emailExists, setEmailExists] = useState(false);
+    const [isAmbassador, setIsAmbassador] = useState("no");
 
     const masterUserNameChangeHandler = (event) => {
         setUserNameExists(false);
@@ -167,7 +167,9 @@ const RegisterForm = () => {
     const emailInputClasses =
         emailInputHasError || emailExists ? errorClasses : normalClasses;
 
-    const collegeNameInputClasses = collegeNameInputHasError ? errorClasses : normalClasses;
+    const collegeNameInputClasses = collegeNameInputHasError
+        ? errorClasses
+        : normalClasses;
 
     const passwordInputClasses = passwordInputHasError
         ? errorClasses
@@ -278,6 +280,16 @@ const RegisterForm = () => {
                 openConfirmHandler();
             });
     };
+
+    const isAmbassadorChangeHandler = () => {
+        setIsAmbassador(prev => {
+            if (prev === "no") {
+                setIsAmbassador("yes");
+            } else {
+                setIsAmbassador("no");
+            }
+        });
+    }
 
     return (
         <>
@@ -494,6 +506,40 @@ const RegisterForm = () => {
                                     IIIT Hyderabad
                                 </option>
                             </select> */}
+                        </div>
+                        <div
+                            className={
+                                darkCtx.theme.mode === "dark"
+                                    ? `${classes["input"]} ${classes["input-dark"]}`
+                                    : classes["input"]
+                            }
+                        >
+                            <label
+                                className={`${classes["input__label"]}`}
+                                htmlFor="campusAmbassador"
+                            >
+                                Are you a campuss ambassador?
+                            </label>
+                            <div id="campusAmbassador" className={classes["checkbox__group"]}> 
+                                <input
+                                    type="checkbox"
+                                    id="yes"
+                                    value="newsletter"
+                                    className={classes["checkbox"]}
+                                    checked={isAmbassador === "yes"}
+                                    onChange={isAmbassadorChangeHandler}
+                                />
+                                <label htmlFor="yes" className={classes["checkbox__label"]}>Yes</label>
+                                <input
+                                    type="checkbox"
+                                    id="no"
+                                    value="newsletter"
+                                    className={classes["checkbox"]}
+                                    checked={isAmbassador === "no"}
+                                    onChange={isAmbassadorChangeHandler}
+                                />
+                                <label htmlFor="no" className={classes["checkbox__label"]}>No</label>
+                            </div>
                         </div>
                         <div
                             className={

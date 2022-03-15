@@ -203,6 +203,25 @@
     color: #ddd;
 }
 
+.checkbox__group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 3rem;
+    height: 3rem;
+}
+
+.checkbox:checked::before {
+    background: var(--color-primary);
+}
+
+.checkbox__label {
+    margin-left: 1rem;
+    margin-right: 5rem;
+}
+
 @media (max-width: 450px) {
     .form {
         margin-left: -1rem;
