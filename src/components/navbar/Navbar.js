@@ -18,9 +18,7 @@ const Navbar = () => {
                 to="/login"
                 className={
                     `${classes["nav-btn"]}  ${classes["nav-btn__login"]}` +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["nav-btn__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["nav-btn__dark"] : "")
                 }
             >
                 Login
@@ -29,9 +27,7 @@ const Navbar = () => {
                 to="/register"
                 className={
                     `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["nav-btn__register__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["nav-btn__register__dark"] : "")
                 }
             >
                 Register
@@ -48,30 +44,23 @@ const Navbar = () => {
                 to="/home"
                 className={
                     `${classes["nav-btn"]} ${classes["nav-btn__register"]}` +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["nav-btn__register__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["nav-btn__register__dark"] : "")
                 }
                 onClick={userCtx.onLogout}
-            >Logout</NavLink>
+            >
+                Logout
+            </NavLink>
         </>
     );
 
     const menuToggleIcon = !scrollCtx.isSecondaryNavOpen ? (
-        <svg
-            viewBox="0 0 100 80"
-            width="40"
-            height="40"
-            className={classes["hamburger"]}
-        >
+        <svg viewBox="0 0 100 80" width="40" height="40" className={classes["hamburger"]}>
             <rect
                 width="100"
                 height="10"
                 className={
                     classes["hamburger__bar"] +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["hamburger__bar__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["hamburger__bar__dark"] : "")
                 }
             />
             <rect
@@ -80,9 +69,7 @@ const Navbar = () => {
                 height="10"
                 className={
                     classes["hamburger__bar"] +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["hamburger__bar__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["hamburger__bar__dark"] : "")
                 }
             />
             <rect
@@ -91,61 +78,32 @@ const Navbar = () => {
                 height="10"
                 className={
                     classes["hamburger__bar"] +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["hamburger__bar__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["hamburger__bar__dark"] : "")
                 }
             />
         </svg>
     ) : (
-        <svg
-            viewBox="0 0 100 80"
-            width="40"
-            height="40"
-            className={classes["close"]}
-        >
-            <line
-                x1="0"
-                y1="0"
-                x2="100"
-                y2="80"
-                className={classes["close__fragment"]}
-            />
-            <line
-                x1="0"
-                y1="80"
-                x2="100"
-                y2="0"
-                className={classes["close__fragment"]}
-            />
+        <svg viewBox="0 0 100 80" width="40" height="40" className={classes["close"]}>
+            <line x1="0" y1="0" x2="100" y2="80" className={classes["close__fragment"]} />
+            <line x1="0" y1="80" x2="100" y2="0" className={classes["close__fragment"]} />
         </svg>
     );
 
     const secondaryHeaderClasses =
-        classes["secondary-header"] +
-        (scrollCtx.isSecondaryNavOpen ? ` ${classes["active"]}` : "");
+        classes["secondary-header"] + (scrollCtx.isSecondaryNavOpen ? ` ${classes["active"]}` : "");
 
     return (
         <header className={classes["navbar"]}>
             <header
                 className={
                     classes["primary-header"] +
-                    (darkCtx.theme.mode === "dark"
-                        ? " " + classes["primary-header__dark"]
-                        : "")
+                    (darkCtx.theme.mode === "dark" ? " " + classes["primary-header__dark"] : "")
                 }
             >
                 <div className={classes["logo-container"]}>
-                    <img
-                        src={logo}
-                        alt="Composit"
-                        className={classes["logo-img"]}
-                    />
+                    <img src={logo} alt="Composit" className={classes["logo-img"]} />
                 </div>
-                <button
-                    className={classes["nav-toggle"]}
-                    onClick={scrollCtx.onToggleSecondaryNav}
-                >
+                <button className={classes["nav-toggle"]} onClick={scrollCtx.onToggleSecondaryNav}>
                     {menuToggleIcon}
                 </button>
                 <nav className={classes["primary-navigation"]}>
@@ -156,10 +114,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                             >
@@ -172,10 +127,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                             >
@@ -187,10 +139,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToEventCarousel}
@@ -203,10 +152,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToSchedule}
@@ -219,10 +165,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                                 onClick={scrollCtx.onScrollToGallery}
@@ -236,10 +179,7 @@ const Navbar = () => {
                                 className={
                                     classes["primary-navigation__link"] +
                                     (darkCtx.theme.mode === "dark"
-                                        ? " " +
-                                          classes[
-                                              "primary-navigation__link__dark"
-                                          ]
+                                        ? " " + classes["primary-navigation__link__dark"]
                                         : "")
                                 }
                             >
@@ -253,9 +193,7 @@ const Navbar = () => {
                     <button
                         className={
                             classes["dark-icon"] +
-                            (darkCtx.theme.mode === "dark"
-                                ? " " + classes["dark-icon__dark"]
-                                : "")
+                            (darkCtx.theme.mode === "dark" ? " " + classes["dark-icon__dark"] : "")
                         }
                         onClick={darkCtx.switchThemeOnClick}
                     />
@@ -264,30 +202,18 @@ const Navbar = () => {
             <header className={secondaryHeaderClasses}>
                 <ul className={classes["secondary-navigation__list"]}>
                     <li>
-                        <NavLink
-                            to="/login"
-                            className={classes["secondary-navigation__link"]}
-                        >
+                        <NavLink to="/login" className={classes["secondary-navigation__link"]}>
                             Login
                         </NavLink>
-                        <NavLink
-                            to="/register"
-                            className={classes["secondary-navigation__link"]}
-                        >
+                        <NavLink to="/register" className={classes["secondary-navigation__link"]}>
                             Register
                         </NavLink>
-                        <NavLink
-                            to="/home"
-                            className={classes["secondary-navigation__link"]}
-                        >
+                        <NavLink to="/home" className={classes["secondary-navigation__link"]}>
                             Home
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to="/about"
-                            className={classes["secondary-navigation__link"]}
-                        >
+                        <NavLink to="/about" className={classes["secondary-navigation__link"]}>
                             About
                         </NavLink>
                     </li>
@@ -300,36 +226,24 @@ const Navbar = () => {
                         </div>
                     </li>
                     <li>
-                        <div
-                            className={classes["secondary-navigation__link"]}
-                            onClick={scrollCtx.onScrollToSchedule}
-                        >
+                        <div className={classes["secondary-navigation__link"]} onClick={scrollCtx.onScrollToSchedule}>
                             Schedule
                         </div>
                     </li>
                     <li>
-                        <div
-                            className={classes["secondary-navigation__link"]}
-                            onClick={scrollCtx.onScrollToGallery}
-                        >
+                        <div className={classes["secondary-navigation__link"]} onClick={scrollCtx.onScrollToGallery}>
                             Gallery
                         </div>
                     </li>
                     <li>
-                        <NavLink
-                            to="/team"
-                            className={classes["secondary-navigation__link"]}
-                        >
+                        <NavLink to="/team" className={classes["secondary-navigation__link"]}>
                             Our Team
                         </NavLink>
                     </li>
                 </ul>
                 <button
                     className={
-                        classes["dark-icon"] +
-                        (darkCtx.theme.mode === "dark"
-                            ? " " + classes["dark-icon__dark"]
-                            : "")
+                        classes["dark-icon"] + (darkCtx.theme.mode === "dark" ? " " + classes["dark-icon__dark"] : "")
                     }
                     onClick={darkCtx.switchThemeOnClick}
                 />

@@ -126,7 +126,7 @@ const Footer = () => {
                                 {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faPhoneAlt} />
                                 </span>
-                                096104 08669
+                                6302468417
                             </li>
                             <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
                             {/* <li className={classes["footer-contact"]}> */}
@@ -134,7 +134,7 @@ const Footer = () => {
                                 {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faEnvelope} />
                                 </span>
-                                composit2k22@gmail.com
+                                composit.iit@gmail.com
                             </li>
                         </ul>
                     </div>
