@@ -12,6 +12,7 @@ const Profile = () => {
     // const reg_events = data.eventsRegistered;
     const reg_events = [];
 
+    console.log(JSON.parse(userCtx.user.reg_events));
     return (
         <div className={theme.mode === 'dark' ? `${modules["container"]} ${modules["container_dark"]}` : modules["container"]}>
             <div className={theme.mode === 'dark' ? `${modules["content"]} ${modules["content_dark"]}` : modules["content"]}>
@@ -48,8 +49,7 @@ const Profile = () => {
                 </div>
             </div>
 
-            {false &&
-                reg_events.length > 0 ?
+            {userCtx.user.reg_events.length > 0 ?
                 <div className={modules["events_container"]}>
                     {/* <div className={modules["metal_bar"]}/> */}
                     <div className={theme.mode === 'dark' ? `${modules["reg_events"]} ${modules["content_dark"]}` : modules["reg_events"]}>
