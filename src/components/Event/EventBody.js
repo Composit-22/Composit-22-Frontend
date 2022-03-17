@@ -25,6 +25,10 @@ const Event = (props) => {
         loadImages(6).then(() => setIsLoaded(true));
     }, []);
 
+    function registerEvent(eventID){
+        
+    }
+
     return (
         <div className={`${classes["event"]} ${bkg}` + (darkCtx.theme.mode === "dark" ? " " + classes["event__dark"] : "")}>
             <div className={classes["event-img__container"]}>
