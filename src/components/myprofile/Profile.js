@@ -4,12 +4,46 @@ import { useContext } from "react";
 import DarkContext from '../../store/DarkMode';
 import UserContext from "../../store/user-context";
 
+const Events = {
+    '0': {
+        name: 'Case Study',
+        link: '/event/0'
+    },
+
+    '1': {
+        name: 'Technova',
+        link: '/event/1'
+    },
+
+    '2': {
+        name: 'Ideathon',
+        link: '/event/2'
+    },
+
+    '3': {
+        name: 'Excavate',
+        link: '/event/3'
+    },
+
+    '4': {
+        name: 'Metallomania',
+        link: '/event/4'
+    },
+
+    '5': {
+        name: 'Meta-Clix',
+        link: '/event/5'
+    },
+}
+
 const Profile = () => {
 
     const { theme } = useContext(DarkContext);
     const userCtx = useContext(UserContext);
 
-    const reg_events = [];
+    const reg_events = Array.from(userCtx.user.reg_events);
+    console.log(reg_events);
+    console.log(userCtx.user.reg_events, typeof (userCtx.user.reg_events));
     return (
         <div className={theme.mode === 'dark' ? `${modules["container"]} ${modules["container_dark"]}` : modules["container"]}>
             <div className={theme.mode === 'dark' ? `${modules["content"]} ${modules["content_dark"]}` : modules["content"]}>
@@ -54,10 +88,12 @@ const Profile = () => {
 
                         {
                             reg_events.map((event) => {
+
+                                const _event = Events[event];
                                 return (
                                     <div className={theme.mode === 'dark' ? `${modules["event_button"]} ${modules["bkg_dark"]}` : modules["event_button"]}>
-                                        <div className={theme.mode === 'dark' ? `${modules["event_name"]} ${modules["text_dark"]}` : modules["event_name"]}>{event.name}</div>
-                                        <NavLink to={event.link} className={modules["event_link"]}>Track Event</NavLink>
+                                        <div className={theme.mode === 'dark' ? `${modules["event_name"]} ${modules["text_dark"]}` : modules["event_name"]}>{_event.name}</div>
+                                        <NavLink to={_event.link} className={modules["event_link"]}>Track Event</NavLink>
                                     </div>
                                 );
                             }
