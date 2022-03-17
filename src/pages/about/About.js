@@ -29,18 +29,6 @@ const About = () => {
 
                     <p>
                         <br />
-                        The Society of Metallurgical Engineers (SME), IIT
-                        Kharagpur is the official departmental society of the
-                        Department of Metallurgical and Materials Engineering,
-                        IIT Kharagpur, SME strives to ensure the betterment of
-                        the UG, PG, and RS community of MME students by working
-                        on 3 fronts: Research, Academics, and Welfare. SME aims
-                        to promote Materials Science research among each of the
-                        student communities while enabling collaboration and
-                        ideation. SME also works to facilitate MSE research
-                        among the UG.
-                        <br />
-                        <br />
                         The Society of Metallurgical Engineers, IIT Kharagpur is
                         the conducting body of the annual departmental fest,
                         COMPOSIT, to promote the field of Materials Science in

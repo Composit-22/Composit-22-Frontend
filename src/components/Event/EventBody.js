@@ -45,7 +45,7 @@ const Event = (props) => {
                     <p className={classes["desc"]}>{`Minimum ${props.min} to maximum ${props.max} members`}</p>
                 </div>
                 <div>
-                    <h2 className={classes["title"]}>Who will participate</h2>
+                    <h2 className={classes["title"]}>Who can participate</h2>
                     <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
             </div>
                 <div className={classes["event-btn__group"]}>
