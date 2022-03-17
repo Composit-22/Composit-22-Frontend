@@ -86,7 +86,7 @@ const RegisterForm = () => {
         valueChangeHandler: collegeNameChangeHandler,
         inputBlurHandler: collegeNameInputBlurHandler,
         reset: resetCollegeName,
-    } = useInput(isEmail);
+    } = useInput(isNotEmpty);
 
     const {
         value: password,
@@ -343,7 +343,7 @@ const RegisterForm = () => {
                         }
                     >
                         {/* <h1 className={classes["form__title"]}>*/}Register
-                        to Composit
+                        for Composit
                     </h1>
                     <div className={`${classes["form__inputs"]}`}>
                         <div
