@@ -45,7 +45,7 @@ const Event = (props) => {
                     <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
             </div>
                 <div className={classes["event-btn__group"]}>
-                    <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]}>Register</NavLink>
+                    <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]} onClick={()=>registerEvent(props.id)}>Register</NavLink>
                     <a href = {props.Details} className={classes["event-btn"]}>Details</a>
                 </div> 
             </div>
