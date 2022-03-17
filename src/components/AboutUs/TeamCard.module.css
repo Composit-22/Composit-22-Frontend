@@ -41,3 +41,8 @@
   justify-content: center;
   z-index: 2;
 }
+
+.cardLink{
+  text-decoration: none;
+  color: black;
+}

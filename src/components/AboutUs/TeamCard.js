@@ -1,6 +1,7 @@
 import classes from "./TeamCard.module.css";
-import img from "./dummy.jpg";
+
 import { useState } from "react";
+
 const TeamCard = function (props) {
     const [onState, setOnState] = useState(false);
     const [offState, setOffState] = useState(true);
@@ -18,24 +19,23 @@ const TeamCard = function (props) {
             onMouseOut={leavehoverHandler}
             className={`${classes.card}`}
         >
-            <div className={`${classes["card-img__container"]}  ${
-                        onState ? classes.mouseOn : ""
-                    } ${offState ? classes.mouseOff : ""}`}>
+            <div className={`${classes["card-img__container"]}  ${onState ? classes.mouseOn : ""
+                } ${offState ? classes.mouseOff : ""}`}>
                 <img
-                    className={`${classes.cardimage}  ${
-                        onState ? classes.mouseOn : ""
-                    } ${offState ? classes.mouseOff : ""}`}
+                    className={`${classes.cardimage}  ${onState ? classes.mouseOn : ""
+                        } ${offState ? classes.mouseOff : ""}`}
                     src={props.img}
                 ></img>
             </div>
             <div
-                className={`${classes.offHoverCardText} ${
-                    onState ? classes.cardText : ""
-                }`}
+                className={`${classes.offHoverCardText} ${onState ? classes.cardText : ""
+                    }`}
             >
                 <div>{props.name}</div>
                 <br />
                 <div>{props.designation}</div>
+                <br />
+                {props.linkedIn === "" ? "" : <div><a href={props.linkedIn} className={classes.cardLink}>LinkedIn	&#x2192;</a></div>}
             </div>
         </div>
     );
