@@ -238,7 +238,7 @@ const RegisterForm = () => {
             password: password,
             number: number,
             events_registered: "",
-            // isAmbassador: isAmbassador,
+            ambassador: ambassador,
         };
 
         console.log(state);
