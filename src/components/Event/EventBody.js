@@ -9,7 +9,7 @@ const imgs = [];
 const loadImages = async (n) => {
     let getter;
     for (let i = 0; i < n; i++) {
-        getter = await import("./imgs/" + i + ".png").then(result => {imgs.push(result.default);});
+        getter = await import("./imgs/" + i + ".png").then(result => { imgs.push(result.default); });
     }
 };
 
@@ -21,26 +21,41 @@ const Event = (props) => {
     const darkCtx = useContext(DarkContext);
 
     const [isLoaded, setIsLoaded] = useState(false);
-    
+
     useEffect(() => {
         loadImages(6).then(() => setIsLoaded(true));
     }, []);
 
-    function registerEvent(eventID){
-        if(userCtx.isLoggedIn)
-        {
+    function registerEvent(eventID) {
+        if (userCtx.isLoggedIn) {
             //CALL BACKEND
-
+            const state = {
+                username: 'test1',
+                eventID: eventID
+            };
+            fetch("https://composit-api.herokuapp.com/registerForEvent", {
+                method: "POST",
+                body: JSON.stringify(state),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    Accept: "application/json",
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => console.log(data))
+                .catch((e) => console.log(e))
 
 
             alert("Successfully registered for the Event!");
         }
-        else
-        {
+        else {
             alert("Please login to register for the Event!");
             window.location.href = '/login';
         }
     }
+
+    const toLink = '/event/'+props.id
+    console.log(toLink)
 
     return (
         <div className={`${classes["event"]} ${bkg}` + (darkCtx.theme.mode === "dark" ? " " + classes["event__dark"] : "")}>
@@ -60,14 +75,14 @@ const Event = (props) => {
                 <div>
                     <h2 className={classes["title"]}>Who can participate</h2>
                     <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
-            </div>
+                </div>
                 <div className={classes["event-btn__group"]}>
-                    <NavLink to="" className={classes["event-btn"]} onClick={()=>registerEvent(props.id)}>Register</NavLink>
-                    <a href = {props.Details} className={classes["event-btn"]}>Details</a>
-                </div> 
+                    <button className={classes["event-btn"]} onClick={() => registerEvent(props.id)}>Register</button>
+                    <a href={props.Details} className={classes["event-btn"]}>Details</a>
+                </div>
             </div>
         </div>
-    
+
     );
 };
 export default Event;

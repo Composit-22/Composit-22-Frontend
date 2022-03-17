@@ -266,7 +266,7 @@ const RegisterForm = () => {
                 if (message.success) {
                     setOverlayTitle("Registration Successful");
                     setOverlayContent(
-                        "Successfully registered for Composit 2022. Please activate your account from your inbox."
+                        "Successfully registered for Composit 2022. Please confirm your email"
                     );
                     openConfirmHandler();
                     resetName();
