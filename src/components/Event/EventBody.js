@@ -3,8 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import DarkContext from '../../store/DarkMode';
 import classes from "./EventBody.module.css";
 
-import eventImg from "./imgs/event.png";
-
+import UserContext from "../../store/user-context";
 const imgs = [];
 
 const loadImages = async (n) => {
@@ -15,6 +14,8 @@ const loadImages = async (n) => {
 };
 
 const Event = (props) => {
+    const userCtx = useContext(UserContext);
+
     const bkg = classes["bkg-" + props.colorId];
 
     const darkCtx = useContext(DarkContext);
@@ -26,7 +27,19 @@ const Event = (props) => {
     }, []);
 
     function registerEvent(eventID){
-        
+        if(userCtx.isLoggedIn)
+        {
+            //CALL BACKEND
+
+
+
+            alert("Successfully registered for the Event!");
+        }
+        else
+        {
+            alert("Please login to register for the Event!");
+            window.location.href = '/login';
+        }
     }
 
     return (
@@ -49,7 +62,7 @@ const Event = (props) => {
                     <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
             </div>
                 <div className={classes["event-btn__group"]}>
-                    <NavLink to={"/eventRegister/" + props.id} className={classes["event-btn"]} onClick={()=>registerEvent(props.id)}>Register</NavLink>
+                    <NavLink to="" className={classes["event-btn"]} onClick={()=>registerEvent(props.id)}>Register</NavLink>
                     <a href = {props.Details} className={classes["event-btn"]}>Details</a>
                 </div> 
             </div>
