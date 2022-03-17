@@ -86,7 +86,7 @@ const RegisterForm = () => {
         valueChangeHandler: collegeNameChangeHandler,
         inputBlurHandler: collegeNameInputBlurHandler,
         reset: resetCollegeName,
-    } = useInput(isEmail);
+    } = useInput(isNotEmpty);
 
     const {
         value: password,
