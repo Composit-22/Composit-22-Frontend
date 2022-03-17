@@ -101,7 +101,9 @@ const LoginForm = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                if (data.userRegistered === "true") {
+                data = JSON.parse(data);
+                console.log(data);
+                if (data.userRegistered === 1) {
                     setUserNameExists(true);
                     userCtx.onLogin(data);
                     resetUserName();

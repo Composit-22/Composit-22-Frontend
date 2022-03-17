@@ -9,10 +9,7 @@ const Profile = () => {
     const { theme } = useContext(DarkContext);
     const userCtx = useContext(UserContext);
 
-    // const reg_events = data.eventsRegistered;
     const reg_events = [];
-
-    console.log(JSON.parse(userCtx.user.reg_events));
     return (
         <div className={theme.mode === 'dark' ? `${modules["container"]} ${modules["container_dark"]}` : modules["container"]}>
             <div className={theme.mode === 'dark' ? `${modules["content"]} ${modules["content_dark"]}` : modules["content"]}>
