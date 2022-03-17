@@ -42,11 +42,13 @@ const Event = (props) => {
                 },
             })
                 .then((response) => response.json())
-                .then((data) => console.log(data))
+                .then((data) => {
+                    alert("Successfully registered for the Event!");
+                })
                 .catch((e) => console.log(e))
 
 
-            alert("Successfully registered for the Event!");
+            // alert("Successfully registered for the Event!");
         }
         else {
             alert("Please login to register for the Event!");
