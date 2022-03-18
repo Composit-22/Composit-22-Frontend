@@ -35,7 +35,7 @@ const TeamCard = function (props) {
                 <br />
                 <div>{props.designation}</div>
                 <br />
-                {props.linkedIn === "" ? "" : <div><a href={props.linkedIn} className={classes.cardLink}>LinkedIn	&#x2192;</a></div>}
+                {props.linkedIn.includes('@') ? <div className={classes.cardLink_email}>{props.linkedIn}</div> : <div><a href={props.linkedIn} className={classes.cardLink}>LinkedIn	&#x2192;</a></div>}
             </div>
         </div>
     );

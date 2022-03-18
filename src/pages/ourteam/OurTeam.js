@@ -52,7 +52,7 @@ const OurTeam = () => {
                             name="Prof. Manas Paliwal"
                             designation="Professor"
                             img={mpImg}
-                            linkedIn = ""
+                            linkedIn = "manas.paliwal@metal.iitkgp.ac.in"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -60,7 +60,7 @@ const OurTeam = () => {
                             name="Prof. Siddhartha Roy"
                             designation="Professor"
                             img={srImg}
-                            linkedIn = ""
+                            linkedIn = "siddhartha@metal.iitkgp.ac.in"
                         />
                     </li>
                 </ul>
@@ -85,7 +85,7 @@ const OurTeam = () => {
                             name="Harsh Vardhan Dubey"
                             designation="Coordinator"
                             img={hvdImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/harsh-vardhan-dubey-0a36b8182"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -93,7 +93,7 @@ const OurTeam = () => {
                             name="Pranav Krishnan"
                             designation="Coordinator"
                             img={pkImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/pranav-krishnan-97080a160"
                         />
                     </li>
                 </ul>
@@ -118,7 +118,7 @@ const OurTeam = () => {
                             name="Abhishek Roy"
                             designation="Events Head"
                             img={arImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/abhishek-roy-0bb427132"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -126,7 +126,7 @@ const OurTeam = () => {
                             name="Maitreyo Biswas"
                             designation="Events Head"
                             img={mbImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/maitreyo-biswas-949b1b216"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -142,7 +142,7 @@ const OurTeam = () => {
                             name="Ananya Mahato"
                             designation="Web Head"
                             img={amImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/ananyaiit123"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -150,7 +150,7 @@ const OurTeam = () => {
                             name="Gauri Vignesh Jawalkar"
                             designation="Publicity Head"
                             img={gvjImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/gouri-vignesh-jawalkar-626258200"
                         />
                     </li>
                     <li className={classes["team__member"]}>
@@ -158,7 +158,7 @@ const OurTeam = () => {
                             name="Riyan Biswas"
                             designation="Publicity Head"
                             img={rbImg}
-                            linkedIn = ""
+                            linkedIn = "https://www.linkedin.com/in/riyan-biswas-4178981bb"
                         />
                     </li>
                 </ul>
