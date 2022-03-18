@@ -46,6 +46,11 @@ const Welcome = () => {
                 }
             >
                 Composit
+                <br />
+                & <br />
+                
+                <h4>
+                11'th Research Scholar's Day</h4>
             </h1>
             <div className={classes["welcome-btn__group"]}>
                 {/* <Button className={theme.mode==='dark'? `${classes['welcome-btn']} ${classes['welcome-btn__left-dark']}` : `${classes['welcome-btn']} ${classes['welcome-btn__left']}`> */}
