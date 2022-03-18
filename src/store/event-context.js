@@ -92,7 +92,7 @@ const DUMMY_EVENTS = [
         min: 1,
         max: 3,
         Details:
-            "https://drive.google.com/file/d/1em0j7MtYMfmKll1qofSrkRPDV3os3_qd/view?usp=sharing",
+            "https://drive.google.com/file/d/1n1MOVTKqAaE3EpdxEVj61b_DWhC2QCa9/view?usp=sharing",
     },
     {
         id: 2,
