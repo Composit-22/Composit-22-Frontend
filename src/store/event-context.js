@@ -90,9 +90,10 @@ const DUMMY_EVENTS = [
         title: "Technova - Research Scholar Day",
         desc: "Technical paper contest to present original scientific work on various topics like Physical Metallurgy and Mechanical Metallurgy, Extractive Metallurgy and Process Modelling, Advanced Materials and Materials Processing, Functional Materials, Nanotechnology, Biomaterials, Computational Material Science",
         min: 1,
-        max: 3,
+        max: 1,
         Details:
             "https://drive.google.com/file/d/1n1MOVTKqAaE3EpdxEVj61b_DWhC2QCa9/view?usp=sharing",
+        participant_info : "Research Scholar's from IIT Kharagpur."
     },
     {
         id: 2,
@@ -102,6 +103,7 @@ const DUMMY_EVENTS = [
         max: 5,
         Details:
             "https://drive.google.com/file/d/1B_uXN5zO6mLla_ROKa716_AiCID1x26G/view?usp=sharing",
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
     {
         id: 3,
@@ -111,6 +113,7 @@ const DUMMY_EVENTS = [
         max: 2,
         Details:
             "https://drive.google.com/file/d/1ZOFbhSddCPIn-ffOkYlgG9ZsrBachkTG/view?usp=sharing",
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
     {
         id: 4,
@@ -120,6 +123,7 @@ const DUMMY_EVENTS = [
         max: 2,
         Details:
             "https://drive.google.com/file/d/1FM7S7AtbyYXHMn7vVgK5q66catOA-JBT/view?usp=sharing",
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
     {
         id: 5,
@@ -129,6 +133,7 @@ const DUMMY_EVENTS = [
         max: 1,
         Details:
             "https://drive.google.com/file/d/1n0Jg3c4UDh_1QnCqYnKy_hl-xJrH9POs/view?usp=sharing",
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
 ];
 

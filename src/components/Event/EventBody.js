@@ -72,11 +72,11 @@ const Event = (props) => {
                 </div>
                 <div>
                     <h2 className={classes["title"]}>Team Size</h2>
-                    <p className={classes["desc"]}>{`Minimum ${props.min} to maximum ${props.max} members`}</p>
+                    <p className={classes["desc"]}>{props.min === props.max ? 'Individual participation.' : `Minimum ${props.min} to maximum ${props.max} members`}</p>
                 </div>
                 <div>
                     <h2 className={classes["title"]}>Who can participate</h2>
-                    <p className={classes["desc"]}>Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.</p>
+                    <p className={classes["desc"]}>{props.participant_info}</p>
                 </div>
                 <div className={classes["event-btn__group"]}>
                     <button className={classes["event-btn"]} onClick={() => registerEvent(props.id)}>Register</button>
