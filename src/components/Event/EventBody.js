@@ -55,7 +55,7 @@ const Event = (props) => {
     }
 
     const toLink = '/event/' + props.id
-    console.log(toLink)
+    // console.log(toLink)
 
     return (
         <div className={`${classes["event"]} ${bkg}` + (darkCtx.theme.mode === "dark" ? " " + classes["event__dark"] : "")}>
