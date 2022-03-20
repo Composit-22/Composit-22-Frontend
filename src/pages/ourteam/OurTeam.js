@@ -19,6 +19,7 @@ import rrmImg from "./imgs/SubHeads/rrm.png";
 import asImg from "./imgs/SubHeads/Ananay Singh.jpg";
 import prImg from "./imgs/SubHeads/Priya.jpeg";
 import aaImg from "./imgs/SubHeads/Abhyuday.jpg";
+import lhpImg from "./imgs/SubHeads/lhp.jpg";
 
 const OurTeam = () => {
     const { theme } = useContext(DarkContext);
@@ -147,7 +148,7 @@ const OurTeam = () => {
                     </li>
                     <li className={classes["team__member"]}>
                         <TeamCard
-                            name="Gauri Vignesh Jawalkar"
+                            name="Gouri Vignesh Jawalkar"
                             designation="Publicity Head"
                             img={gvjImg}
                             linkedIn = "https://www.linkedin.com/in/gouri-vignesh-jawalkar-626258200"
@@ -200,6 +201,14 @@ const OurTeam = () => {
                             designation="Events Sub Head"
                             img={aaImg}
                             linkedIn="https://www.linkedin.com/in/abhyuday-agrawal-8b0b7b211/"
+                        />
+                    </li>
+                    <li className={classes["team__member"]}>
+                        <TeamCard
+                            name="Lalam Prasad"
+                            designation="Publicity Sub Head"
+                            img={lhpImg}
+                            linkedIn="https://www.linkedin.com/in/lalam-hari-prasad-b93820217/"
                         />
                     </li>
                     <li className={classes["team__member"]}>

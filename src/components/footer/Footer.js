@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebook,
     faLinkedin,
+    faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
@@ -178,6 +179,21 @@ const Footer = () => {
                                         <FontAwesomeIcon icon={faLinkedin} />
                                     </span>
                                     LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://instagram.com/composit_iitkgp?utm_medium=copy_link"
+                                    target="_blank"
+                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
+
+                                    // className={classes["footer-link"]}
+                                >
+                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </span>
+                                    Instagram
                                 </a>
                             </li>
                         </ul>
