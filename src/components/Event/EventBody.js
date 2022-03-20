@@ -30,9 +30,10 @@ const Event = (props) => {
         if (userCtx.isLoggedIn) {
             //CALL BACKEND
             const state = {
-                username: username,
+                username: userCtx.user.username,
                 eventID: eventID
             };
+            console.log(state)
             fetch("https://composit-api.herokuapp.com/registerForEvent", {
                 method: "POST",
                 body: JSON.stringify(state),
