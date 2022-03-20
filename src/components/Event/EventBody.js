@@ -43,12 +43,10 @@ const Event = (props) => {
             })
                 .then((response) => response.json())
                 .then((data) => {
+                    console.log(data)
                     alert("Successfully registered for the Event!");
                 })
                 .catch((e) => console.log(e))
-
-
-            // alert("Successfully registered for the Event!");
         }
         else {
             alert("Please login to register for the Event!");
@@ -56,7 +54,7 @@ const Event = (props) => {
         }
     }
 
-    const toLink = '/event/'+props.id
+    const toLink = '/event/' + props.id
     console.log(toLink)
 
     return (
