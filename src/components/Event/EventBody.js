@@ -30,7 +30,7 @@ const Event = (props) => {
         if (userCtx.isLoggedIn) {
             //CALL BACKEND
             const state = {
-                username: userCtx.user.username,
+                username: userCtx.user.userName,
                 eventID: eventID
             };
             console.log(state)
