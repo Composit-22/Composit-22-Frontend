@@ -200,7 +200,7 @@ const RegisterForm = () => {
     const confirmPasswordInputClasses = confirmPasswordInputHasError
         ? errorClasses
         : normalClasses;
-    
+
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
@@ -315,6 +315,12 @@ const RegisterForm = () => {
         });
     }
 
+    const handleKeyDown = e => {
+        if (e.key === " ") {
+            e.preventDefault();
+        }
+    };
+
     return (
         <>
             {confirmMessageOpen && <Backdrop onClose={closeConfirmHandler} />}
@@ -395,6 +401,7 @@ const RegisterForm = () => {
                                 type="text"
                                 value={userName}
                                 onChange={masterUserNameChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={userNameInputBlurHandler}
                             />
                             {(userNameInputHasError || userNameExists) && (
@@ -426,6 +433,7 @@ const RegisterForm = () => {
                                 type="number"
                                 value={number}
                                 onChange={numberChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={numberInputBlurHandler}
                             />
                             {numberInputHasError && (
@@ -455,6 +463,7 @@ const RegisterForm = () => {
                                 type="email"
                                 value={email}
                                 onChange={masterEmailChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={emailInputBlurHandler}
                             />
                             {(emailInputHasError || emailExists) && (
