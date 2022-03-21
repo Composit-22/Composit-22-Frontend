@@ -146,17 +146,17 @@ const Schedule = () => {
 
                     <div className={tab === 2 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
                         <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
-                            {/* <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
+                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
                                 Releasing Soon
-                            </div> */}
+                            </div>
                         </div>
                     </div>
 
                     <div className={tab === 3 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
                         <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
-                            {/* <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
+                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
                                 Releasing Soon
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
