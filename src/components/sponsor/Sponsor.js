@@ -25,8 +25,8 @@ const Sponsor = () => {
                 <img src={hindalco} alt="Birla copper" className={classes["sponsor-logo"]} />
                 <img src={mycaptain} alt="Mycaptain" className={classes["sponsor-logo"]} />
                 <img src={collegeBol} alt="CollegeBol" className={classes["sponsor-logo"]} />
-                <img src={coupanswala} alt="Coupanswala" className={classes["sponsor-logo"]} />
-                <img src={ninthsem} alt="Ninthsem" className={classes["sponsor-logo"]} />
+                <a href = "https://www.couponswala.com" ><img src={coupanswala} alt="Coupanswala" className={classes["sponsor-logo"]} /></a>
+                <a href = "https://ninthsem.com/"><img src={ninthsem} alt="Ninthsem" className={classes["sponsor-logo"]} /></a>
             </div>
             {/* <Button className={theme.mode==='dark'? `${classes['btn-sponsor']} ${classes['btn-sponsor-dark']}`: classes["btn-sponsor"]}>
             <Button className={classes["btn-sponsor"]}>
