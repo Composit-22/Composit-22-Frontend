@@ -105,11 +105,11 @@ const Profile = () => {
                 : ''
             }
 
-            <div className={`${modules["reset-pwd-container"]}`}>
+            {/* <div className={`${modules["reset-pwd-container"]}`}>
                 <button className={`${modules["reset-pwd-btn"]}`} onClick={() => { window.location.pathname = ('/resetPwd') }}>
                     Reset Password
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 }
