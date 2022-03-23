@@ -16,7 +16,6 @@ import Profile from "./components/myprofile/Profile";
 import Reset from "./pages/resetPassword/resetPassword";
 
 const App = () => {
-  console.log = function() {}
   return (
     <>
       <Navbar />
