@@ -8,6 +8,7 @@ import About from "./pages/about/About";
 import Event from "./pages/event/Event";
 import EventRegister from "./pages/eventregister/EventRegister";
 import ComingSoon from "./pages/comingsoon/ComingSoon";
+import Schedule  from "./components/schedule/Schedule";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import OurTeam from "./pages/ourteam/OurTeam";
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="/profile" component={Profile} />
                 <Route path="/resetpwd" component={Reset} />
                 <Route path="*" component={ComingSoon} />
+                <Route path="/schedule" component={Schedule} />
             </Switch>
       <Footer />
     </>

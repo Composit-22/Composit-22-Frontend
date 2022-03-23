@@ -86,7 +86,7 @@ const RegisterForm = () => {
         valueChangeHandler: collegeNameChangeHandler,
         inputBlurHandler: collegeNameInputBlurHandler,
         reset: resetCollegeName,
-    } = useInput(isEmail);
+    } = useInput(isNotEmpty);
 
     const {
         value: password,
@@ -200,7 +200,7 @@ const RegisterForm = () => {
     const confirmPasswordInputClasses = confirmPasswordInputHasError
         ? errorClasses
         : normalClasses;
-    
+
     const optionInputClasses =
         darkCtx.theme.mode === "dark" ? classes["option__dark"] : "";
 
@@ -238,7 +238,7 @@ const RegisterForm = () => {
             password: password,
             number: number,
             events_registered: "",
-            // isAmbassador: isAmbassador,
+            ambassador: ambassador,
         };
 
         console.log(state);
@@ -266,7 +266,7 @@ const RegisterForm = () => {
                 if (message.success) {
                     setOverlayTitle("Registration Successful");
                     setOverlayContent(
-                        "Successfully registered for Composit 2022. Please activate your account from your inbox."
+                        "Successfully registered for Composit 2022. Please confirm your email"
                     );
                     openConfirmHandler();
                     resetName();
@@ -315,6 +315,12 @@ const RegisterForm = () => {
         });
     }
 
+    const handleKeyDown = e => {
+        if (e.key === " ") {
+            e.preventDefault();
+        }
+    };
+
     return (
         <>
             {confirmMessageOpen && <Backdrop onClose={closeConfirmHandler} />}
@@ -343,7 +349,7 @@ const RegisterForm = () => {
                         }
                     >
                         {/* <h1 className={classes["form__title"]}>*/}Register
-                        to Composit
+                        for Composit
                     </h1>
                     <div className={`${classes["form__inputs"]}`}>
                         <div
@@ -395,6 +401,7 @@ const RegisterForm = () => {
                                 type="text"
                                 value={userName}
                                 onChange={masterUserNameChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={userNameInputBlurHandler}
                             />
                             {(userNameInputHasError || userNameExists) && (
@@ -426,6 +433,7 @@ const RegisterForm = () => {
                                 type="number"
                                 value={number}
                                 onChange={numberChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={numberInputBlurHandler}
                             />
                             {numberInputHasError && (
@@ -455,6 +463,7 @@ const RegisterForm = () => {
                                 type="email"
                                 value={email}
                                 onChange={masterEmailChangeHandler}
+                                onKeyDown={handleKeyDown}
                                 onBlur={emailInputBlurHandler}
                             />
                             {(emailInputHasError || emailExists) && (

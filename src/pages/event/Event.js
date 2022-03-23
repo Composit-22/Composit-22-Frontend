@@ -16,7 +16,7 @@ const Event = () => {
 
     return (
         // <EventBody title={event.title} desc={event.desc} id={eventIndex} colorId={eventIndex % 6} min={event.min} max={event.max} Details={event.Details} />
-        <EventBody title={event.title} desc={event.desc} id={event.id} colorId={event.id % 6} min={event.min} max={event.max} Details={event.Details} />
+        <EventBody title={event.title} desc={event.desc} id={event.id} colorId={event.id % 6} min={event.min} max={event.max} participant_info = {event.participant_info} Details={event.Details} />
     );
 };
 

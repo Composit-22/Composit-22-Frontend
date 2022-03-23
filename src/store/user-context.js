@@ -21,7 +21,8 @@ export const UserContextProvider = (props) => {
             email: data.email,
             phone: data.number,
             registeredOn: data.date,
-            college: data.collegeName
+            college: data.collegeName,
+            reg_events: data.eventsRegistered
         };
         setUser(newUser);
         history.push("/profile");

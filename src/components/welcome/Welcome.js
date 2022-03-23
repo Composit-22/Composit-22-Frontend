@@ -46,10 +46,15 @@ const Welcome = () => {
                 }
             >
                 Composit
+                <br />
+                & <br />
+                
+                <h4>
+                11'th Research Scholar's Day</h4>
             </h1>
             <div className={classes["welcome-btn__group"]}>
                 {/* <Button className={theme.mode==='dark'? `${classes['welcome-btn']} ${classes['welcome-btn__left-dark']}` : `${classes['welcome-btn']} ${classes['welcome-btn__left']}`> */}
-                <Button
+                {/* <Button
                     className={
                         `${classes["welcome-btn"]} ${classes["welcome-btn__left"]}` +
                         (darkCtx.theme.mode === "dark"
@@ -58,8 +63,8 @@ const Welcome = () => {
                     }
                 >
                     <NavLink to="/register" className={classes["landing-register"]}>Get Started</NavLink>
-                </Button>
-                <Button
+                </Button> */}
+                {/* <Button
                     className={
                         `${classes["welcome-btn"]} ${classes["welcome-btn__right"]}` +
                         (darkCtx.theme.mode === "dark"
@@ -68,7 +73,7 @@ const Welcome = () => {
                     }
                 >
                     Event Promo
-                </Button>
+                </Button> */}
                 {/* <img src={molekule} alt="molekule" className={classes["molekule"]} /> */}
             </div>
         </section>

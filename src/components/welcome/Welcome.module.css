@@ -112,11 +112,17 @@
 }
 
 .heading-large {
-    font-size: min(13.2rem, 12vw);
+    text-align: center;
+    font-size: min(10.2rem, 12vw);
     font-weight: 600;
     letter-spacing: .3rem;
     color: rgb(138,96,49);
     text-shadow: .6rem .6rem 3px rgb(200, 200, 200);
+}
+
+.heading-large > h4 {
+    font-size: min(6.2rem, 12vw);
+    font-weight: 400;
 }
 
 .heading-large__dark {

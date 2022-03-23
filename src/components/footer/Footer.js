@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebook,
     faLinkedin,
-    faYoutube,
-    faGoogle,
+    faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
@@ -126,7 +125,15 @@ const Footer = () => {
                                 {/* <span className={classes["footer-icon"]}> */}
                                     <FontAwesomeIcon icon={faPhoneAlt} />
                                 </span>
-                                6302468417
+                                Riyan: +91 6291 079 485
+                            </li>
+                            <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
+                            {/* <li className={classes["footer-contact"]}> */}
+                            <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
+                                {/* <span className={classes["footer-icon"]}> */}
+                                    <FontAwesomeIcon icon={faPhoneAlt} />
+                                </span>
+                                Gouri Vignesh: +91 6302 468 417
                             </li>
                             <li className={theme.mode==='dark'? `${classes['footer-contact']} ${classes['footer-contact-dark']}`: classes["footer-contact"]}>
                             {/* <li className={classes["footer-contact"]}> */}
@@ -161,7 +168,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.linkedin.com/compnay/composit-iit-kharagpur/"
+                                    href="https://www.linkedin.com/company/composit-iit-kharagpur/"
                                     target="_blank"
                                     className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
 
@@ -176,7 +183,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.youtube.com/c/composit"
+                                    href="https://instagram.com/composit_iitkgp?utm_medium=copy_link"
                                     target="_blank"
                                     className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
 
@@ -184,24 +191,9 @@ const Footer = () => {
                                 >
                                     <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
                                 {/* <span className={classes["footer-icon"]}> */}
-                                        <FontAwesomeIcon icon={faYoutube} />
+                                        <FontAwesomeIcon icon={faInstagram} />
                                     </span>
-                                    YouTube
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.composit.in/"
-                                    target="_blank"
-                                    className={theme.mode==='dark'? `${classes['footer-link']} ${classes['footer-link-dark']}`: classes["footer-link"]}
-
-                                    // className={classes["footer-link"]}
-                                >
-                                    <span className={theme.mode==='dark'? `${classes['footer-icon']} ${classes['footer-icon-dark']}`: classes["footer-icon"]}>
-                                {/* <span className={classes["footer-icon"]}> */}
-                                        <FontAwesomeIcon icon={faGoogle} />
-                                    </span>
-                                    Google
+                                    Instagram
                                 </a>
                             </li>
                         </ul>

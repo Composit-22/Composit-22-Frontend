@@ -6,10 +6,10 @@ const Speaker = (props) => {
     const { theme } = useContext(DarkContext);
     return (
         <div className={classes["speaker"]}>
-            <img src={props.img} alt="Speaker-Img"/>
+            {/* <img src={props.img} alt="Speaker-Img"/> */}
             <div className={theme.mode === 'dark' ? `${classes['info']} ${classes['info-dark']}` : classes["info"]}>
                 <span>{props.name}</span>
-                <p>Booth: <strong>{props.booth}</strong></p>
+                <p><strong>{props.booth}</strong></p>
             </div>
         </div>
     );

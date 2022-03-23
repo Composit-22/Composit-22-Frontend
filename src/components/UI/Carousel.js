@@ -21,7 +21,7 @@ const NextArrow = (props) => {
                 position: "absolute",
                 top: "50%",
                 right: "3rem",
-                transform: "translateY(-50%) scale(1.2)",
+                transform: "translateY(-50%) scale(3.2)",
                 zIndex: "1000",
             }}
             onClick={onClick}
@@ -43,7 +43,7 @@ const PrevArrow = (props) => {
                 position: "absolute",
                 top: "50%",
                 left: "3rem",
-                transform: "translateY(-50%) scale(1.2)",
+                transform: "translateY(-50%) scale(3.2)",
                 zIndex: "1000",
             }}
             onClick={onClick}
