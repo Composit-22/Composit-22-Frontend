@@ -132,7 +132,7 @@ const DUMMY_EVENTS = [
         min: 1,
         max: 1,
         Details:
-            "https://drive.google.com/file/d/1n0Jg3c4UDh_1QnCqYnKy_hl-xJrH9POs/view?usp=sharing",
+            "https://drive.google.com/file/d/1aJU0xO32rBGrH50Sxp5IANyqXGrFzVII/view?usp=sharing",
         participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
 ];
