@@ -30,7 +30,7 @@ const About = () => {
            <h2>Composit'22</h2>
 
           <p style={{
-            fontSize:"20px",textAlign:"justify",color:"#000",fontWeight:"700"
+            fontSize:"20px",textAlign:"justify",fontWeight:"700"
         }}>
             <br />
             The Society of Metallurgical Engineers, IIT Kharagpur is the
@@ -73,7 +73,7 @@ const About = () => {
           </div>
           
           <p style={{
-            fontSize:"20px",textAlign:"justify",color:"#000",fontWeight:"700"
+            fontSize:"20px",textAlign:"justify",fontWeight:"700"
         }}>
             <br></br>
             It gives me great pleasure to announce that after a two-year absence
