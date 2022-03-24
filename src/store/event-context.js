@@ -79,11 +79,11 @@ const DUMMY_EVENTS = [
         id: 0,
         title: "Case Study",
         // desc: "Case studies are one of the best teaching tools for enhancing and testing the practical knowledge of students. It asks for a detailed analysis of a market situation or any organization or a similar group, and the students are required to use their problem-solving skills to rectify the complications in it.The strategic actions which a group proposes are backed up with an in-depth research of the organization and the market conditions. These solutions are meant to provide the company with a competitive edge over others.Suggested topics for case study:Materials selection for a plug,Examination of an artefact,Hydrogen Economy,Joining,Failure Analysis Of Corrosion On Stainless Steel Fasteners,Space shuttle tiles ",
-        desc: "Commencing",
+        desc: "Investigate some cases in the Metallurgical and Materials industry.",
         min: 1,
         max: 5,
-        // Details:
-        //     "https://drive.google.com/file/d/1DXxmMUN5ilGKoP5URcV-oVsB78stYWpy/view?usp=sharing",
+        Details:
+            "https://drive.google.com/file/d/1gU2lkiWVzzes-CRhA2b_LOWz4HcsBe7n/view?usp=sharing",
         participant_info: "Open to everyone"
     },
     {
@@ -102,8 +102,8 @@ const DUMMY_EVENTS = [
         desc: "Ideathon is a competition to be conducted in COMPOSIT 2022 which is related to the pitching of ideas related to metallurgy / materials. It could be a competition where participants in teams can suggest startup/business proposals to brainstorm and validate their ideas from the judges.Startup ideas can be about anything related to metallurgy : Energy Materials, Biomaterials, Nanomaterials, Polymers and materials for technology like 3D printing, Anything other related to metallurgy.",
         min: 1,
         max: 5,
-        Details:
-            "https://drive.google.com/file/d/1B_uXN5zO6mLla_ROKa716_AiCID1x26G/view?usp=sharing",
+        // Details:
+        //     "https://drive.google.com/file/d/1B_uXN5zO6mLla_ROKa716_AiCID1x26G/view?usp=sharing",
         participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
     // {

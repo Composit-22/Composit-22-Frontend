@@ -74,7 +74,7 @@ const Schedule = () => {
                                     
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
-                                
+                                    27th March (2 PM)
                                 </div>
                             </div>
                             <div className={classes["row"]}>
@@ -100,17 +100,16 @@ const Schedule = () => {
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
                                 </div>
                             </div>
-                            <div className={classes["row"]}>
+                            {/* <div className={classes["row"]}>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>2:00 pm to 4:00 pm</div> 
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Excavate<br></br>( Data Analytics )</div>
                                 <div className={classes['row-cell']}>
-                                    {/* <div><Speaker name="Prof. Siddhartha Roy"  /></div> */}
-                                    {/* <div><Speaker name="Prof. Manas Paliwal" /></div> */}
+                                    
                                     
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className={classes["row"]}>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>5:00 pm to 6:00 pm</div> 
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Prize Distribution</div>
