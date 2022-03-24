@@ -20,17 +20,17 @@ const Events = {
         link: '/event/2'
     },
 
-    '3': {
-        name: 'Excavate',
-        link: '/event/3'
-    },
+    // '3': {
+    //     name: 'Excavate',
+    //     link: '/event/3'
+    // },
 
-    '4': {
+    '3': {
         name: 'Metallomania',
         link: '/event/4'
     },
 
-    '5': {
+    '4': {
         name: 'Meta-Clix',
         link: '/event/5'
     },

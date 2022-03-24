@@ -19,7 +19,7 @@ const EventCarousel = React.forwardRef((props, ref) => {
     const [isLoaded, setIsLoaded] = useState(false);
     
     useEffect(() => {
-        loadImages(6).then(() => setIsLoaded(true));
+        loadImages(5).then(() => setIsLoaded(true));
     }, []);
 
     return (
@@ -27,7 +27,7 @@ const EventCarousel = React.forwardRef((props, ref) => {
             {imgs.map((img, index) => (
                 <div className={classes["event-carousel__item"]} key={index}>
                     <EventCard
-                        id={index % 6}
+                        id={index % 5}
                         image={img}
                     />
                 </div>

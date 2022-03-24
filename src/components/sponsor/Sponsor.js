@@ -20,11 +20,11 @@ const Sponsor = () => {
                 //  className={classes["sponsor-heading"]}
                  >Our Sponsors</h1>
             <div className={classes["sponsor-group"]}>
-                <img src={jsw} alt="Jsw" className={classes["sponsor-logo"]} />
+                {/* <img src={jsw} alt="Jsw" className={classes["sponsor-logo"]} />
                 <img src={dominos} alt="Dominos" className={classes["sponsor-logo"]} />
                 <img src={hindalco} alt="Birla copper" className={classes["sponsor-logo"]} />
                 <img src={mycaptain} alt="Mycaptain" className={classes["sponsor-logo"]} />
-                <img src={collegeBol} alt="CollegeBol" className={classes["sponsor-logo"]} />
+                <img src={collegeBol} alt="CollegeBol" className={classes["sponsor-logo"]} /> */}
                 <img src={coupanswala} alt="Coupanswala" className={classes["sponsor-logo"]} />
                 <img src={ninthsem} alt="Ninthsem" className={classes["sponsor-logo"]} />
             </div>
