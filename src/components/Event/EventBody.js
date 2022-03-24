@@ -55,6 +55,8 @@ const Event = (props) => {
         }
     }
 
+    console.log(props);
+
     const toLink = '/event/' + props.id
     // console.log(toLink)
 
