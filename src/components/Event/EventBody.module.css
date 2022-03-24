@@ -1,9 +1,40 @@
+.event__container {
+    width: 100%;
+}
+
 .event {
     display: flex;
     gap: 10rem;
     padding: 5rem;
     padding-top: 12rem;
     margin-bottom: -4rem;
+}
+
+.event__dark {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.block {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, .5);
+    
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+}
+
+.block__dark {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    cursor: pointer;
+}
+
+.block__dark:hover {
+    background-color: #000;
+}
+
+.block:hover {
+    background-color: #fff;
 }
 
 .bkg-0 {
@@ -50,7 +81,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2.4rem;
+    gap: 3rem;
 }
 
 .event-title {
@@ -76,12 +107,13 @@
 }
 
 .event-btn__group {
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     gap: 20rem;
 }
 
-.event-btn, .event-btn:link {
+/* .event-btn, .event-btn:link {
     color: #000;
     margin-top: 2.5rem;
     padding: 1rem 4rem;
@@ -97,6 +129,45 @@
 
 .event-btn:hover {
     background-color: #fff;
+} */
+
+.register-btn {
+    border: 2px solid black;
+    padding: .5rem 3rem;
+    border-radius: .5rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 2.4rem;
+    background-color: transparent;
+    transition: all .2s;
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.details-btn {
+    border: 2px solid black;
+    padding: .5rem 3rem;
+    border-radius: .5rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 2.4rem;
+    background-color: black;
+    color: white;
+    transition: all .2s;
+    text-decoration: none;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    cursor: pointer;
+}
+
+.details-btn:hover {
+    background-color: transparent;
+    color: black;
 }
 
 @media (max-width: 600px) {
@@ -115,7 +186,7 @@
 
     .event-btn__group {
         flex-direction: column;
-        gap: 0;
+        gap: 2rem;
     }
 
     .event-btn {
