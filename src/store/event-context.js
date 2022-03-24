@@ -83,7 +83,7 @@ const DUMMY_EVENTS = [
         min: 1,
         max: 5,
         Details:
-            "https://drive.google.com/file/d/1gU2lkiWVzzes-CRhA2b_LOWz4HcsBe7n/view?usp=sharing",
+            "https://drive.google.com/file/d/1UAasODfMhTUclqazKtEUBP0cCGTYJnzV/view?usp=sharing",
         participant_info: "Open to everyone"
     },
     {
