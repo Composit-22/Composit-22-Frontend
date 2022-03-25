@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+
 import { useState, useEffect, useContext } from "react";
 import DarkContext from "../../store/DarkMode";
 import classes from "./EventBody.module.css";
@@ -57,8 +57,7 @@ const Event = (props) => {
     }
 
     const toLink = "/event/" + props.id;
-    // console.log(toLink)
-
+    
     return (
         <div className={`${classes["event__container"]} ${bkg}`}>
             <div
@@ -94,6 +93,14 @@ const Event = (props) => {
                         <a href={props.Details} className={classes["details-btn"]} target="_blank">
                             Details
                         </a>
+                        {
+                            
+                            props.submit_link === "" ? ""
+                            :
+                            <a href={props.submit_link} className={classes["details-btn"]} target="_blank">
+                                Submit
+                            </a>
+                        }
                     </div>
                 </div>
             </div>

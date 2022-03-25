@@ -84,7 +84,8 @@ const DUMMY_EVENTS = [
         max: 5,
         Details:
             "https://drive.google.com/file/d/1UAasODfMhTUclqazKtEUBP0cCGTYJnzV/view?usp=sharing",
-        participant_info: "Open to everyone"
+        participant_info: "Open to everyone",
+        submit_link: "https://docs.google.com/forms/d/1txBLbD5bedunsItNaRbjNSt4i8tuLabGp1nea5bdg44/edit?usp=sharing",
     },
     {
         id: 1,
@@ -94,7 +95,8 @@ const DUMMY_EVENTS = [
         max: 1,
         Details:
             "https://drive.google.com/file/d/1n1MOVTKqAaE3EpdxEVj61b_DWhC2QCa9/view?usp=sharing",
-        participant_info : "Open to everyone"
+        participant_info : "Open to everyone",
+        submit_link: "",
     },
     {
         id: 2,
@@ -104,18 +106,9 @@ const DUMMY_EVENTS = [
         max: 5,
         Details:
             "https://docs.google.com/document/d/1zpdvf694spxW6-5iD4qdcVj_pC3cUbz1nIfFyQXetXA/edit",
-        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.",
+        submit_link: "",
     },
-    // {
-    //     id: 3,
-    //     title: "Excavate",
-    //     desc: "Data Analytics is used in many industries to allow companies and organization to  make better business decisions and in the sciences to verify or disprove existing  models or theories. It provides an opportunity to find insights in types of data and content, to make  the business agiler, and to answer questions that were previously considered  beyond reach. This event will aim to gauge your presentation and data analysis  skills to the fullest.  ",
-    //     min: 1,
-    //     max: 2,
-    //     Details:
-    //         "https://drive.google.com/file/d/1ZOFbhSddCPIn-ffOkYlgG9ZsrBachkTG/view?usp=sharing",
-    //     participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
-    // },
     {
         id: 3,
         title: "Metallomania - Research Scholar Day",
@@ -124,7 +117,8 @@ const DUMMY_EVENTS = [
         max: 2,
         Details:
             "https://drive.google.com/file/d/1FM7S7AtbyYXHMn7vVgK5q66catOA-JBT/view?usp=sharing",
-        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.",
+        submit_link: "",
     },
     {
         id: 4,
@@ -134,7 +128,8 @@ const DUMMY_EVENTS = [
         max: 1,
         Details:
             "https://drive.google.com/file/d/1aJU0xO32rBGrH50Sxp5IANyqXGrFzVII/view?usp=drivesdk",
-        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
+        participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA.",
+        submit_link: "",
     },
 ];
 
