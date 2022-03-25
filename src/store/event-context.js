@@ -102,8 +102,8 @@ const DUMMY_EVENTS = [
         desc: "Ideathon is a competition to be conducted in COMPOSIT 2022 which is related to the pitching of ideas related to metallurgy / materials. It could be a competition where participants in teams can suggest startup/business proposals to brainstorm and validate their ideas from the judges.Startup ideas can be about anything related to metallurgy : Energy Materials, Biomaterials, Nanomaterials, Polymers and materials for technology like 3D printing, Anything other related to metallurgy.",
         min: 1,
         max: 5,
-        // Details:
-        //     "https://drive.google.com/file/d/1B_uXN5zO6mLla_ROKa716_AiCID1x26G/view?usp=sharing",
+        Details:
+            "https://docs.google.com/document/d/1zpdvf694spxW6-5iD4qdcVj_pC3cUbz1nIfFyQXetXA/edit",
         participant_info: "Any student pursuing B.Tech, M.Tech degree (no age restriction). Team members from different colleges in INDIA."
     },
     // {
