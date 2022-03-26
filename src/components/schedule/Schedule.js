@@ -81,7 +81,7 @@ const Schedule = () => {
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>10:30 am to 1:00 pm</div> 
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Ideathon<br></br>( Business Plan )</div>
                                 <div className={classes['row-cell']}>
-                                    <div><Speaker name="Prof. Indrani Sen"  /></div>
+                                    <div><Speaker name="Prof. Siddhartha Das"  /></div>
                                     <div><Speaker name="Prof. Manas Paliwal" /></div>
                                     
                                 </div>
