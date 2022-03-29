@@ -31,7 +31,7 @@
 .tab_container {
   display: block;
   flex-direction: column;
-  width: 70%;
+  width: 90%;
   background: white;
   margin-top: 6rem;
 }
@@ -58,7 +58,7 @@
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 800;
-  text-align: left;
+  text-align: center;
   opacity: 0.5;
 }
 
@@ -154,6 +154,20 @@
   color: #222222;
 }
 
+.row-cell_2 {
+  width: 20%;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-bottom: solid 0.1rem #d9d9d9;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  padding: 2rem;
+  color: #222222;
+}
+
 .row-cell>div {
   margin-left: 13%;
 }
@@ -217,6 +231,16 @@
 
   .row-cell {
     width: 100%
+  }
+
+  .row-cell_2 {
+    width: 100%
+  }
+
+  .row-cell_2 > div{
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }
 
   .row-cell>div {

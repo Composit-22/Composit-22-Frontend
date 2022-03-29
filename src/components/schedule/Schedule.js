@@ -65,37 +65,37 @@ const Schedule = () => {
                                 </div>
                             </div>
                             <div className={classes["row"]}>
-                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>9:30 am to 10:30 am</div> 
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>9:30 am to 10:30 am</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Tech Talk<br></br>( Ninth Sem )</div>
                                 <div className={classes['row-cell']}>
-                                    
+
                                     {/* <div><Speaker name="Prof. Siddhartha Roy"  /></div> */}
                                     {/* <div><Speaker name="Prof. Manas Paliwal" /></div> */}
-                                    
+
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
                                     27th March (2 PM)
                                 </div>
                             </div>
                             <div className={classes["row"]}>
-                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>10:30 am to 1:00 pm</div> 
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>10:30 am to 1:00 pm</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Ideathon<br></br>( Business Plan )</div>
                                 <div className={classes['row-cell']}>
-                                    <div><Speaker name="Prof. Siddhartha Das"  /></div>
+                                    <div><Speaker name="Prof. Siddhartha Das" /></div>
                                     <div><Speaker name="Prof. Manas Paliwal" /></div>
-                                    
+
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
-                                26th March (11:59 PM)
+                                    26th March (11:59 PM)
                                 </div>
                             </div>
                             <div className={classes["row"]}>
-                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>1:00 pm to 2:00 pm</div> 
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>1:00 pm to 2:00 pm</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Break for Lunch</div>
                                 <div className={classes['row-cell']}>
                                     {/* <div><Speaker name="Prof. Siddhartha Roy"  /></div> */}
                                     {/* <div><Speaker name="Prof. Manas Paliwal" /></div> */}
-                                    
+
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
                                 </div>
@@ -111,17 +111,17 @@ const Schedule = () => {
                                 </div>
                             </div> */}
                             <div className={classes["row"]}>
-                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>5:00 pm to 6:00 pm</div> 
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>27th March<br></br>5:00 pm to 6:00 pm</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Prize Distribution</div>
                                 <div className={classes['row-cell']}>
                                     {/* <div><Speaker name="Prof. Siddhartha Roy"  /></div> */}
                                     {/* <div><Speaker name="Prof. Manas Paliwal" /></div> */}
-                                    
+
                                 </div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>
                                 </div>
                             </div>
-                     {/* <div className={classes["row"]}>
+                            {/* <div className={classes["row"]}>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>9 to 12 am</div>
                                 <div className={theme.mode === 'dark' ? `${classes['row-cell']} ${classes['row-cell-dark']}` : classes["row-cell"]}>Inaugration Seremoni</div>
                                 <div className={classes['row-cell']}>
@@ -132,17 +132,59 @@ const Schedule = () => {
                                     Ended
                                 </div>
                             </div> */}
-                            
+
                         </div>
                     </div>
 
-                    {/* <div className={tab === 3 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
-                        <div className={theme.mode === 'dark' ? `${classes['temp-info']} ${classes['temp-info_dark']}` : classes['temp-info']}>
-                            <div className={theme.mode === 'dark' ? `${classes['release-soon']} ${classes['release-soon_dark']}` : classes['release-soon']}>
-                                Releasing Soon
+                    <div className={tab === 3 ? `${classes["content"]} ${classes["active-content"]}` : classes["content"]}>
+                        <div className={theme.mode === 'dark' ? `${classes['table-container']} ${classes['table-container-dark']}` : classes["table-container"]}>
+                            <div className={theme.mode === 'dark' ? `${classes["table-heading"]} ${classes["table-heading-dark"]}` : classes["table-heading"]}>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Event</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Position</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Team Leader/ Team Name</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Insitute</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Prize Money</div>
                             </div>
+                            <div className={classes["row"]}>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Ideathon</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>1 <br /><br /> 2</div>
+                                <div className={classes['row-cell_2']}>
+                                    <div><Speaker name="Gopi M" /></div>
+                                    <div><Speaker name="Sanskar Soven" /></div>
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>
+                                    IIT KHARAGPUR <br /><br /> IIT KANPUR
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>₹2000 <br /><br /> ₹1000</div>
+                            </div>
+                            <div className={classes["row"]}>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Case Study</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>1 <br /><br/><br /> 2</div>
+                                <div className={classes['row-cell_2']}>
+
+                                    <div><Speaker name="Ramona Kodkani / The_Invincibles"  /></div>
+                                    <div><Speaker name="Mohan Jyotirman Misra / Team Li-Ions" /></div>
+
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>
+                                    IIT KHARAGPUR <br /><br/><br /> IIT KANPUR
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>₹2000 <br /><br/><br /> ₹1000</div>
+                            </div>
+                            <div className={classes["row"]}>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>Metallomania</div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>1 <br /> 2</div>
+                                <div className={classes['row-cell_2']}>
+                                    {/* <div><Speaker name="Prof. Siddhartha Das" /></div>
+                                    <div><Speaker name="Prof. Manas Paliwal" /></div> */}
+
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>   
+                                </div>
+                                <div className={theme.mode === 'dark' ? `${classes['row-cell_2']} ${classes['row-cell-dark']}` : classes["row-cell_2"]}>₹2000 <br /> ₹1000</div>
+                            </div>                            
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
